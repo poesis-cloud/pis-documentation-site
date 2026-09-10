@@ -181,4 +181,4 @@ Each use case maps GSM onto cloud-native projects and the ecosystem domains that
 
 The throughline: **GSM is the definitional complement to the runtime standards.** OpenTelemetry gave the RUN layer a vendor-neutral home; the THINK layer — the definitions those runtimes enforce and measure against — needs a neutral standards home for the same reason: portability instead of lock-in. GSM seeks that home at [OASIS Open](https://www.oasis-open.org/), whose portfolio (policy, governance, topology, interoperability) is the natural fit for a definition-and-governance standard.
 
-> See also: **[GSM and the Kubernetes Model](gsm-and-kubernetes.md)** (how GSM generalizes the Kubernetes pattern), the [Specification](specification.md) (normative model), the [Primer](primer.md) (intuition), and the [OASIS TC Proposal](oasis-tc-proposal.md).
+> See also: **[GSM and the Kubernetes Model](gsm-and-kubernetes.md)** (how GSM generalizes the Kubernetes pattern), the [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) (normative model), the [Primer](primer.md) (intuition), and the [OASIS TC Proposal](oasis-tc-proposal.md).

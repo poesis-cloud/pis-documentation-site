@@ -62,7 +62,7 @@ The current maintainer is **Poesis** ([github.com/poesis-cloud](https://github.c
 
 ### 5.1 Change proposals
 
-Substantive changes are raised as a written **GSM Change Proposal** (a tracked issue/PR) stating: motivation, the normative delta, conformance impact (which `GSM-*` requirement IDs change), backwards-compatibility analysis, and migration notes. Editors integrate accepted proposals; the [Conformance](conformance.md) catalog is updated with stable IDs.
+Substantive changes are raised as a written **GSM Change Proposal** (a tracked issue/PR) stating: motivation, the normative delta, conformance impact (which `GSM-*` requirement IDs change), backwards-compatibility analysis, and migration notes. Editors integrate accepted proposals; the [Conformance](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/conformance.md) catalog is updated with stable IDs.
 
 ## 6. Releases and versioning
 

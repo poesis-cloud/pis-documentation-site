@@ -61,8 +61,8 @@ Acceptance is built before the charter is filed, in the open:
 
 | Artifact | Where |
 |---|---|
-| Normative specification | [Specification](specification.md) |
-| Conformance catalog (stable IDs) | [Conformance](conformance.md) |
+| Normative specification | [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) |
+| Conformance catalog (stable IDs) | [Conformance](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/conformance.md) |
 | Non-normative onboarding | [Primer](primer.md) |
 | Cloud-native relevance | [Cloud-Native Use Cases](cloud-native-use-cases.md) |
 | Proposed governance | [Charter](charter.md) |

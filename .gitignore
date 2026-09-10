@@ -4,6 +4,13 @@ _site/
 .jekyll-metadata
 vendor/
 
-# GSM source is private, so Pages cannot fetch it at build time. Research,
-# model, and schema publication copies are refreshed locally with
+# GSM source is private, so Pages cannot fetch it at build time. Research
+# and schema publication copies are refreshed locally with
 # scripts/sync-gsm-content.sh and checked in with the documentation changes.
+
+# Normative spec prose and PlantUML live only in gsm-specifications.
+# Do not check in copies; remaining pages link to that repo.
+gsm/specifications/specification.md
+gsm/specifications/conformance.md
+gsm/specifications/model/gsm.puml
+gsm/specifications/model/gsm-ascription-lifecycle.puml

@@ -34,7 +34,7 @@ jobs:
       - name: Verify checked-in GSM content
         run: |
           test "$(find gsm/research-lab/programs -name '*.md' | wc -l)" -eq 8
-          test "$(find gsm/specifications/model -maxdepth 1 -type f | wc -l)" -eq 4
+          test "$(find gsm/specifications/model -maxdepth 1 -type f | wc -l)" -eq 2
           test "$(find gsm/specifications/schemas -maxdepth 1 -type f | wc -l)" -eq 9
 
       - name: Build with Jekyll

@@ -185,4 +185,4 @@ GSM's value is *above* the control plane: a portable, vendor-neutral, governed d
 
 This is the deepest answer to "is GSM cloud-native?": **GSM generalizes the pattern Kubernetes pioneered.** Kubernetes gave container workloads a declarative, reconciliation-governed model and a neutral home. GSM gives *that same pattern* a governance grammar, a lifecycle, and cross-domain reach — and needs a neutral home for the same reason: so the definitions Kubernetes and its neighbors enforce are portable, not locked in. GSM seeks that home at [OASIS Open](https://www.oasis-open.org/), whose portfolio — policy, governance, topology, and interoperability standards — is where a definition-and-governance standard natively belongs.
 
-> See also: [Cloud-Native Use Cases](cloud-native-use-cases.md), the [Specification](specification.md) (normative model), and the [Primer](primer.md) (intuition).
+> See also: [Cloud-Native Use Cases](cloud-native-use-cases.md), the [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) (normative model), and the [Primer](primer.md) (intuition).

@@ -95,7 +95,7 @@ All Archetype schemas — GSM base and tenant-defined — declare `"$schema": "g
 | `Directive.schema.json`   | Directive   | No     | Yes (`$ref`)      | `structure`, `qualifier`, `purpose`   |
 | `Norm.schema.json`        | Norm        | No     | Yes (`$ref`)      | `structure`, `qualifier`, `assertion` |
 
-**Extensible** schemas declare no top-level closure. Closure is applied by DM at Ascription authoring time, on the resolved typing Archetype — see GSM §5 ("Statement closure") in [`../model/gsm.puml`](../model/gsm.puml). A base carrying `unevaluatedProperties: false` would reject every property contributed by its extensions, because JSON Schema annotations never propagate from an extending schema into the schema it extends.
+**Extensible** schemas declare no top-level closure. Closure is applied by DM at Ascription authoring time, on the resolved typing Archetype — see GSM §5 ("Statement closure") in [`gsm.puml`](https://github.com/poesis-cloud/gsm-specifications/blob/main/model/gsm.puml). A base carrying `unevaluatedProperties: false` would reject every property contributed by its extensions, because JSON Schema annotations never propagate from an extending schema into the schema it extends.
 **Sealed** schemas use `additionalProperties: false` and carry `$gsm:sealed: true`.
 
 ## Archetype's Triple Relational Role

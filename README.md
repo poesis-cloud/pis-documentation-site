@@ -31,16 +31,18 @@ competitive positioning, ROI, CTAs — belongs on [poesis.cloud](https://poesis.
 
 ## Local build
 
-Refresh the checked-in GSM research, model, and schema content from sibling
+Refresh the checked-in GSM research and schema content from sibling
 `gsm/gsm-research-lab` and `gsm/gsm-specifications` checkouts before building:
 
 ```bash
 ./scripts/sync-gsm-content.sh
 ```
 
-The GSM source repository remains authoritative. The documentation repository
-checks in the synchronized output because the Pages build cannot fetch the
-private source repository.
+The GSM source repository remains authoritative. Normative specification
+prose and PlantUML live only in
+[gsm-specifications](https://github.com/poesis-cloud/gsm-specifications).
+Research and schema publication copies are checked in because the Pages
+build cannot fetch the private source repository.
 
 ```bash
 bundle install

@@ -13,8 +13,8 @@ When prose and these artifacts disagree, the artifacts are authoritative.
 
 | Artifact | Role |
 | --- | --- |
-| [GSM class model](gsm.puml) | Defines the eight primitives, the generative governance grammar, statement closure, references, and systemic invariants. |
-| [Ascription lifecycle](gsm-ascription-lifecycle.puml) | Defines lifecycle states, transitions, preconditions, and cascades. |
+| [GSM class model](https://github.com/poesis-cloud/gsm-specifications/blob/main/model/gsm.puml) | Defines the eight primitives, the generative governance grammar, statement closure, references, and systemic invariants. |
+| [Ascription lifecycle](https://github.com/poesis-cloud/gsm-specifications/blob/main/model/gsm-ascription-lifecycle.puml) | Defines lifecycle states, transitions, preconditions, and cascades. |
 | [Starlark Rule API](rule-api-starlark.py) | Defines the sandboxed API available to Mechanism rules. |
 
 The PlantUML files are published as inspectable source so implementations can
@@ -24,7 +24,7 @@ Python implementation.
 
 ## Relationship to other GSM artifacts
 
-- The [Specification](https://docs.poesis.cloud/gsm/specifications/specification/)
+- The [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md)
   explains the model and defines normative conformance language.
 - The [base Archetype schemas](../schemas/) provide the JSON interchange
   contracts for the eight primitive subject types.

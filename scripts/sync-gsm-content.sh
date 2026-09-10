@@ -34,8 +34,7 @@ for chapter in causal-model governance-chain dna-production cases decision-regis
     "$research_target/generative-governance/"
 done
 
-cp "$spec_root/model/README.md" "$model_target/index.md"
-cp "$spec_root/model/"*.puml "$spec_root/model/"*.py "$model_target/"
+cp "$spec_root/model/"*.py "$model_target/"
 
 cp "$spec_root/schemas/README.md" "$schemas_target/index.md"
 cp "$spec_root/schemas/"*.json "$schemas_target/"
@@ -48,8 +47,8 @@ schema_artifacts=$(find "$schemas_target" -maxdepth 1 -type f | wc -l)
   echo "Expected 8 research pages, found $research_pages" >&2
   exit 1
 }
-[[ "$model_artifacts" -eq 4 ]] || {
-  echo "Expected 4 model files, found $model_artifacts" >&2
+[[ "$model_artifacts" -eq 2 ]] || {
+  echo "Expected 2 model files, found $model_artifacts" >&2
   exit 1
 }
 [[ "$schema_artifacts" -eq 9 ]] || {

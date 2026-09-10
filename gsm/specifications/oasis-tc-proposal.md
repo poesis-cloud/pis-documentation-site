@@ -127,7 +127,7 @@ Developed within the **Poesis** project. No external consortium or vendor fundin
 
 ### Related documents
 
-- [Specification](specification.md) — the normative standard.
+- [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) — the normative standard.
 - [Primer](primer.md) — non-normative introduction.
-- [Conformance](conformance.md) — testable requirement catalog.
+- [Conformance](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/conformance.md) — testable requirement catalog.
 - [Charter](charter.md) — proposed project governance.

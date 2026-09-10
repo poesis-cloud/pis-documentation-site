@@ -11,10 +11,10 @@ redirect_from:
 # GSM Primer
 {: .no_toc }
 
-**Status:** Non-normative companion to the [Specification](specification.md)
+**Status:** Non-normative companion to the [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md)
 {: .fs-5 .fw-300 }
 
-This primer builds intuition for the Generative System Model. It is **non-normative**: nothing here defines conformance. For the vision and principles, read the **[Manifesto](manifesto.md)**; for the binding rules, read the **[Specification](specification.md)**.
+This primer builds intuition for the Generative System Model. It is **non-normative**: nothing here defines conformance. For the vision and principles, read the **[Manifesto](manifesto.md)**; for the binding rules, read the **[Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md)**.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -185,6 +185,6 @@ A suggested order:
 4. **§9–§11** — the Archetype type system and schema vocabulary.
 5. **§12** — the lifecycle.
 6. **§14** — the expression languages.
-7. **§16** — conformance (then the [Conformance](conformance.md) catalog).
+7. **§16** — conformance (then the [Conformance](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/conformance.md) catalog).
 
 Then skim **§17–§20** for ecosystem positioning, security, and versioning.

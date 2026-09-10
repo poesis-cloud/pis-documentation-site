@@ -11,7 +11,7 @@ redirect_from:
 # GSM Foundations & Rationale
 {: .no_toc }
 
-**Status:** Non-normative. The deeper *why* beneath the [Manifesto](manifesto.md) (vision) and the [Specification](specification.md) (rules).
+**Status:** Non-normative. The deeper *why* beneath the [Manifesto](manifesto.md) (vision) and the [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) (rules).
 {: .fs-5 .fw-300 }
 
 This page records the foundational commitments that explain *why* GSM is shaped the way it is — the design axioms behind the eight primitives, the DNA grammar, and the deliberate exclusions. It is **non-normative**: nothing here defines conformance. It is meant for readers who want the reasoning, not just the rules.
@@ -56,7 +56,7 @@ GSM primitives **do not** carry free-form `description` text. Human-facing expla
 
 GSM deliberately excludes **all** classification or labeling primitives — whether for entities (a `Type`) or for organizing governance into subsets (`Domain`, `Category`, `Tag`). Classification is *descriptive opinion*, not *definition*: a label like "WebApp" produces no governance, closes no loop, and auto-defines nothing. What makes a system *this* system is its purpose and its DNA — those are definitional; classification adds nothing.
 
-Classification belongs to the **descriptive plane**, not to GSM. This is the rationale behind several of the Specification's deliberate exclusions ([§15](https://docs.poesis.cloud/gsm/specifications/specification/#15-eliminated-constructs)).
+Classification belongs to the **descriptive plane**, not to GSM. This is the rationale behind several of the Specification's deliberate exclusions ([§15](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md)).
 
 ## 7. Structural constancy with semantic variation
 
@@ -83,4 +83,4 @@ GSM **inherits** the deep insights of classical systemics — viability and recu
 
 ---
 
-> Continue: the [Specification](specification.md) (normative model and §15 eliminations), the [Primer](primer.md) (worked intuition), and the [Manifesto](manifesto.md) (vision and principles).
+> Continue: the [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) (normative model and §15 eliminations), the [Primer](primer.md) (worked intuition), and the [Manifesto](manifesto.md) (vision and principles).
