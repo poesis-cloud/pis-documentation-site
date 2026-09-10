@@ -31,18 +31,27 @@ competitive positioning, ROI, CTAs — belongs on [poesis.cloud](https://poesis.
 
 ## Local build
 
-Refresh the checked-in GSM research and schema content from sibling
-`gsm/gsm-research-lab` and `gsm/gsm-specifications` checkouts before building:
+GSM research programs, base schemas, and the Starlark Rule API are **not**
+stored in this repository. Pages CI checks out the private
+[gsm-specifications](https://github.com/poesis-cloud/gsm-specifications) and
+[gsm-research-lab](https://github.com/poesis-cloud/gsm-research-lab) repos,
+runs `scripts/sync-gsm-content.sh`, then builds. Local preview does the same
+from sibling checkouts:
 
 ```bash
 ./scripts/sync-gsm-content.sh
 ```
 
-The GSM source repository remains authoritative. Normative specification
-prose and PlantUML live only in
-[gsm-specifications](https://github.com/poesis-cloud/gsm-specifications).
-Research and schema publication copies are checked in because the Pages
-build cannot fetch the private source repository.
+Override source roots with `GSM_SPECIFICATIONS_ROOT` and `GSM_RESEARCH_LAB_ROOT`
+when the layout is not the Poesis multi-root workspace. Do not commit the
+generated trees.
+
+The Pages workflow needs a repo (or org) secret `GSM_CONTENT_READ_TOKEN` with
+`contents:read` on those two private repositories. `github.token` cannot read
+them.
+
+Normative specification prose and PlantUML live only in gsm-specifications;
+companion pages link there.
 
 ```bash
 bundle install

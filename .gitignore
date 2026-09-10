@@ -4,12 +4,16 @@ _site/
 .jekyll-metadata
 vendor/
 
-# GSM source is private, so Pages cannot fetch it at build time. Research
-# and schema publication copies are refreshed locally with
-# scripts/sync-gsm-content.sh and checked in with the documentation changes.
+# Private GSM checkouts used by CI (and optional local layout).
+_sources/
+
+# Generated at build / local preview by scripts/sync-gsm-content.sh.
+# Sources stay in gsm-specifications and gsm-research-lab; do not commit copies.
+gsm/research-lab/programs/
+gsm/specifications/schemas/
+gsm/specifications/model/rule-api-starlark.py
 
 # Normative spec prose and PlantUML live only in gsm-specifications.
-# Do not check in copies; remaining pages link to that repo.
 gsm/specifications/specification.md
 gsm/specifications/conformance.md
 gsm/specifications/model/gsm.puml

@@ -4,6 +4,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    # Pick up GSM source updates without committing copies into this repo.
+    - cron: "0 6 * * *"
 
 permissions:
   contents: read
@@ -21,6 +24,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Require GSM_CONTENT_READ_TOKEN
+        env:
+          TOKEN: ${{ secrets.GSM_CONTENT_READ_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "Set repo/org secret GSM_CONTENT_READ_TOKEN with contents:read on poesis-cloud/gsm-specifications and poesis-cloud/gsm-research-lab." >&2
+            exit 1
+          fi
+
+      # Private GSM sources. Requires repo/org secret GSM_CONTENT_READ_TOKEN
+      # with contents:read on poesis-cloud/gsm-specifications and
+      # poesis-cloud/gsm-research-lab. Do not commit generated copies.
+      - name: Checkout GSM specifications
+        uses: actions/checkout@v4
+        with:
+          repository: poesis-cloud/gsm-specifications
+          path: _sources/gsm-specifications
+          token: ${{ secrets.GSM_CONTENT_READ_TOKEN }}
+          persist-credentials: false
+
+      - name: Checkout GSM research lab
+        uses: actions/checkout@v4
+        with:
+          repository: poesis-cloud/gsm-research-lab
+          path: _sources/gsm-research-lab
+          token: ${{ secrets.GSM_CONTENT_READ_TOKEN }}
+          persist-credentials: false
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -31,11 +62,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Verify checked-in GSM content
-        run: |
-          test "$(find gsm/research-lab/programs -name '*.md' | wc -l)" -eq 8
-          test "$(find gsm/specifications/model -maxdepth 1 -type f | wc -l)" -eq 2
-          test "$(find gsm/specifications/schemas -maxdepth 1 -type f | wc -l)" -eq 9
+      - name: Sync GSM content
+        env:
+          GSM_SPECIFICATIONS_ROOT: ${{ github.workspace }}/_sources/gsm-specifications
+          GSM_RESEARCH_LAB_ROOT: ${{ github.workspace }}/_sources/gsm-research-lab
+        run: ./scripts/sync-gsm-content.sh
 
       - name: Build with Jekyll
         run: bundle exec jekyll build

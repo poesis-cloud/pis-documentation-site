@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Materialize GSM research / schema / Rule API pages from the source repos.
+# Used by Pages CI after checking out those repos, and locally for preview.
+# Generated files are gitignored — do not commit them.
 
 set -euo pipefail
 
