@@ -11,7 +11,7 @@ has_children: true
 
 The **Systemic Intelligence Engine (SIE)** is the reference implementation of **[GSM]({% link gsm/index.md %})**: the engine that hosts governed definitions, enforces their lifecycle, evaluates Norms, executes Mechanisms, and keeps the sourcing pipeline auditable. Domain applications such as **[ITIP]({% link itip/index.md %})** are built on top of it.
 
-What Kubernetes is to software infrastructures, the Systemic Intelligence Engine is to governed systems: a small, fixed core of primitives, reconciled continuously, with everything domain-specific expressed as typed definitions on top.
+What Kubernetes is to software infrastructures, the Systemic Intelligence Engine is to governed systems: a small, fixed core of primitives, reconciled continuously, with everything domain-specific expressed as typed definitions on top. Start with **[The mental model]({% link sie/mental-model.md %})** for the loop that makes this work.
 
 ## Products
 
