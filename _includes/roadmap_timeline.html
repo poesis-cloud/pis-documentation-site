@@ -4,6 +4,8 @@
   timeline per product, grouped by solution. Mirrors the corporate site's ProductRoadmap.astro
   pattern. Styling lives in _sass/custom/custom.scss (.roadmap-timeline*).
 -->
+{% capture implemented_icon %}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>{% endcapture %}
+{% capture planned_icon %}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/><path d="M12 6v6l4 2"/></svg>{% endcapture %}
 {% for solution in site.data.roadmap %}
 <h3>{{ solution.solution }}</h3>
 
@@ -11,17 +13,30 @@
 <div class="roadmap-timeline">
   <div class="roadmap-timeline-head">
     <span class="roadmap-timeline-product">{{ product.name }}</span>
-    <span class="roadmap-timeline-current">current v{{ product.current }}</span>
+    <span class="delivery-status{% if product.status != 'delivered' %} is-planned{% endif %}" data-delivery-status="{{ product.status }}" title="{{ product.statusLabel }}" aria-label="{{ product.statusLabel }}">{% if product.status == 'delivered' %}{{ implemented_icon }}{% else %}{{ planned_icon }}{% endif %} {{ product.statusLabel }}</span>
+    <span class="roadmap-timeline-current">recorded v{{ product.current }}</span>
   </div>
   <ol class="roadmap-timeline-track">
     {% for m in product.milestones %}
     <li class="roadmap-timeline-item{% if m.shipped %} is-shipped{% endif %}{% if m.ga %} is-ga{% endif %}">
       <span class="roadmap-timeline-dot" aria-hidden="true"></span>
-      <span class="roadmap-timeline-version">{{ m.version }}{% if m.shipped %} ✅{% endif %}</span>
-      <span class="roadmap-timeline-label">{{ m.label }}</span>
+      <span class="roadmap-timeline-version">v{{ m.version }}</span>
+      <span class="delivery-status{% if m.status != 'delivered' %} is-planned{% endif %}" data-delivery-status="{{ m.status }}" title="{{ m.statusLabel }}" aria-label="{{ m.statusLabel }}">{% if m.status == 'delivered' %}{{ implemented_icon }}{% else %}{{ planned_icon }}{% endif %} {{ m.statusLabel }}</span>
+      <span class="roadmap-timeline-label">{% if m.shipped %}Recorded release{% else %}Planned milestone{% endif %}: {{ m.label | escape }}</span>
     </li>
     {% endfor %}
   </ol>
+  <p>{{ product.scope | escape }}</p>
+  <table>
+    <thead><tr><th>Feature</th><th>Claim Scope</th><th>Milestone</th></tr></thead>
+    <tbody>{% for feature in product.features %}
+      <tr id="feature-{{ feature.id | replace: '/', '-' }}">
+        <td>{{ feature.name | escape }}</td>
+        <td><span class="delivery-status{% if feature.status != 'delivered' %} is-planned{% endif %}" data-delivery-status="{{ feature.status }}" title="{{ feature.statusLabel }}" aria-label="{{ feature.statusLabel }}">{% if feature.status == 'delivered' %}{{ implemented_icon }}{% else %}{{ planned_icon }}{% endif %} {{ feature.statusLabel }}</span> ({{ feature.kind }})<br>{{ feature.notes | escape }}</td>
+        <td>v{{ feature.milestone.version }}</td>
+      </tr>
+    {% endfor %}</tbody>
+  </table>
 </div>
 {% endfor %}
 {% endfor %}
