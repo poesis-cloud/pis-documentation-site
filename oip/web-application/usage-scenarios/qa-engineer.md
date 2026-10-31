@@ -4,9 +4,10 @@ title: QA / Test Engineer
 nav_exclude: true
 redirect_from:
   - /itip/usage-scenarios/qa-engineer/
+  - /itip/web-application/usage-scenarios/qa-engineer/
 ---
 
-[← Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})
+[← Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})
 {: .fs-3 .fw-300 }
 
 # QA / Test Engineer
@@ -20,17 +21,17 @@ redirect_from:
 
 ---
 
-## What you do in ITIP
+## What you do in OIP
 
 You **reference quality requirements** from governed definitions as test acceptance criteria. You **verify** that quality governance covers the dimensions your testing addresses. You **trace** test results back to governance Norms.
 
-ITIP gives you authoritative, machine-readable quality requirements — not vague NFR statements buried in a requirements document.
+OIP gives you authoritative, machine-readable quality requirements — not vague NFR statements buried in a requirements document.
 
 ## Core workflows
 
 ### Reference quality requirements as test criteria
 
-Every Norm assertion in ITIP is a testable statement. Navigate to a Structure's Norms and read them as acceptance criteria:
+Every Norm assertion in OIP is a testable statement. Navigate to a Structure's Norms and read them as acceptance criteria:
 
 | Norm assertion | Test translation |
 |---|---|
@@ -83,7 +84,7 @@ ISO 25010 provides the quality taxonomy that organizes your test strategy:
 | **FunctionalSuitability** | Completeness, Correctness, Appropriateness | Functional testing, acceptance testing |
 | **Portability** | Adaptability, Installability, Replaceability | Environment testing, migration testing |
 
-Each Norm in ITIP references an ISO 25010 quality characteristic. This maps your test plan to the governance taxonomy.
+Each Norm in OIP references an ISO 25010 quality characteristic. This maps your test plan to the governance taxonomy.
 
 ### ISO 25012 — Data quality testing
 

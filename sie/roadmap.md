@@ -8,7 +8,7 @@ nav_order: 4
 # SIE Roadmap
 {: .no_toc }
 
-Engine-level capabilities planned across the SIE products — the analytical and contextual layers SIE will expose over the governed model. Product-scoped capabilities live on each product's Features page: [Definition Manager]({% link sie/definition-manager/features.md %}), [Operator]({% link sie/operator/features.md %}), [Definition Blackboard Manager]({% link sie/definition-blackboard-manager/features.md %}).
+Engine-level capabilities planned across the SIE products — the analytical and contextual layers SIE will expose over the governed model. Product-scoped capabilities live on each product's Features page: [Definition Manager]({% link sie/definition-manager/features.md %}), [Definition Operator]({% link sie/operator/features.md %}). Definition-sourcing capabilities live with the SIS [Blackboard Manager]({% link sis/blackboard-manager/features.md %}).
 
 ## Table of contents
 {: .no_toc .text-delta }

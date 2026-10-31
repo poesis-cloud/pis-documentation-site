@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "ITIP Web Application"
-parent: ITIP — the IT Intelligence Platform
+title: "OIP Web Application"
+parent: OIP — the Organizational Intelligence Platform
 nav_order: 1
 has_children: true
+redirect_from:
+  - /itip/web-application/
 ---
 
-# ITIP Web Application
+# OIP Web Application
 
 {: .fs-5 .fw-300 }
 
@@ -24,23 +26,23 @@ BUILD has mature, automated toolchains. RUN has real-time observability and reme
 
 But **THINK** — the activity that is supposed to *align* BUILD and RUN — has no equivalent. What exists today is a patchwork: architecture wikis nobody maintains, compliance spreadsheets updated before audits, governance review boards that meet quarterly while the landscape changes daily. There is no continuous, machine-enforceable, structurally coherent solution for the **definition** of what IT systems should be.
 
-**ITIP is the first complete THINK solution for IT.**
+**OIP is the first complete THINK solution for IT.**
 
 That is a deliberately provocative claim, so let's be precise about what "complete" means:
 
-1. **Coherent** — ITIP centralizes all definition concerns (architecture, governance, compliance, quality, operational constraints) in a single governed model. Not scattered across tools, not reconciled after the fact — structurally unified from the start.
+1. **Coherent** — OIP centralizes all definition concerns (architecture, governance, compliance, quality, operational constraints) in a single governed model. Not scattered across tools, not reconciled after the fact — structurally unified from the start.
 
-2. **Generative** — definitions in ITIP are not passive documentation. They are the *generative source* from which execution is derived and against which observations are compared. What you define in ITIP is what BUILD implements and what RUN monitors.
+2. **Generative** — definitions in OIP are not passive documentation. They are the *generative source* from which execution is derived and against which observations are compared. What you define in OIP is what BUILD implements and what RUN monitors.
 
-3. **Connected** — ITIP naturally links to both BUILD (code repositories, CI/CD, deployment pipelines) and RUN (observability, CMDB, incident management). By providing the authoritative definition layer, ITIP makes BUILD and RUN coherent *with each other* — because both now reference the same governed definitions.
+3. **Connected** — OIP naturally links to both BUILD (code repositories, CI/CD, deployment pipelines) and RUN (observability, CMDB, incident management). By providing the authoritative definition layer, OIP makes BUILD and RUN coherent *with each other* — because both now reference the same governed definitions.
 
 This is the **Definition–Execution–Observation** triad:
 
 ```
             ┌──────────────┐
             │    THINK     │
-            │  Definition  │  ◄── ITIP lives here
-            │  (ITIP/SIE)  │
+            │  Definition  │  ◄── OIP lives here
+            │  (OIP/SIE)   │
             └──────┬───────┘
                    │
          ┌─────────┴─────────┐
@@ -58,7 +60,7 @@ This is the **Definition–Execution–Observation** triad:
 
 ---
 
-## What problems does ITIP solve?
+## What problems does OIP solve?
 
 If you work in IT — in any role — you've experienced these:
 
@@ -76,13 +78,13 @@ If you work in IT — in any role — you've experienced these:
 
 These are not tooling gaps. They are symptoms of the same root cause: **IT systems have never been governed as integrated wholes.** Organizations decompose governance into silos — architecture, security, compliance, operations — each with its own vocabulary, artifacts, and review cycle. Then they spend enormous effort trying to reconcile the pieces after the fact. The coherence is always late, always incomplete, and always fragile — because it was never structural.
 
-**ITIP makes coherence structural.** Every definition — from enterprise architecture directives to individual service constraints — lives in the same governed model, follows the same lifecycle, and is continuously evaluated against reality.
+**OIP makes coherence structural.** Every definition — from enterprise architecture directives to individual service constraints — lives in the same governed model, follows the same lifecycle, and is continuously evaluated against reality.
 
 ---
 
-## ITIP in the market ecosystem
+## OIP in the market ecosystem
 
-ITIP occupies a space that existing tool categories partially address but never unify:
+OIP occupies a space that existing tool categories partially address but never unify:
 
 | Tool category | What it does well | What it misses |
 |--------------|------------------|----------------|
@@ -92,7 +94,7 @@ ITIP occupies a space that existing tool categories partially address but never 
 | **Observability** (Datadog, Grafana) | Real-time monitoring | Monitors what *is*, not what *should be* — no governance context for alerts |
 | **DevOps/CI-CD** (GitHub Actions, GitLab CI) | Build & deploy automation | Executes, but doesn't know *why* — no definition-level governance |
 
-ITIP is not a replacement for any of these. It is the **definition layer that connects them**. ITIP provides the governed definitions that EA tools describe, that GRC platforms audit, that CMDBs inventory, that observability measures against, and that CI/CD implements.
+OIP is not a replacement for any of these. It is the **definition layer that connects them**. OIP provides the governed definitions that EA tools describe, that GRC platforms audit, that CMDBs inventory, that observability measures against, and that CI/CD implements.
 
 ---
 
@@ -106,9 +108,9 @@ THINK is still waiting for its OpenTelemetry. The definition of what systems *sh
 
 ---
 
-## How ITIP works: DNA governance
+## How OIP works: DNA governance
 
-ITIP is built on **SIE (Systemic Intelligence Engine)**, which implements the **Generative System Model (GSM)** — the vendor-neutral standard for defining systems.
+OIP is built on **SIE (Systemic Intelligence Engine)**, which implements the **Generative System Model (GSM)** — the vendor-neutral standard for defining systems.
 
 At the heart of GSM is a generative governance grammar called **DNA**. Its
 three layers also express governance tempo:
@@ -119,7 +121,7 @@ three layers also express governance tempo:
 | **N** | Norm | A **tactical assertion and measure** — operationalizes a Directive into an enforceable, machine-evaluable constraint |
 | **A** | Ascription | Binds any definition to its governed subject — the versioned, lifecycle-managed snapshot |
 
-DNA is ITIP's universal axis for defining IT systems. It descends from strategy to measurement: a **Directive** sets the slow-changing strategic operational intent, a **Norm** makes it tactical — the assertions and measures that turn intent into something machines can enforce — and an **Ascription** versions every change. Every piece of governed information — from an enterprise architecture principle to a single service's latency threshold — is expressed as DNA.
+DNA is OIP's universal axis for defining IT systems. It descends from strategy to measurement: a **Directive** sets the slow-changing strategic operational intent, a **Norm** makes it tactical — the assertions and measures that turn intent into something machines can enforce — and an **Ascription** versions every change. Every piece of governed information — from an enterprise architecture principle to a single service's latency threshold — is expressed as DNA.
 
 This is not metaphorical. DNA has a precise grammar:
 
@@ -127,7 +129,7 @@ This is not metaphorical. DNA has a precise grammar:
 - A **Norm** reads: *"The payment gateway ON availability: ASSERT availability30d >= 0.999 (SUSTAINED over 30d)"*
 - An **Ascription** binds these definitions to their subjects with a governed lifecycle (DRAFT → PROPOSED → APPROVED → ACTIVE → ... → RETIRED)
 
-[General Usage]({% link itip/web-application/general-usage.md %}) walks through each DNA primitive in detail with practical examples.
+[General Usage]({% link oip/web-application/general-usage.md %}) walks through each DNA primitive in detail with practical examples.
 
 ---
 
@@ -144,7 +146,7 @@ So frameworks both **constitute** and **extend** the standard:
 
 And because every framework speaks the same DNA, they compose. A regulatory standard, a quality model, and an architecture framework layer into one coherent governance fabric — no reconciliation, no silos. Adopt a framework and its governance is *already* expressed, versioned, and enforceable in your model.
 
-[General Usage]({% link itip/web-application/general-usage.md %}) covers the ontology catalogue and how to compose ontology stacks in practice.
+[General Usage]({% link oip/web-application/general-usage.md %}) covers the ontology catalogue and how to compose ontology stacks in practice.
 
 ---
 
@@ -154,7 +156,7 @@ Semantics is what lets anyone — human or machine — *act upon* a definition i
 
 **GSM and its sourcers are the logical evolution of a RAG.** Where a RAG *indexes* raw documentation and code for AI context, GSM's sourcers go one step further and *structure* it — parsing documentation, specs, and repositories into governed definitions once. The result is a **write-once, read-many (WORM)** corpus: the costly parse-and-structure work is paid a single time, then humans and agents consume those definitions repeatedly, with no re-parsing or re-interpretation on each call.
 
-This is where the economics tip. The AI does the expensive cognitive work — turning raw material into a structured definition — exactly **once**. Because the result is governed and structured, ITIP's **deterministic generators** (an artifact factory, a document renderer, a scaffolder) can then project that definition into concrete outputs — diagrams, reports, code skeletons, compliance evidence — any number of times, identically, at *zero marginal cost*. Without a structured definition to draw on, every one of those outputs means asking an LLM again: paying tokens each time, waiting each time, and accepting a slightly different answer each time. Define once with AI; regenerate forever for free.
+This is where the economics tip. The AI does the expensive cognitive work — turning raw material into a structured definition — exactly **once**. Because the result is governed and structured, OIP's **deterministic generators** (an artifact factory, a document renderer, a scaffolder) can then project that definition into concrete outputs — diagrams, reports, code skeletons, compliance evidence — any number of times, identically, at *zero marginal cost*. Without a structured definition to draw on, every one of those outputs means asking an LLM again: paying tokens each time, waiting each time, and accepting a slightly different answer each time. Define once with AI; regenerate forever for free.
 
 And because GSM's primitives encode **causality** — Mechanisms with their Effectors and Receptors, and the Interactions that couple them — a definition carries not just *what* a thing is but *what causes what*. That is what enables recursive causal reasoning — the why behind the why behind the why — which is precisely what intelligence *is*.
 
@@ -165,13 +167,13 @@ Reasoning over a governed, causal model instead of retrieved text makes the payo
 - **Higher quality** — authoritative, typed context yields verifiable results.
 - **Lower cost** — precise structured context shrinks the tokens, and the retries, that vague prompting wastes.
 
-This is what makes ITIP's Copilot more than a chatbot: it reasons over a *governed, causal model*, not a pile of documents.
+This is what makes OIP's Copilot more than a chatbot: it reasons over a *governed, causal model*, not a pile of documents.
 
 ---
 
 ## IT systems are socio-technical systems
 
-Before diving into DNA mechanics, one foundational insight that shapes everything in ITIP:
+Before diving into DNA mechanics, one foundational insight that shapes everything in OIP:
 
 **IT systems are fundamentally human systems, not technical systems.**
 
@@ -189,9 +191,9 @@ This is not philosophy — it's an observable structural reality. Consider:
 
 The technical layer — code, infrastructure, networks — is a *medium*, not the system itself. The system is the socio-technical whole: humans defining intent, machines executing it, observations feeding back to human decisions.
 
-**ITIP embraces this.** Definition IS the generative part — the human governance decisions from which we execute, and against which we compare observations. Code repositories, running services, telemetry data — these are downstream artifacts of definition decisions. ITIP governs the definitions, and in doing so, governs the entire lifecycle.
+**OIP embraces this.** Definition IS the generative part — the human governance decisions from which we execute, and against which we compare observations. Code repositories, running services, telemetry data — these are downstream artifacts of definition decisions. OIP governs the definitions, and in doing so, governs the entire lifecycle.
 
 DNA is the lever that makes this practical: a universal, machine-enforceable grammar for expressing human governance intent over technical systems. Every Directive is a human decision. Every Norm is a human constraint made measurable. Every Ascription is a governed snapshot of that decision at a point in time.
 
-**Next: [General Usage — DNA in Practice →]({% link itip/web-application/general-usage.md %})**
+**Next: [General Usage — DNA in Practice →]({% link oip/web-application/general-usage.md %})**
 {: .fs-5 .fw-300 }

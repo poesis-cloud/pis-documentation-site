@@ -1,23 +1,24 @@
 ---
 layout: default
 title: "Web Application Features"
-parent: ITIP Web Application
-grand_parent: ITIP — the IT Intelligence Platform
+parent: OIP Web Application
+grand_parent: OIP — the Organizational Intelligence Platform
 nav_order: 2
 redirect_from:
   - /itip/features/
+  - /itip/web-application/features/
 ---
 
 # Web Application Features
 {: .no_toc }
 
-The Web Application's capabilities, grouped by functional component. Each section is one component of the product; the entries under it are the capabilities it provides. ITIP is in active design.
+The Web Application's capabilities, grouped by functional component. Each section is one component of the product; the entries under it are the capabilities it provides. OIP is in active design.
 
-Each capability carries the exact ITIP **SemVer milestone** that delivers it: **1.0** is the GA scope and **1.1**–**1.5** is the ordered post-GA roadmap — see **[Milestones & Versions]({% link milestones.md %})** for the canonical version semantics and the delivery clause.
+Each capability carries the exact OIP **SemVer milestone** that delivers it: **1.0** is the GA scope and **1.1**–**1.5** is the ordered post-GA roadmap — see **[Milestones & Versions]({% link milestones.md %})** for the canonical version semantics and the delivery clause.
 
 ## Published feature catalogue
 
-The product's published features on [poesis.cloud](https://poesis.cloud/solutions/itip/products/web-application) map onto the functional components below:
+The product's published features on [poesis.cloud](https://poesis.cloud/solutions/oip/products/web-application) map onto the functional components below:
 
 | Published feature | Functional component(s) |
 |-------------------|-------------------------|
@@ -28,7 +29,7 @@ The product's published features on [poesis.cloud](https://poesis.cloud/solution
 | IT impact simulation | [Simulation](#simulation) |
 | GSM Definitions management | [Definition](#definition), [Lenses](#lenses), [Overview](#overview) |
 | GSM Ontology management | [Ontology](#ontology) |
-| RBAC and ABAC | [Admin](#admin), role-specific [Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %}) |
+| RBAC and ABAC | [Admin](#admin), role-specific [Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %}) |
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -156,15 +157,15 @@ Generate governed artifacts from definitions.
 
 ## Guided Workflows
 
-End-to-end walkthroughs that thread several capability areas together. They map onto the role-based **[Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})**.
+End-to-end walkthroughs that thread several capability areas together. They map onto the role-based **[Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})**.
 
 | Workflow | Threads together | Role | Version |
 |----------|------------------|------|---------|
-| Architect: Governance Authoring & Impact Analysis | Definition → Simulation | [Architect]({% link itip/web-application/usage-scenarios/architect.md %}) | 1.5 |
-| Security Officer: Ontology Stack Composition | Ontologies → Evaluation | [Security Officer]({% link itip/web-application/usage-scenarios/security-officer.md %}) | 1.3 |
-| Governance Review Ceremony | Review → Definition | [Project Manager]({% link itip/web-application/usage-scenarios/project-manager.md %}) | 1.2 |
-| Evaluation Status Transition | Evaluation → Definition | [Operations]({% link itip/web-application/usage-scenarios/operations.md %}), [QA]({% link itip/web-application/usage-scenarios/qa-engineer.md %}) | 1.3 |
+| Architect: Governance Authoring & Impact Analysis | Definition → Simulation | [Architect]({% link oip/web-application/usage-scenarios/architect.md %}) | 1.5 |
+| Security Officer: Ontology Stack Composition | Ontologies → Evaluation | [Security Officer]({% link oip/web-application/usage-scenarios/security-officer.md %}) | 1.3 |
+| Governance Review Ceremony | Review → Definition | [Project Manager]({% link oip/web-application/usage-scenarios/project-manager.md %}) | 1.2 |
+| Evaluation Status Transition | Evaluation → Definition | [Operations]({% link oip/web-application/usage-scenarios/operations.md %}), [QA]({% link oip/web-application/usage-scenarios/qa-engineer.md %}) | 1.3 |
 
 ---
 
-For the concepts behind these capabilities, see the **[ITIP overview]({% link itip/web-application/index.md %})**; for hands-on, role-by-role workflows, the **[Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})**.
+For the concepts behind these capabilities, see the **[OIP overview]({% link oip/web-application/index.md %})**; for hands-on, role-by-role workflows, the **[Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})**.

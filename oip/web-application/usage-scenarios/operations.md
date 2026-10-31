@@ -4,9 +4,10 @@ title: Operations / SRE Engineer
 nav_exclude: true
 redirect_from:
   - /itip/usage-scenarios/operations/
+  - /itip/web-application/usage-scenarios/operations/
 ---
 
-[← Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})
+[← Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})
 {: .fs-3 .fw-300 }
 
 # Operations / SRE Engineer
@@ -20,19 +21,19 @@ redirect_from:
 
 ---
 
-## What you do in ITIP
+## What you do in OIP
 
 You **monitor compliance drift** against governed quality constraints. You **inspect** near real-time architecture state sourced from observability platforms. You **trigger remediation** when Norm violations are detected.
 
-ITIP connects your observability stack to the governance plane. You act on governed constraints, not ad-hoc alerts.
+OIP connects your observability stack to the governance plane. You act on governed constraints, not ad-hoc alerts.
 
 ## Core workflows
 
 ### Monitor compliance drift
 
-Observability platforms (Datadog, Grafana, Prometheus) collect SLI/SLO metrics. ITIP ingests this telemetry and continuously evaluates [Norm assertions]({% link itip/web-application/general-usage.md %}#the-norm) against live data.
+Observability platforms (Datadog, Grafana, Prometheus) collect SLI/SLO metrics. OIP ingests this telemetry and continuously evaluates [Norm assertions]({% link oip/web-application/general-usage.md %}#the-norm) against live data.
 
-When a Norm evaluation fails, ITIP flags a compliance drift:
+When a Norm evaluation fails, OIP flags a compliance drift:
 
 ```
 VIOLATION: payment-gateway
@@ -48,7 +49,7 @@ The violation includes full governance context — which Directive it traces to,
 
 ### Inspect near real-time architecture state
 
-Navigate to **Operations > Architecture State**. ITIP shows the current state of all governed Structures:
+Navigate to **Operations > Architecture State**. OIP shows the current state of all governed Structures:
 
 | Column | What it shows |
 |--------|--------------|
@@ -64,15 +65,15 @@ This is the live architecture state — not a diagram drawn months ago. It refle
 
 When a compliance drift is detected:
 
-1. **ServiceNow incident** — ITIP creates an incident linked to the violated Norm, including governance context and current metric values.
+1. **ServiceNow incident** — OIP creates an incident linked to the violated Norm, including governance context and current metric values.
 2. **Jira remediation task** — created in the owning team's backlog with the violated Norm as acceptance criteria.
-3. **Governance loop tracking** — ITIP tracks resolution: Norm re-evaluation → compliance restored → incident closed.
+3. **Governance loop tracking** — OIP tracks resolution: Norm re-evaluation → compliance restored → incident closed.
 
 The remediation workflow is governance-driven. The Norm defines *what* must be fixed. The tolerance mode defines *how quickly* a violation must be resolved.
 
 ### Tolerance modes in practice
 
-The [three tolerance modes]({% link itip/web-application/general-usage.md %}#the-norm) determine how ITIP evaluates compliance:
+The [three tolerance modes]({% link oip/web-application/general-usage.md %}#the-norm) determine how OIP evaluates compliance:
 
 | Mode | Ops meaning | Example |
 |------|------------|---------|
@@ -80,7 +81,7 @@ The [three tolerance modes]({% link itip/web-application/general-usage.md %}#the
 | **AGGREGATED** | Statistical aggregate must pass | `ErrorRate.percent <= 0.1` over 1h window — individual spikes allowed |
 | **SUSTAINED** | Continuous compliance over a time window | `Availability.percent >= 99.9` over 30d — sustained performance required |
 
-AGGREGATED and SUSTAINED modes are where SRE practices (error budgets, burn rates) map directly into ITIP Norms.
+AGGREGATED and SUSTAINED modes are where SRE practices (error budgets, burn rates) map directly into OIP Norms.
 
 ## Using frameworks
 
@@ -108,13 +109,13 @@ For data pipelines and data-processing services:
 
 ## Example: Detect and remediate compliance drift
 
-**Context**: The Payment Gateway is in production. The SRE team monitors via Datadog. ITIP has ingested SLI metrics.
+**Context**: The Payment Gateway is in production. The SRE team monitors via Datadog. OIP has ingested SLI metrics.
 
-1. **Drift detected** — ITIP flags: `availability-30d` Norm in violation. Current value 99.73%, threshold 99.9%.
+1. **Drift detected** — OIP flags: `availability-30d` Norm in violation. Current value 99.73%, threshold 99.9%.
 2. **Inspect context** — the Norm traces to a NIS2 regulatory preset and the architecture board's availability Directive.
 3. **Trigger remediation** — ServiceNow incident created. Jira task added to the payments team's sprint.
 4. **Investigate** — the Reconciliation view shows a recent deployment changed a timeout configuration. Code-sourced definitions diverged from governed values.
-5. **Resolution** — team fixes the configuration. ITIP re-evaluates: compliance restored. Incident auto-closed.
+5. **Resolution** — team fixes the configuration. OIP re-evaluates: compliance restored. Incident auto-closed.
 
 **Result**: Compliance monitoring is continuous and automated. The governance context tells you *why* the metric matters, not just that a number is wrong.
 
@@ -124,7 +125,7 @@ For data pipelines and data-processing services:
 
 1. **Check governed Norms** — open the Structure's Norms tab. See the quality Norms defined by the architect.
 2. **Map to metrics** — each Norm assertion references a quality dimension. Map those to your telemetry sources (Datadog monitors, Grafana dashboards, Prometheus rules).
-3. **Configure telemetry ingestion** — ITIP's observability integration ingests metrics and evaluates Norms continuously.
+3. **Configure telemetry ingestion** — OIP's observability integration ingests metrics and evaluates Norms continuously.
 4. **Verify initial state** — the Operations dashboard shows all Norms green (or flags gaps if telemetry is missing).
 
 **Result**: Governance-driven monitoring from the first deployment. SLOs are defined by architecture Norms, not invented ad-hoc by the ops team.

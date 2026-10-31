@@ -106,7 +106,7 @@ The relicensing is **proposed**; current repository licenses remain authoritativ
 
 ## 13. Trademark and IP
 
-**No trademark donation is required by the OASIS route.** Poesis retains all its marks (Poesis, SIE, ITIP, certification marks, and the GSM name); TC and work-product naming will be aligned with OASIS naming policies. The specification text is contributed to the TC under the OASIS IPR Policy. Specific terms are **TBD** and subject to the rights holder's formal decision.
+**No trademark donation is required by the OASIS route.** Poesis retains all its marks (Poesis, SIE, OIP, certification marks, and the GSM name); TC and work-product naming will be aligned with OASIS naming policies. The specification text is contributed to the TC under the OASIS IPR Policy. Specific terms are **TBD** and subject to the rights holder's formal decision.
 
 ## 14. External dependencies
 
@@ -115,7 +115,7 @@ The standard depends only on open specifications: JSON ([RFC 8259](https://www.r
 ## 15. Adopters
 
 - **SIE (Systemic Intelligence Engine)** — the reference implementation (a GSM Processor) within the Poesis project.
-- **ITIP (IT Intelligence Platform)** — a domain application built on SIE within the Poesis project.
+- **OIP (Organizational Intelligence Platform)** — a domain application built on SIE within the Poesis project.
 
 No external (third-party) adopters are claimed at this draft stage.
 

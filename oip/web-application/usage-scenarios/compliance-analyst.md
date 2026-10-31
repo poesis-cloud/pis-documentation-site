@@ -4,9 +4,10 @@ title: Compliance Analyst
 nav_exclude: true
 redirect_from:
   - /itip/usage-scenarios/compliance-analyst/
+  - /itip/web-application/usage-scenarios/compliance-analyst/
 ---
 
-[← Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})
+[← Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})
 {: .fs-3 .fw-300 }
 
 # Compliance Analyst
@@ -20,17 +21,17 @@ redirect_from:
 
 ---
 
-## What you do in ITIP
+## What you do in OIP
 
 You **evaluate regulatory adherence** across the governed landscape. You **generate compliance reports** from live governance state. You **track gap resolution** from detection to closure.
 
-ITIP transforms compliance from periodic manual audits into continuous, evidence-based evaluation.
+OIP transforms compliance from periodic manual audits into continuous, evidence-based evaluation.
 
 ## Core workflows
 
 ### Evaluate regulatory adherence
 
-Navigate to **Compliance > Adherence Matrix**. ITIP generates a cross-reference matrix:
+Navigate to **Compliance > Adherence Matrix**. OIP generates a cross-reference matrix:
 
 | | GDPR | NIS2 | PCI-DSS | ISO 27001 |
 |---|---|---|---|---|
@@ -48,7 +49,7 @@ You can drill into any cell to see:
 
 ### Generate compliance reports
 
-ITIP generates compliance documentation from live governance state:
+OIP generates compliance documentation from live governance state:
 
 - **Regulatory compliance report** — per framework, per Structure, showing adherence status, gap inventory, and remediation timeline
 - **Audit evidence package** — Norm definitions, evaluation history, and evidence trail (who authored, who approved, when evaluated)
@@ -63,17 +64,17 @@ When a compliance gap is detected:
 1. **Gap identified** — a Norm evaluation fails or a required preset is missing.
 2. **Gap triaged** — you classify severity (critical / major / minor) based on regulatory impact.
 3. **Remediation assigned** — Jira task created for the owning team. ServiceNow change request if infrastructure is involved.
-4. **Progress tracked** — ITIP's gap tracker shows resolution status per gap.
+4. **Progress tracked** — OIP's gap tracker shows resolution status per gap.
 5. **Gap closed** — when the Norm re-evaluates to passing, the gap is automatically marked resolved.
 
 The full lifecycle is auditable. Every state transition is timestamped and attributed.
 
 ### Cross-framework overlap analysis
 
-Multiple regulatory frameworks often impose equivalent or overlapping constraints. ITIP identifies these:
+Multiple regulatory frameworks often impose equivalent or overlapping constraints. OIP identifies these:
 
-- **GDPR Article 32** (security of processing) and **ISO 27001 A.12** (operations security) both require encryption. ITIP flags the overlap and shows the merged Norm.
-- **NIS2 Article 21** (risk management) and **DORA Article 6** (ICT risk management) overlap on risk assessment. ITIP shows which Norm satisfies both.
+- **GDPR Article 32** (security of processing) and **ISO 27001 A.12** (operations security) both require encryption. OIP flags the overlap and shows the merged Norm.
+- **NIS2 Article 21** (risk management) and **DORA Article 6** (ICT risk management) overlap on risk assessment. OIP shows which Norm satisfies both.
 
 This avoids duplicate compliance effort and ensures that a single control satisfies multiple regulatory requirements.
 
@@ -83,7 +84,7 @@ This avoids duplicate compliance effort and ensures that a single control satisf
 
 As a compliance analyst, you work with GDPR preset Norms at the evaluation level:
 
-| GDPR Article | ITIP Norm category | What you evaluate |
+| GDPR Article | OIP Norm category | What you evaluate |
 |---|---|---|
 | Art. 5 — Principles | Data quality Norms (ISO 25012) | Are data minimization, accuracy, and storage limitation enforced? |
 | Art. 25 — Data protection by design | Architecture Norms | Are privacy-by-design patterns implemented in governed Structures? |

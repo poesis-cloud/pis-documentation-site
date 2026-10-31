@@ -185,7 +185,7 @@ into the one before it.
 
 **Actors realize functions.** Humans, AI, and GSM Mechanisms are not separate layers of the
 architecture — they are interchangeable realizers of the same four functions. A Norm may be
-evaluated by a person, by an agent, or by a Mechanism executed in the Operator; the loop does not
+evaluated by a person, by an agent, or by a Mechanism executed in the Definition Operator; the loop does not
 change shape.
 
 **Governance → regulation.** Governance generates **Directives**: strategic intents and objectives.
@@ -208,9 +208,9 @@ and obligations — the state the four functions define, realize, evaluate, and 
 
 - **[Definition Manager]({% link sie/definition-manager/index.md %})** holds the definitions and
   enforces their lifecycle — the API surface the whole loop reads and writes.
-- **[Operator]({% link sie/operator/index.md %})** evaluates Norms and executes Mechanisms — the
+- **[Definition Operator]({% link sie/operator/index.md %})** evaluates Norms and executes Mechanisms — the
   runtime that realizes supervision and operations.
-- **[Definition Blackboard Manager]({% link sie/definition-blackboard-manager/index.md %})** sources
-  definitions collaboratively from evidence, keeping the model anchored to the state plane instead
-  of drifting from it.
+- The **[Blackboard Manager]({% link sis/blackboard-manager/index.md %})**, part of
+  [SIS]({% link sis/index.md %}) rather than SIE, sources definitions collaboratively from
+  evidence, keeping the model anchored to the state plane instead of drifting from it.
 </content>

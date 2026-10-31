@@ -4,9 +4,10 @@ title: Security Officer
 nav_exclude: true
 redirect_from:
   - /itip/usage-scenarios/security-officer/
+  - /itip/web-application/usage-scenarios/security-officer/
 ---
 
-[← Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})
+[← Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})
 {: .fs-3 .fw-300 }
 
 # Security Officer
@@ -20,17 +21,17 @@ redirect_from:
 
 ---
 
-## What you do in ITIP
+## What you do in OIP
 
 You **audit regulatory coverage** across the IT landscape. You **verify** that security governance posture is complete and continuously enforced. You **manage** security frameworks as composable preset stacks.
 
-ITIP makes security governance continuous and machine-evaluable — not a periodic manual audit.
+OIP makes security governance continuous and machine-evaluable — not a periodic manual audit.
 
 ## Core workflows
 
 ### Audit regulatory preset coverage
 
-Navigate to **Governance > Regulatory Coverage**. ITIP renders a coverage map showing:
+Navigate to **Governance > Regulatory Coverage**. OIP renders a coverage map showing:
 
 - Which Structures have regulatory presets attached
 - Which presets are applied (GDPR, NIS2, PCI-DSS, ISO 27001, DORA)
@@ -43,7 +44,7 @@ The coverage map is filterable by:
 
 ### Verify security governance posture
 
-For each Structure, ITIP shows:
+For each Structure, OIP shows:
 
 | Aspect | What you see |
 |--------|-------------|
@@ -56,7 +57,7 @@ You can verify that every security requirement from every applicable regulation 
 
 ### Manage security framework presets
 
-Security frameworks are sourced into ITIP as preset Directives and Norms:
+Security frameworks are sourced into OIP as preset Directives and Norms:
 
 | Framework | Scope | Example preset Directives |
 |-----------|-------|---------------------------|
@@ -66,11 +67,11 @@ Security frameworks are sourced into ITIP as preset Directives and Norms:
 | **ISO 27001** | Information security management | `MUST PRESERVE confidentiality ON information-assets` |
 | **DORA** | Financial services ICT resilience | `MUST ENSURE operational-resilience ON financial-services-ict` |
 
-You compose these into layered stacks (see [framework composition]({% link itip/web-application/general-usage.md %}#frameworks-and-stacks)). Copilot resolves overlaps and flags where multiple frameworks assert equivalent constraints.
+You compose these into layered stacks (see [framework composition]({% link oip/web-application/general-usage.md %}#frameworks-and-stacks)). Copilot resolves overlaps and flags where multiple frameworks assert equivalent constraints.
 
 ### Review Norm violations with governance context
 
-When a security Norm is violated, ITIP provides:
+When a security Norm is violated, OIP provides:
 
 1. **The violation** — which Norm failed, current vs expected value
 2. **The Directive** — the governance intent behind the Norm
@@ -84,7 +85,7 @@ This is not "an alert fired." This is a traceable chain from regulatory requirem
 
 ### GDPR — Data protection governance
 
-GDPR presets in ITIP include:
+GDPR presets in OIP include:
 
 | Directive | Norm assertion | Quality dimension |
 |-----------|---------------|-------------------|
@@ -105,7 +106,7 @@ NIS2 presets target organizations identified as essential or important entities:
 
 ### ISO 27001 — Information security controls
 
-ISO 27001 Annex A controls map to ITIP Directives. Each control objective becomes a Directive; each control implementation becomes a Norm assertion.
+ISO 27001 Annex A controls map to OIP Directives. Each control objective becomes a Directive; each control implementation becomes a Norm assertion.
 
 ### PCI-DSS — Payment card security
 
@@ -136,7 +137,7 @@ PCI-DSS requirements map directly to security Norms:
 1. **Check existing presets** — the NIS2 preset doesn't yet include the new requirement.
 2. **Author a new preset Directive** — `MUST ENSURE supply-chain-risk-assessment ON critical-infrastructure`.
 3. **Author the Norm** — `SupplyChain.riskAssessmentDays <= 180` with SUSTAINED tolerance.
-4. **Apply to scope** — ITIP shows all Structures tagged as critical infrastructure. The new Norm propagates to all of them.
+4. **Apply to scope** — OIP shows all Structures tagged as critical infrastructure. The new Norm propagates to all of them.
 5. **Check compliance** — immediate evaluation shows which Structures already satisfy the requirement and which have gaps.
 
 **Result**: A new regulation is translated into machine-evaluable governance within hours, not months. Compliance is immediately measurable.

@@ -29,7 +29,7 @@ Capability catalogue for GSM Ontology — the published, versioned catalogue of 
 |---------|------------------------|-----------|
 | HTTP Ontology | HTTP interaction semantics sourced as typed Archetypes — methods, status, caching, content negotiation | v1.0 (MVP/GA) |
 | TOGAF Ontology | Enterprise-architecture vocabulary sourced as typed Archetypes | v1.0 (MVP/GA) |
-| IT Ontology | IT-domain vocabulary and semantics for ITIP | v1.0 (MVP/GA) |
+| IT Ontology | IT-domain vocabulary and semantics for OIP | v1.0 (MVP/GA) |
 | ISO 25010 Ontology | Software quality model sourced as typed Archetypes | v1.0 (MVP/GA) |
 | ISO 25012 Ontology | Data quality model sourced as typed Archetypes | v1.0 (MVP/GA) |
 | PROV Ontology | Provenance vocabulary — the Attribution facet (`wasAttributedTo`) sourced as a typed Archetype | v1.0 (MVP/GA) |

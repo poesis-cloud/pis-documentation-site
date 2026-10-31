@@ -1,17 +1,18 @@
 ---
 layout: default
-title: "Definition Blackboard Manager Features"
-parent: Definition Blackboard Manager
-grand_parent: SIE — the Systemic Intelligence Engine
+title: "Blackboard Manager Features"
+parent: Blackboard Manager
+grand_parent: SIS — Systemic Intelligence Sourcing
 nav_order: 1
 redirect_from:
   - /sie-blackboard/features/
+  - /sie/definition-blackboard-manager/features/
 ---
 
-# Definition Blackboard Manager Features
+# Blackboard Manager Features
 {: .no_toc }
 
-Capability catalogue for the Definition Blackboard Manager.
+Capability catalogue for the Blackboard Manager.
 
 ## Table of contents
 {: .no_toc .text-delta }

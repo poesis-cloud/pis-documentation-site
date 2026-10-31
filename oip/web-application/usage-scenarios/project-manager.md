@@ -4,9 +4,10 @@ title: Project / Product Manager
 nav_exclude: true
 redirect_from:
   - /itip/usage-scenarios/project-manager/
+  - /itip/web-application/usage-scenarios/project-manager/
 ---
 
-[← Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})
+[← Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})
 {: .fs-3 .fw-300 }
 
 # Project / Product Manager
@@ -20,17 +21,17 @@ redirect_from:
 
 ---
 
-## What you do in ITIP
+## What you do in OIP
 
 You **track governance readiness** across your project scope. You **monitor** definition lifecycle state to know whether architecture is complete before development proceeds. You **coordinate** deliverables and verify that governance gaps are resolved.
 
-ITIP gives you continuous visibility into architecture governance state — not a one-time checkpoint at an architecture review meeting.
+OIP gives you continuous visibility into architecture governance state — not a one-time checkpoint at an architecture review meeting.
 
 ## Core workflows
 
 ### Governance dashboard
 
-Navigate to **Projects > [your project]**. ITIP shows all Structures in the project scope with their governance state:
+Navigate to **Projects > [your project]**. OIP shows all Structures in the project scope with their governance state:
 
 | Indicator | Meaning |
 |-----------|---------|
@@ -38,7 +39,7 @@ Navigate to **Projects > [your project]**. ITIP shows all Structures in the proj
 | **Amber** | Some Directives still in DRAFT or PROPOSED; Norms pending operationalization |
 | **Red** | Missing required Directives, no regulatory presets, governance gaps unresolved |
 
-Each Structure's state follows the [Ascription lifecycle]({% link itip/web-application/general-usage.md %}#the-ascription-lifecycle): `DRAFT` → `PROPOSED` → `APPROVED` → `ACTIVE`.
+Each Structure's state follows the [Ascription lifecycle]({% link oip/web-application/general-usage.md %}#the-ascription-lifecycle): `DRAFT` → `PROPOSED` → `APPROVED` → `ACTIVE`.
 
 ### Track lifecycle progression
 
@@ -59,7 +60,7 @@ You can drill into any amber/red indicator to see exactly what is pending and wh
 
 Governance state is reflected in Jira bidirectionally:
 
-| ITIP entity | Jira mapping |
+| OIP entity | Jira mapping |
 |-------------|-------------|
 | Structure | Epic |
 | Directive | Story (governance intent) |
@@ -71,14 +72,14 @@ Your Jira board shows governance completeness alongside delivery progress. Archi
 
 ### Deliverable readiness
 
-ITIP tracks which architecture deliverables are published and which are still in progress:
+OIP tracks which architecture deliverables are published and which are still in progress:
 
 - **Architecture Decision Records** — linked to motivating Directives
 - **Solution design documents** — generated from governed definitions
 - **API specifications** — authoritative contracts for development teams
 - **Compliance evidence** — regulatory coverage documentation
 
-Deliverables are served directly from ITIP. No manual export needed (Confluence sync is available for wider distribution).
+Deliverables are served directly from OIP. No manual export needed (Confluence sync is available for wider distribution).
 
 ## Using ontologies
 
@@ -86,7 +87,7 @@ Deliverables are served directly from ITIP. No manual export needed (Confluence 
 
 As a PM, the TOGAF ADM lifecycle maps to your governance checkpoints:
 
-| ADM phase | ITIP governance checkpoint |
+| ADM phase | OIP governance checkpoint |
 |-----------|---------------------------|
 | Preliminary | Ontology stack composed, governing Structures defined |
 | Architecture Vision | Directives authored and in PROPOSED state |

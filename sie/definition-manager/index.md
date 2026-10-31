@@ -14,7 +14,7 @@ redirect_from:
 
 > **In construction.** This product's documentation is being written. The capability catalogue is in **[Features]({% link sie/definition-manager/features.md %})**, reflecting the design-time backlog and the current engine reality.
 
-The **Definition Manager** is the core of the Systemic Intelligence Engine: the authoritative API, lifecycle enforcer, and store of every governed GSM Definition, together with its database. It is the most mature part of the platform — the capabilities marked **Foundation** are backed by real, running service code today. It implements the GSM standard, and the **[Operator]({% link sie/operator/index.md %})** runs against the model it holds.
+The **Definition Manager** is the core of the Systemic Intelligence Engine: the authoritative API, lifecycle enforcer, and store of every governed GSM Definition, together with its database. It is the most mature part of the platform — the capabilities marked **Foundation** are backed by real, running service code today. It implements the GSM standard, and the **[Definition Operator]({% link sie/operator/index.md %})** runs against the model it holds.
 
 ## In this section
 

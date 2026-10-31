@@ -15,21 +15,19 @@ Poesis builds products that bring **systemic governance** to organizations — r
 
 ## Solutions
 
-Poesis is layered: the **GSM** standard, the **SIE** engine that implements it, domain applications built on top such as **ITIP** for the IT domain, and **SAF** to build them. Each solution below groups the products it ships. Delivery language across this site follows the canonical **[Milestones & Versions]({% link milestones.md %})** page.
+Poesis is layered: the **GSM** standard, the **SIE** engine that implements it, **SIS** to source definitions into it, domain applications built on top such as **OIP** for the IT domain, and **SAF** to build them. Each solution below groups the products it ships. Delivery language across this site follows the canonical **[Milestones & Versions]({% link milestones.md %})** page.
 
-### [ITIP — IT Intelligence Platform]({% link itip/index.md %})
+### [OIP — Organizational Intelligence Platform]({% link oip/index.md %})
 
-The first domain application built on SIE. ITIP is where all IT profiles converge — architects, developers, ops engineers, project managers, security officers, compliance analysts — to define, govern, and visualize the IT landscape through a single governed source of truth.
+The first domain application built on SIE. OIP is where all IT profiles converge — architects, developers, ops engineers, project managers, security officers, compliance analysts — to define, govern, and visualize the IT landscape through a single governed source of truth.
 
-- **[Web Application]({% link itip/web-application/index.md %})** — the application every IT profile works in
-  - [Overview]({% link itip/web-application/index.md %}) — the THINK gap, the Definition–Execution–Observation triad, and DNA governance grammar
-  - [Getting Started]({% link itip/web-application/getting-started.md %}) — first steps in the application
-  - [Features]({% link itip/web-application/features.md %}) — the capability catalogue
-  - [General Usage]({% link itip/web-application/general-usage.md %}) — Directives, Norms, Ascriptions, and Frameworks in practice
-  - [Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %}) — role-specific workflows per IT profile
-  - [Rules]({% link itip/web-application/rules.md %}) — governance rules every user must know
-- **[Definition Blackboard Code Sourcer]({% link itip/definition-blackboard-code-sourcer/index.md %})** — client pipeline that sources IT artifacts — code, API contracts, infrastructure — into governed GSM definitions on the Definition Blackboard Manager. *Documentation in construction.*
-  - [Features]({% link itip/definition-blackboard-code-sourcer/features.md %}) — the capability catalogue with milestones
+- **[Web Application]({% link oip/web-application/index.md %})** — the application every IT profile works in
+  - [Overview]({% link oip/web-application/index.md %}) — the THINK gap, the Definition–Execution–Observation triad, and DNA governance grammar
+  - [Getting Started]({% link oip/web-application/getting-started.md %}) — first steps in the application
+  - [Features]({% link oip/web-application/features.md %}) — the capability catalogue
+  - [General Usage]({% link oip/web-application/general-usage.md %}) — Directives, Norms, Ascriptions, and Frameworks in practice
+  - [Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %}) — role-specific workflows per IT profile
+  - [Rules]({% link oip/web-application/rules.md %}) — governance rules every user must know
 
 ### [SIE — Systemic Intelligence Engine]({% link sie/index.md %})
 
@@ -37,11 +35,18 @@ The reference implementation of GSM: the engine that hosts governed definitions,
 
 - **[Definition Manager]({% link sie/definition-manager/index.md %})** — the authoritative API, lifecycle enforcer, and store of every governed GSM Definition. *Documentation in construction.*
   - [Features]({% link sie/definition-manager/features.md %}) — the capability catalogue with milestones
-- **[Operator]({% link sie/operator/index.md %})** — the GSM Definition runtime for Norms and Mechanisms. *Documentation in construction.*
+- **[Definition Operator]({% link sie/operator/index.md %})** — the GSM Definition runtime for Norms and Mechanisms. *Documentation in construction.*
   - [Features]({% link sie/operator/features.md %}) — the capability catalogue with milestones
-- **[Definition Blackboard Manager]({% link sie/definition-blackboard-manager/index.md %})** — collaborative definition-sourcing service with a sealed, byte-stable contribution lifecycle and an append-only audit ledger. *Documentation in construction.*
-  - [Features]({% link sie/definition-blackboard-manager/features.md %}) — the capability catalogue with milestones
 - [Roadmap]({% link sie/roadmap.md %}) — engine-level capabilities planned across the SIE products
+
+### [SIS — Systemic Intelligence Sourcing]({% link sis/index.md %})
+
+Sources GSM definitions from external artifacts — starting with code repositories — through a collaborative blackboard, feeding the SIE Definition Manager.
+
+- **[Code Sourcer]({% link sis/code-sourcer/index.md %})** — client pipeline that sources IT artifacts — code, API contracts, infrastructure — into governed GSM definitions on the Blackboard Manager. *Documentation in construction.*
+  - [Features]({% link sis/code-sourcer/features.md %}) — the capability catalogue with milestones
+- **[Blackboard Manager]({% link sis/blackboard-manager/index.md %})** — collaborative definition-sourcing service with a sealed, byte-stable contribution lifecycle and an append-only audit ledger. *Documentation in construction.*
+  - [Features]({% link sis/blackboard-manager/features.md %}) — the capability catalogue with milestones
 
 ### [GSM — the standard]({% link gsm/index.md %})
 
@@ -65,5 +70,5 @@ A governed, local-first, multi-agent way to run SAFe — today in VS Code / GitH
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared remote workspace for agentic workflow artifacts. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
-- **[SAF SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning harness-governed execution history into GSM contributions on the Definition Blackboard Manager. *Documentation in construction.*
+- **[SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning harness-governed execution history into GSM contributions on the Blackboard Manager. *Documentation in construction.*
   - [Features]({% link saf/saf-sie-bridge/features.md %}) — the capability catalogue with milestones

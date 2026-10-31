@@ -1,19 +1,19 @@
 [
   {
-    "id": "itip",
-    "solution": "ITIP",
+    "id": "oip",
+    "solution": "OIP",
     "products": [
       {
-        "id": "itip/web-application",
+        "id": "oip/web-application",
         "name": "Web Application",
         "current": "0.1",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "The authenticated application shell is available. Planned workflows connect inventory authoring, ontology composition, scoped appraisal, impact analysis and cited copilot answers through the BFF and SIE, with tenant/object access controls.",
         "features": [
           {
-            "id": "itip/web-application/it-artifact-factory",
+            "id": "oip/web-application/it-artifact-factory",
             "name": "IT artifact factory",
             "state": "planned",
             "status": "planned",
@@ -26,7 +26,7 @@
             }
           },
           {
-            "id": "itip/web-application/it-compliance-evaluation",
+            "id": "oip/web-application/it-compliance-evaluation",
             "name": "IT compliance evaluation",
             "state": "planned",
             "status": "planned",
@@ -39,7 +39,7 @@
             }
           },
           {
-            "id": "itip/web-application/it-copilot",
+            "id": "oip/web-application/it-copilot",
             "name": "IT Copilot",
             "state": "planned",
             "status": "planned",
@@ -52,7 +52,7 @@
             }
           },
           {
-            "id": "itip/web-application/it-impact-simulation",
+            "id": "oip/web-application/it-impact-simulation",
             "name": "IT impact analysis and planned simulation",
             "state": "planned",
             "status": "planned",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "itip/web-application/definitions-truth-sourcing-management",
+            "id": "oip/web-application/definitions-truth-sourcing-management",
             "name": "GSM Definitions sourcing management",
             "state": "planned",
             "status": "planned",
@@ -78,7 +78,7 @@
             }
           },
           {
-            "id": "itip/web-application/definitions-management",
+            "id": "oip/web-application/definitions-management",
             "name": "GSM Definitions management",
             "state": "planned",
             "status": "planned",
@@ -93,7 +93,7 @@
             }
           },
           {
-            "id": "itip/web-application/ontology-management",
+            "id": "oip/web-application/ontology-management",
             "name": "GSM Ontology management",
             "state": "planned",
             "status": "planned",
@@ -108,11 +108,11 @@
             }
           },
           {
-            "id": "itip/web-application/rbac-abac",
+            "id": "oip/web-application/rbac-abac",
             "name": "Authentication and planned RBAC/ABAC",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "implementation",
             "notes": "Sign in and assign privileges today. Planned RBAC administration and ABAC will review and enforce tenant, object and action permissions against responsibilities.",
             "milestone": {
@@ -123,7 +123,7 @@
             }
           },
           {
-            "id": "itip/web-application/identity-provider-synchronization",
+            "id": "oip/web-application/identity-provider-synchronization",
             "name": "Identity-provider synchronization",
             "state": "planned",
             "status": "planned",
@@ -136,7 +136,7 @@
             }
           },
           {
-            "id": "itip/web-application/governance-review-sessions",
+            "id": "oip/web-application/governance-review-sessions",
             "name": "Governance review sessions",
             "state": "planned",
             "status": "planned",
@@ -154,7 +154,7 @@
             "version": "1.0",
             "label": "MVP/GA — GSM Definitions & Ontology management, RBAC/ABAC, hardened",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "shipped": true,
             "ga": true
           },
@@ -195,40 +195,6 @@
             "statusLabel": "Planned"
           }
         ]
-      },
-      {
-        "id": "itip/definition-blackboard-code-sourcer",
-        "name": "Definition Blackboard Code Sourcer",
-        "current": "0.0",
-        "state": "planned",
-        "status": "planned",
-        "statusLabel": "Planned",
-        "scope": "The planned sourcer will analyze pinned repository revisions, initially for JVM projects, and prepare candidates for expert review. Source evidence describes the inspected revision; draft promotion and confirmation of deployed behavior are separate steps.",
-        "features": [
-          {
-            "id": "itip/definition-blackboard-code-sourcer/automatic-sourcing-from-code-repos",
-            "name": "GSM Definitions candidate sourcing from code repos",
-            "state": "planned",
-            "status": "planned",
-            "statusLabel": "Planned",
-            "kind": "implementation",
-            "notes": "Prepare typed, evidence-backed candidates from staged repository analysis, initially for JVM projects. Each language, API-contract, SBOM and infrastructure adapter declares its coverage; candidates pass through review before draft promotion.",
-            "milestone": {
-              "version": "1.0",
-              "label": "MVP/GA — GSM Definitions automatic sourcing from code repos",
-              "ga": true
-            }
-          }
-        ],
-        "milestones": [
-          {
-            "version": "1.0",
-            "label": "MVP/GA — GSM Definitions automatic sourcing from code repos",
-            "status": "planned",
-            "statusLabel": "Planned",
-            "ga": true
-          }
-        ]
       }
     ]
   },
@@ -242,7 +208,7 @@
         "current": "1.0",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "REST APIs, retained snapshots and transition controls provide the current implementation scope. Tenant/object authorization, current graded validation and revision-bound decisions are being completed; committed change notifications and MCP access are planned.",
         "features": [
           {
@@ -342,11 +308,11 @@
       },
       {
         "id": "sie/operator",
-        "name": "Operator",
+        "name": "Definition Operator",
         "current": "0.1",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "The execution implementation resolves eligible definitions and dispatches through selected adapters. Caller authority, execution budgets and failure handling remain integration boundaries. Planned pure Norm evaluation will return verdicts over pinned inputs without dispatching effects.",
         "features": [
           {
@@ -368,7 +334,7 @@
             "name": "GSM Mechanism execution foundations",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "implementation",
             "notes": "Resolve requested eligible definitions and dispatch their effects. Further execution controls cover atomic frames, caller authority, budgets, cancellation and partial or unknown outcome receipts.",
             "milestone": {
@@ -381,7 +347,7 @@
             "name": "GSM Mechanism technology integrations",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "implementation",
             "notes": "Connect execution through selected adapters. Planned additional adapters extend coverage independently of core execution, each with transport, authority and failure contracts.",
             "milestone": {
@@ -402,19 +368,59 @@
             "version": "1.1",
             "label": "GSM Mechanism execution foundations",
             "status": "partial",
-            "statusLabel": "In progress"
+            "statusLabel": "Partial"
           },
           {
             "version": "1.x",
             "label": "GSM Mechanism execution technos integrations (ongoing, unordered)",
             "status": "partial",
-            "statusLabel": "In progress"
+            "statusLabel": "Partial"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sis",
+    "solution": "SIS",
+    "products": [
+      {
+        "id": "sis/code-sourcer",
+        "name": "Code Sourcer",
+        "current": "0.0",
+        "state": "planned",
+        "status": "planned",
+        "statusLabel": "Planned",
+        "scope": "The planned sourcer will analyze pinned repository revisions, initially for JVM projects, and prepare candidates for expert review. Source evidence describes the inspected revision; draft promotion and confirmation of deployed behavior are separate steps.",
+        "features": [
+          {
+            "id": "sis/code-sourcer/automatic-sourcing-from-code-repos",
+            "name": "GSM Definitions candidate sourcing from code repos",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "implementation",
+            "notes": "Prepare typed, evidence-backed candidates from staged repository analysis, initially for JVM projects. Each language, API-contract, SBOM and infrastructure adapter declares its coverage; candidates pass through review before draft promotion.",
+            "milestone": {
+              "version": "1.0",
+              "label": "MVP/GA — GSM Definitions automatic sourcing from code repos",
+              "ga": true
+            }
+          }
+        ],
+        "milestones": [
+          {
+            "version": "1.0",
+            "label": "MVP/GA — GSM Definitions automatic sourcing from code repos",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "ga": true
           }
         ]
       },
       {
-        "id": "sie/definition-blackboard-manager",
-        "name": "Definition Blackboard Manager",
+        "id": "sis/blackboard-manager",
+        "name": "Blackboard Manager",
         "current": "1.0",
         "state": "delivered",
         "status": "delivered",
@@ -422,7 +428,7 @@
         "scope": "Panels, contribution intake, retention and sequential sealing are implemented. Concurrent intake integrity and client integration remain in scope for completion. Clients reconcile candidates and promote drafts; sealing closes collection rather than approving a definition.",
         "features": [
           {
-            "id": "sie/definition-blackboard-manager/ks-contributions-management-api",
+            "id": "sis/blackboard-manager/ks-contributions-management-api",
             "name": "KS Contributions management RESTful API",
             "state": "delivered",
             "status": "delivered",
@@ -437,7 +443,7 @@
             }
           },
           {
-            "id": "sie/definition-blackboard-manager/ks-contributions-lifecycle-enforcement",
+            "id": "sis/blackboard-manager/ks-contributions-lifecycle-enforcement",
             "name": "Blackboard seal lifecycle controls",
             "state": "delivered",
             "status": "delivered",
@@ -452,7 +458,7 @@
             }
           },
           {
-            "id": "sie/definition-blackboard-manager/ks-contributions-retention",
+            "id": "sis/blackboard-manager/ks-contributions-retention",
             "name": "KS Contributions retention",
             "state": "delivered",
             "status": "delivered",
@@ -490,7 +496,7 @@
         "current": "1.0",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "GSM 1.0 source content specifies eight primitives, Archetypes, DNA grammar and the Ascription lifecycle. Document-set publication is pending. Processor conformance and neutral stewardship are separate adoption steps; OASIS candidacy is not endorsement.",
         "features": [
           {
@@ -590,7 +596,7 @@
         "current": "0.1",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "Selected framework, protocol and IT-domain packages include source mappings and unbound governance templates. Adopters select scope, review interpretations and govern their bindings. These content packages describe requirements; runtime assessment belongs to consuming tools.",
         "features": [
           {
@@ -859,7 +865,7 @@
             "version": "1.x",
             "label": "Remaining protocols (gRPC, GraphQL, Kafka, AMQP, JDBC, WebSocket) · GDPR · NIS2 · SCAP · DORA · SAFe · ITIL (unordered)",
             "status": "partial",
-            "statusLabel": "In progress"
+            "statusLabel": "Partial"
           }
         ]
       },
@@ -869,7 +875,7 @@
         "current": "1.0.0-beta.1",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "Non-normative hypotheses, case records and a decision register examine GSM as a candidate systemics model. Conceptual cases and executed experiments remain distinct; findings enter the specification through accepted Change Proposals.",
         "features": [
           {
@@ -947,7 +953,7 @@
             "name": "Research protocol & promotion path",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "research",
             "notes": "Follow a documented path from research to proposed specification changes. Reproducible experiments and accepted normative changes supply the evidence for promotion.",
             "milestone": {
@@ -969,7 +975,7 @@
             "version": "1.0",
             "label": "MVP/GA — research protocol, published programs, promotion path into GSM Change Proposals",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "ga": true
           }
         ]
@@ -1097,7 +1103,7 @@
         "current": "0.1",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "A catalogue of SAFe-oriented roles and versioned guidance is available, with workflow graphs, playbooks and artifact contracts under integration. Planned authenticated human approval will bind decisions to exact revisions. Execution depends on supported harness, template and host combinations.",
         "features": [
           {
@@ -1119,7 +1125,7 @@
             "name": "Skills",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "content",
             "notes": "Reuse domain and practice playbooks, with alignment and behavioral quality checks continuing across supported workflows.",
             "milestone": {
@@ -1133,7 +1139,7 @@
             "name": "Workflows",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "content",
             "notes": "Sequence ceremonies around agents, context and artifacts. Planned authenticated human approval will bind advancement decisions to exact revisions and scope.",
             "milestone": {
@@ -1161,7 +1167,7 @@
             "name": "Artifacts",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "content",
             "notes": "Structure deliverables with schemas and Markdown templates. Integration work completes metadata parsing, required-content checks and URI resolution.",
             "milestone": {
@@ -1176,7 +1182,7 @@
             "version": "1.0",
             "label": "MVP/GA — agents, skills, workflows, instructions, artifacts",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "ga": true
           }
         ]
@@ -1187,7 +1193,7 @@
         "current": "0.0",
         "state": "partial",
         "status": "partial",
-        "statusLabel": "In progress",
+        "statusLabel": "Partial",
         "scope": "Git-backed artifact conventions and separate journals support manual local setup today. A pinned installer and reusable validation/publication pipelines are planned. The harness owns write validation; remotes, backups and collaboration retain their own policies.",
         "features": [
           {
@@ -1195,7 +1201,7 @@
             "name": "Workspace data plane",
             "state": "partial",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "kind": "implementation",
             "notes": "Keep artifacts in Git and execution records in separate journals. Reconcile overlapping agent outputs against a shared baseline with attribution and revalidation of the combined artifacts; transaction and collaboration behavior remains under integration.",
             "milestone": {
@@ -1238,14 +1244,14 @@
             "version": "1.0",
             "label": "MVP/GA — workspace data plane, installer, CI/CD artifact pipelines",
             "status": "partial",
-            "statusLabel": "In progress",
+            "statusLabel": "Partial",
             "ga": true
           }
         ]
       },
       {
         "id": "saf/saf-sie-bridge",
-        "name": "SAF SIE Bridge",
+        "name": "SIE Bridge",
         "current": "0.0",
         "state": "planned",
         "status": "planned",
@@ -1262,7 +1268,7 @@
             "notes": "Derive typed Blackboard candidates from pinned artifacts and journals, retaining provenance and uncertainty for review before separate draft promotion.",
             "milestone": {
               "version": "1.0",
-              "label": "MVP/GA — harness history sourcing into GSM contributions on the Definition Blackboard Manager",
+              "label": "MVP/GA — harness history sourcing into GSM contributions on the Blackboard Manager",
               "ga": true
             }
           }
@@ -1270,7 +1276,7 @@
         "milestones": [
           {
             "version": "1.0",
-            "label": "MVP/GA — harness history sourcing into GSM contributions on the Definition Blackboard Manager",
+            "label": "MVP/GA — harness history sourcing into GSM contributions on the Blackboard Manager",
             "status": "planned",
             "statusLabel": "Planned",
             "ga": true
