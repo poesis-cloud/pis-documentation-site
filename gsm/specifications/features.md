@@ -9,7 +9,7 @@ nav_order: 11
 # GSM Specifications Features
 {: .no_toc }
 
-What the GSM specification document set defines. GSM is at v1.0: the constructs below are frozen normative content — see **[Milestones & Versions]({% link milestones.md %})** for the canonical version semantics and the delivery clause.
+What the GSM specification document set defines. GSM is at v1.0: the constructs in the first table below are frozen normative content, and planned constructs follow — see **[Milestones & Versions]({% link milestones.md %})** for the canonical version semantics and the delivery clause.
 
 | Construct | What it defines | Where |
 |-----------|-----------------|-------|
@@ -18,3 +18,12 @@ What the GSM specification document set defines. GSM is at v1.0: the constructs 
 | Archetyping | Typed JSON Schema domain schemas that carry vocabulary, grammar, and semantics — meaning travels with the type | [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) |
 | Systemic lifecycle management | The normative state machine governing how every definition is drafted, proposed, approved, activated, deprecated, and retired | [Specification](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/specification.md) |
 | Conformance targets | Testable, ID-stable conformance requirements for implementations | [Conformance](https://github.com/poesis-cloud/gsm-specifications/blob/main/docs/conformance.md) |
+
+## Planned
+
+Post-v1.0 constructs, in the order of the GSM Specifications roadmap. Each requires an accepted Change Proposal before it becomes normative content.
+
+| Construct | What it will define | Milestone |
+|-----------|---------------------|-----------|
+| Graduate data-quality conformance | Graded conformance of Definitions against their Archetype — strict rejection or accepted nonconformant drafts, with each nonconformant property reported and explained | v1.1 |
+| Enhanced DNA model | Directives and Norms applicable to any GSM primitive, not only Structures | v1.2 |

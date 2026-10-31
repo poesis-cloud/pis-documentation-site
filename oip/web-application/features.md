@@ -14,7 +14,7 @@ redirect_from:
 
 The Web Application's capabilities, grouped by functional component. Each section is one component of the product; the entries under it are the capabilities it provides. OIP is in active design.
 
-Each capability carries the exact OIP **SemVer milestone** that delivers it: **1.0** is the GA scope and **1.1**–**1.5** is the ordered post-GA roadmap — see **[Milestones & Versions]({% link milestones.md %})** for the canonical version semantics and the delivery clause.
+Each capability carries the exact OIP **SemVer milestone** that delivers it: **1.0** is the GA scope and **1.1**–**1.6** is the ordered post-GA roadmap, following the product's GitHub roadmap; **1.x** is post-GA scope not yet sequenced — see **[Milestones & Versions]({% link milestones.md %})** for the canonical version semantics and the delivery clause.
 
 ## Published feature catalogue
 
@@ -30,6 +30,9 @@ The product's published features on [poesis.cloud](https://poesis.cloud/solution
 | GSM Definitions management | [Definition](#definition), [Lenses](#lenses), [Overview](#overview) |
 | GSM Ontology management | [Ontology](#ontology) |
 | RBAC and ABAC | [Admin](#admin), role-specific [Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %}) |
+| OIDC / SSO | [Admin](#admin) |
+| Identity-provider synchronization | [Admin](#admin) |
+| Governance review sessions | [Review](#review) |
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -45,8 +48,8 @@ Governance posture at a glance.
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Dashboard | Governance posture overview: definition counts, evaluation health, and recent changes | 1.1 |
-| Activity | Chronological activity log / audit feed of governance events | 1.1 |
+| Dashboard | Governance posture overview: definition counts, evaluation health, and recent changes | 1.x |
+| Activity | Chronological activity log / audit feed of governance events | 1.x |
 
 ## Definition
 
@@ -54,7 +57,7 @@ The authoring core — create and manage the eight GSM primitives and drive the 
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Dashboard | Definition activity and health overview | 1.1 |
+| Dashboard | Definition activity and health overview | 1.x |
 | Registry & Inventory | Browse, search, and filter every governed definition | 1.0 |
 | Structures | Create and inspect **Structures** (systems, services, teams, platform components) | 1.0 |
 | Archetypes | Create and inspect **Archetypes** — JSON-Schema-typed domain schemas | 1.0 |
@@ -70,17 +73,17 @@ Appraisal of the governed model — the bilateral appraisal-indicator system, or
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Dashboard | Aggregate appraisal posture across all indicator classes | 1.3 |
-| Findings | Browse findings, overall and per bilateral class | 1.3 |
-| AA · Source Fidelity | Ascription ↔ Ascription — sourced definitions stay faithful to their source | 1.3 |
-| AC · Comitology Compliance | Ascription ↔ Comitology — changes followed the required decision procedure | 1.3 |
-| DD · Directive Coherence | Directive ↔ Directive — Directives are mutually coherent | 1.3 |
-| DN · Operationalization Integrity | Directive ↔ Norm — every Directive is properly operationalized into Norms | 1.3 |
-| NN · Norm Coherence | Norm ↔ Norm — Norms are mutually coherent, with no conflicts | 1.3 |
-| NA · Definition Compliance | Norm ↔ Ascription — in both the meta-governance and governance zones | 1.3 |
-| NX · Execution Compliance | Norm ↔ eXecution — in both the meta-governance and governance zones | 1.3 |
-| Adherence matrix | Regulatory adherence matrix across frameworks and Structures | 1.3 |
-| Conformance | Conformance dashboard — drift of reality against governed intent | 1.3 |
+| Dashboard | Aggregate appraisal posture across all indicator classes | 1.5 |
+| Findings | Browse findings, overall and per bilateral class | 1.5 |
+| AA · Source Fidelity | Ascription ↔ Ascription — sourced definitions stay faithful to their source | 1.5 |
+| AC · Comitology Compliance | Ascription ↔ Comitology — changes followed the required decision procedure | 1.5 |
+| DD · Directive Coherence | Directive ↔ Directive — Directives are mutually coherent | 1.5 |
+| DN · Operationalization Integrity | Directive ↔ Norm — every Directive is properly operationalized into Norms | 1.5 |
+| NN · Norm Coherence | Norm ↔ Norm — Norms are mutually coherent, with no conflicts | 1.5 |
+| NA · Definition Compliance | Norm ↔ Ascription — in both the meta-governance and governance zones | 1.5 |
+| NX · Execution Compliance | Norm ↔ eXecution — in both the meta-governance and governance zones | 1.5 |
+| Adherence matrix | Regulatory adherence matrix across frameworks and Structures | 1.5 |
+| Conformance | Conformance dashboard — drift of reality against governed intent | 1.5 |
 
 ## Ontology
 
@@ -98,9 +101,9 @@ Saved, multi-dimensional views over the governed model.
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Browse | Browse saved lenses (named, filtered views) | 1.1 |
-| Edit Lens | Create and edit a lens — multi-dimensional filters over the model | 1.1 |
-| Diagram | Render a lens as a diagram (topology / governance overlay) | 1.1 |
+| Browse | Browse saved lenses (named, filtered views) | 1.0 |
+| Edit Lens | Create and edit a lens — multi-dimensional filters over the model | 1.0 |
+| Diagram | Render a lens as a diagram (topology / governance overlay) | 1.x |
 
 ## Simulation
 
@@ -108,7 +111,7 @@ Explore the consequences of a change before committing it.
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Impact Analysis | Cascade / blast-radius analysis across dependent definitions | 1.5 |
+| Impact Analysis | Cascade / blast-radius analysis across dependent definitions | 1.4 |
 
 ## Copilot
 
@@ -116,7 +119,7 @@ A governed AI assistant grounded in the definitions.
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Assistant | Conversational assistant that answers and drafts from the governed model — grounded and traceable, not hallucinated | 1.4 |
+| Assistant | Conversational assistant that answers and drafts from the governed model — grounded and traceable, not hallucinated | 1.2 |
 
 ## Review
 
@@ -124,9 +127,9 @@ The human governance gates — the comitology of approving change.
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Review Board | Governance approvals board for pending lifecycle transitions | 1.2 |
-| Sessions | Conduct a governance review session | 1.2 |
-| History | Past review decisions and their rationale | 1.2 |
+| Review Board | Governance approvals board for pending lifecycle transitions | 1.3 |
+| Sessions | Conduct a governance review session | 1.x |
+| History | Past review decisions and their rationale | 1.3 |
 
 ## Truth Sourcing
 
@@ -134,9 +137,9 @@ Connect external reality and keep the governed model in sync.
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Sources | Manage connected sources (repositories, API contracts, infrastructure) | 1.2 |
-| Source detail | Inspect a single source and what it contributes | 1.2 |
-| Sync Jobs | Track sourcing / sync runs and their outcomes | 1.2 |
+| Sources | Manage connected sources (repositories, API contracts, infrastructure) | 1.3 |
+| Source detail | Inspect a single source and what it contributes | 1.3 |
+| Sync Jobs | Track sourcing / sync runs and their outcomes | 1.3 |
 
 ## Deliverables
 
@@ -144,9 +147,9 @@ Generate governed artifacts from definitions.
 
 | Capability | What it does | Version |
 |------------|--------------|---------|
-| Templates | Catalog of deliverable templates (the artifact catalog) | 1.1 |
-| Template Editor | Author and edit deliverable templates | 1.1 |
-| Generated & Jobs | Generated deliverables and the generation jobs that produce them | 1.1 |
+| Templates | Catalog of deliverable templates (the artifact catalog) | 1.6 |
+| Template Editor | Author and edit deliverable templates | 1.6 |
+| Generated & Jobs | Generated deliverables and the generation jobs that produce them | 1.6 |
 
 ## Admin
 
@@ -154,6 +157,8 @@ Generate governed artifacts from definitions.
 |------------|--------------|---------|
 | Users | Users, roles, and permissions | 1.0 |
 | Integrations | External-system integration settings | 1.0 |
+| Single sign-on | Sign in through an external OIDC identity provider with single sign-on | 1.1 |
+| Identity-provider synchronization | Reconcile identities and groups from a configured provider with local assignments | 1.x |
 
 ## Guided Workflows
 
@@ -161,10 +166,10 @@ End-to-end walkthroughs that thread several capability areas together. They map 
 
 | Workflow | Threads together | Role | Version |
 |----------|------------------|------|---------|
-| Architect: Governance Authoring & Impact Analysis | Definition → Simulation | [Architect]({% link oip/web-application/usage-scenarios/architect.md %}) | 1.5 |
-| Security Officer: Ontology Stack Composition | Ontologies → Evaluation | [Security Officer]({% link oip/web-application/usage-scenarios/security-officer.md %}) | 1.3 |
-| Governance Review Ceremony | Review → Definition | [Project Manager]({% link oip/web-application/usage-scenarios/project-manager.md %}) | 1.2 |
-| Evaluation Status Transition | Evaluation → Definition | [Operations]({% link oip/web-application/usage-scenarios/operations.md %}), [QA]({% link oip/web-application/usage-scenarios/qa-engineer.md %}) | 1.3 |
+| Architect: Governance Authoring & Impact Analysis | Definition → Simulation | [Architect]({% link oip/web-application/usage-scenarios/architect.md %}) | 1.4 |
+| Security Officer: Ontology Stack Composition | Ontologies → Evaluation | [Security Officer]({% link oip/web-application/usage-scenarios/security-officer.md %}) | 1.5 |
+| Governance Review Ceremony | Review → Definition | [Project Manager]({% link oip/web-application/usage-scenarios/project-manager.md %}) | 1.x |
+| Evaluation Status Transition | Evaluation → Definition | [Operations]({% link oip/web-application/usage-scenarios/operations.md %}), [QA]({% link oip/web-application/usage-scenarios/qa-engineer.md %}) | 1.5 |
 
 ---
 

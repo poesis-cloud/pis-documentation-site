@@ -13,4 +13,4 @@ The **Systemic Intelligence Model (SIM)** is an early-stage effort toward a lang
 
 ## Products
 
-- **[LM]({% link sim/lm/index.md %})** — the SIM language model, exploring whether language models trained against GSM / SIE governed context perform better than with any other context. *Documentation in construction.*
+- **[LM]({% link sim/lm/index.md %})** — the SIM language model. Its planned v1.0 (MVP/GA), **GSM/SIE-grounded language models**, trains language models on GSM / SIE governed context and tests whether they outperform the same models given any other context. *Documentation in construction.*

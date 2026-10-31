@@ -14,7 +14,7 @@ Timeline labels say **Recorded release** when `milestone.shipped` is true and
 **Planned milestone** otherwise, independently of the feature's current claim state.
 
 The export also synchronizes only the bounded feature-scope table in `strategy/roadmap.md`;
-surrounding normative prose is preserved. Tests compare all 65 features, not just milestones.
+surrounding normative prose is preserved. Tests compare all 73 features, not just milestones.
 
 Regenerate after any change to `poesis-platform.ts`:
 

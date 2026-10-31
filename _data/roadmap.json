@@ -21,7 +21,7 @@
             "kind": "implementation",
             "notes": "Generate ADR packs, architecture baselines, roadmaps and evidence summaries from pinned definitions and versioned templates. Maintain and preview bindings, specify narrative grounding, schedule recurring runs and inspect partial or failed jobs; review substantive quality before accepting each document.",
             "milestone": {
-              "version": "1.1",
+              "version": "1.6",
               "label": "IT artifact factory"
             }
           },
@@ -34,7 +34,7 @@
             "kind": "implementation",
             "notes": "Review scoped measures and findings with rule/input versions and explicit unknown or not-applicable results. Carry findings into owned corrective proposals and reappraise after change; live-system assessment additionally uses observation evidence.",
             "milestone": {
-              "version": "1.3",
+              "version": "1.5",
               "label": "IT compliance evaluation"
             }
           },
@@ -47,7 +47,7 @@
             "kind": "implementation",
             "notes": "Ask read-only questions over authorized, versioned definitions and check answers through citations, snapshot age and explicit abstention when evidence is insufficient.",
             "milestone": {
-              "version": "1.4",
+              "version": "1.2",
               "label": "IT Copilot"
             }
           },
@@ -60,7 +60,7 @@
             "kind": "implementation",
             "notes": "Trace dependency and obligation paths, including cycles, retirement prerequisites and missing boundaries. Causal simulation is a further extension with validated dynamics and explicit uncertainty; retirement execution is separate.",
             "milestone": {
-              "version": "1.5",
+              "version": "1.4",
               "label": "IT impact simulation"
             }
           },
@@ -73,7 +73,7 @@
             "kind": "implementation",
             "notes": "Configure repository branches, paths and revision boundaries, set refresh expectations, track durable runs and coverage, recover incomplete collection, reconcile candidates and register reviewed drafts idempotently, with visible failures and source age.",
             "milestone": {
-              "version": "1.2",
+              "version": "1.3",
               "label": "Truth sourcing management"
             }
           },
@@ -147,6 +147,19 @@
               "version": "1.x",
               "label": "Identity synchronization and governance review sessions (unordered)"
             }
+          },
+          {
+            "id": "oip/web-application/oidc-sso",
+            "name": "OIDC / SSO",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "implementation",
+            "notes": "Sign in through a configured external OIDC identity provider with single sign-on instead of separate local credentials. Privileges still come from reviewed role and attribute assignments, not from identity-provider claims alone.",
+            "milestone": {
+              "version": "1.1",
+              "label": "OIDC / SSO"
+            }
           }
         ],
         "milestones": [
@@ -160,31 +173,37 @@
           },
           {
             "version": "1.1",
-            "label": "IT artifact factory",
+            "label": "OIDC / SSO",
             "status": "planned",
             "statusLabel": "Planned"
           },
           {
             "version": "1.2",
-            "label": "Truth sourcing management",
-            "status": "planned",
-            "statusLabel": "Planned"
-          },
-          {
-            "version": "1.3",
-            "label": "IT compliance evaluation",
-            "status": "planned",
-            "statusLabel": "Planned"
-          },
-          {
-            "version": "1.4",
             "label": "IT Copilot",
             "status": "planned",
             "statusLabel": "Planned"
           },
           {
-            "version": "1.5",
+            "version": "1.3",
+            "label": "Truth sourcing management",
+            "status": "planned",
+            "statusLabel": "Planned"
+          },
+          {
+            "version": "1.4",
             "label": "IT impact simulation",
+            "status": "planned",
+            "statusLabel": "Planned"
+          },
+          {
+            "version": "1.5",
+            "label": "IT compliance evaluation",
+            "status": "planned",
+            "statusLabel": "Planned"
+          },
+          {
+            "version": "1.6",
+            "label": "IT artifact factory",
             "status": "planned",
             "statusLabel": "Planned"
           },
@@ -209,7 +228,7 @@
         "state": "partial",
         "status": "partial",
         "statusLabel": "Partial",
-        "scope": "REST APIs, retained snapshots and transition controls provide the current implementation scope. Tenant/object authorization, current graded validation and revision-bound decisions are being completed; committed change notifications are planned.",
+        "scope": "REST APIs, retained snapshots and transition controls provide the current implementation scope. Tenant/object authorization, current graded validation and revision-bound decisions are being completed; client-selected draft conformance, an enhanced DNA model, committed change notifications and OpenTelemetry signals are planned.",
         "features": [
           {
             "id": "sie/definition-manager/definitions-management-api",
@@ -263,10 +282,49 @@
             "status": "planned",
             "statusLabel": "Planned",
             "kind": "implementation",
-            "notes": "Notify authorized consumers of committed changes, with ordering, replay, deduplication and crash recovery in a dedicated lifecycle event stream.",
+            "notes": "Notify authorized consumers of committed changes over the Kafka protocol with a configurable broker, with ordering, replay, deduplication and crash recovery in a dedicated lifecycle event stream.",
+            "milestone": {
+              "version": "1.3",
+              "label": "GSM Definitions lifecycle events mediation · OTel signals"
+            }
+          },
+          {
+            "id": "sie/definition-manager/graduate-data-quality-conformance",
+            "name": "Graduate data-quality conformance",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "implementation",
+            "notes": "Choose when posting a draft whether a Definition that does not conform to its Archetype is rejected (strict) or accepted as a nonconformant draft. Responses identify each nonconformant property and why, so corrections can precede review.",
             "milestone": {
               "version": "1.1",
-              "label": "GSM Definitions lifecycle events mediation"
+              "label": "Graduate data-quality conformance"
+            }
+          },
+          {
+            "id": "sie/definition-manager/enhanced-dna-model",
+            "name": "Enhanced DNA model",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "implementation",
+            "notes": "Store and validate Directives and Norms that apply to any GSM primitive, not only Structures, following the enhanced DNA model of the GSM Specifications and its compatibility decisions.",
+            "milestone": {
+              "version": "1.2",
+              "label": "Enhanced DNA model"
+            }
+          },
+          {
+            "id": "sie/definition-manager/otel-signals",
+            "name": "OTel signals",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "implementation",
+            "notes": "Emit OpenTelemetry traces, metrics and logs from the Definition Manager through the SIE OTel Collector, so operators can inspect requests and failures in their configured backend. Existing trace and log export is a foundation, not accepted signal coverage.",
+            "milestone": {
+              "version": "1.3",
+              "label": "GSM Definitions lifecycle events mediation · OTel signals"
             }
           }
         ],
@@ -281,7 +339,19 @@
           },
           {
             "version": "1.1",
-            "label": "GSM Definitions lifecycle events mediation",
+            "label": "Graduate data-quality conformance",
+            "status": "planned",
+            "statusLabel": "Planned"
+          },
+          {
+            "version": "1.2",
+            "label": "Enhanced DNA model",
+            "status": "planned",
+            "statusLabel": "Planned"
+          },
+          {
+            "version": "1.3",
+            "label": "GSM Definitions lifecycle events mediation · OTel signals",
             "status": "planned",
             "statusLabel": "Planned"
           }
@@ -587,15 +657,28 @@
           },
           {
             "id": "gsm/specifications/enhanced-directives-norms-model",
-            "name": "Enhanced Directives and Norms model",
+            "name": "Enhanced DNA model",
             "state": "planned",
             "status": "planned",
             "statusLabel": "Planned",
             "kind": "specification",
-            "notes": "Extend governance expression through tested cases and accepted Change Proposals, with explicit compatibility decisions for each grammar change.",
+            "notes": "Extend Directives and Norms so they can apply to any GSM primitive, not only Structures, through tested cases and accepted Change Proposals with explicit compatibility decisions for each grammar change.",
+            "milestone": {
+              "version": "1.2",
+              "label": "Enhanced DNA model"
+            }
+          },
+          {
+            "id": "gsm/specifications/graduate-data-quality-conformance",
+            "name": "Graduate data-quality conformance",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "specification",
+            "notes": "Specify graded conformance of Definitions against their Archetype, distinguishing strict rejection from accepted nonconformant drafts and requiring each nonconformant property to be reported with its reason. Normative content requires an accepted Change Proposal.",
             "milestone": {
               "version": "1.1",
-              "label": "Enhanced Directives and Norms model"
+              "label": "Graduate data-quality conformance"
             }
           }
         ],
@@ -610,7 +693,13 @@
           },
           {
             "version": "1.1",
-            "label": "Enhanced Directives and Norms model",
+            "label": "Graduate data-quality conformance",
+            "status": "planned",
+            "statusLabel": "Planned"
+          },
+          {
+            "version": "1.2",
+            "label": "Enhanced DNA model",
             "status": "planned",
             "statusLabel": "Planned"
           }
@@ -1322,9 +1411,32 @@
         "state": "planned",
         "status": "planned",
         "statusLabel": "Planned",
-        "scope": "The SIM language model is at an early stage. Training against GSM and SIE governed context is being explored; no model is released and no capability is claimed yet.",
-        "features": [],
-        "milestones": []
+        "scope": "The SIM language model is at an early stage. Its planned 1.0 trains language models on GSM and SIE governed context and compares them with the same models given other context; no model is released and no advantage is claimed yet.",
+        "features": [
+          {
+            "id": "sim/lm/gsm-sie-grounded-training",
+            "name": "GSM/SIE-grounded language models",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "research",
+            "notes": "Train language models on GSM definitions and SIE governed context and compare them with the same models given any other context, to establish whether governed grounding improves their results. Planned research: no model is released and no advantage is claimed yet.",
+            "milestone": {
+              "version": "1.0",
+              "label": "MVP/GA — GSM/SIE-grounded language models",
+              "ga": true
+            }
+          }
+        ],
+        "milestones": [
+          {
+            "version": "1.0",
+            "label": "MVP/GA — GSM/SIE-grounded language models",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "ga": true
+          }
+        ]
       }
     ]
   }
