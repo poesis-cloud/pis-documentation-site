@@ -17,6 +17,8 @@ What Kubernetes is to software infrastructures, the Systemic Intelligence Engine
 
 - **[Definition Manager]({% link sie/definition-manager/index.md %})** — the authoritative API, lifecycle enforcer, and store of every governed GSM Definition; the heart of the engine.
 - **[Definition Operator]({% link sie/operator/index.md %})** — the GSM Definition runtime, evaluating Norms and executing Mechanisms. *Documentation in construction.*
+- **[OTel Collector]({% link sie/otel-collector/index.md %})** — the shared OpenTelemetry collector receiving the traces and logs of the SIE services. *Documentation in construction.*
+- **[MCP]({% link sie/mcp/index.md %})** — the planned Model Context Protocol server giving AI agents governed SIE context; early stage. *Documentation in construction.*
 
 ## Roadmap
 

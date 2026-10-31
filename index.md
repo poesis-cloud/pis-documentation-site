@@ -15,7 +15,7 @@ Poesis builds products that bring **systemic governance** to organizations — r
 
 ## Solutions
 
-Poesis is layered: the **GSM** standard, the **SIE** engine that implements it, **SIS** to source definitions into it, domain applications built on top such as **OIP** for the IT domain, and **SAF** to build them. Each solution below groups the products it ships. Delivery language across this site follows the canonical **[Milestones & Versions]({% link milestones.md %})** page.
+Poesis is layered: the **GSM** standard, the **SIE** engine that implements it, **SIS** to source definitions into it, domain applications built on top such as **OIP** for the IT domain, **SAF** to build them, and **SIM**, an early-stage language model grounded in GSM and SIE context. Each solution below groups the products it ships. Delivery language across this site follows the canonical **[Milestones & Versions]({% link milestones.md %})** page.
 
 ### [OIP — Organizational Intelligence Platform]({% link oip/index.md %})
 
@@ -37,6 +37,8 @@ The reference implementation of GSM: the engine that hosts governed definitions,
   - [Features]({% link sie/definition-manager/features.md %}) — the capability catalogue with milestones
 - **[Definition Operator]({% link sie/operator/index.md %})** — the GSM Definition runtime for Norms and Mechanisms. *Documentation in construction.*
   - [Features]({% link sie/operator/features.md %}) — the capability catalogue with milestones
+- **[OTel Collector]({% link sie/otel-collector/index.md %})** — the shared OpenTelemetry collector for the SIE services. *Documentation in construction.*
+- **[MCP]({% link sie/mcp/index.md %})** — the planned Model Context Protocol server giving AI agents governed SIE context; early stage. *Documentation in construction.*
 - [Roadmap]({% link sie/roadmap.md %}) — engine-level capabilities planned across the SIE products
 
 ### [SIS — Systemic Intelligence Sourcing]({% link sis/index.md %})
@@ -72,3 +74,9 @@ A governed, local-first, multi-agent way to run SAFe — today in VS Code / GitH
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
 - **[SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning harness-governed execution history into GSM contributions on the Blackboard Manager. *Documentation in construction.*
   - [Features]({% link saf/saf-sie-bridge/features.md %}) — the capability catalogue with milestones
+
+### [SIM — Systemic Intelligence Model]({% link sim/index.md %})
+
+An early-stage effort toward a language model grounded in GSM definitions and SIE governed context. Nothing is released yet.
+
+- **[LM]({% link sim/lm/index.md %})** — the SIM language model, exploring training against GSM / SIE governed context. *Documentation in construction.*

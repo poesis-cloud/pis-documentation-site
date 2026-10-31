@@ -209,7 +209,7 @@
         "state": "partial",
         "status": "partial",
         "statusLabel": "Partial",
-        "scope": "REST APIs, retained snapshots and transition controls provide the current implementation scope. Tenant/object authorization, current graded validation and revision-bound decisions are being completed; committed change notifications and MCP access are planned.",
+        "scope": "REST APIs, retained snapshots and transition controls provide the current implementation scope. Tenant/object authorization, current graded validation and revision-bound decisions are being completed; committed change notifications are planned.",
         "features": [
           {
             "id": "sie/definition-manager/definitions-management-api",
@@ -268,19 +268,6 @@
               "version": "1.1",
               "label": "GSM Definitions lifecycle events mediation"
             }
-          },
-          {
-            "id": "sie/definition-manager/mcp",
-            "name": "MCP",
-            "state": "planned",
-            "status": "planned",
-            "statusLabel": "Planned",
-            "kind": "implementation",
-            "notes": "Give AI tools MCP access to policy-filtered, pinned definitions and bounded operations, alongside direct API access and independently of sourcing.",
-            "milestone": {
-              "version": "1.2",
-              "label": "MCP"
-            }
           }
         ],
         "milestones": [
@@ -295,12 +282,6 @@
           {
             "version": "1.1",
             "label": "GSM Definitions lifecycle events mediation",
-            "status": "planned",
-            "statusLabel": "Planned"
-          },
-          {
-            "version": "1.2",
-            "label": "MCP",
             "status": "planned",
             "statusLabel": "Planned"
           }
@@ -375,6 +356,51 @@
             "label": "GSM Mechanism execution technos integrations (ongoing, unordered)",
             "status": "partial",
             "statusLabel": "Partial"
+          }
+        ]
+      },
+      {
+        "id": "sie/otel-collector",
+        "name": "OTel Collector",
+        "current": "1.0",
+        "state": "planned",
+        "status": "planned",
+        "statusLabel": "Planned",
+        "scope": "A stock OpenTelemetry Collector deployment shared by the SIE services of a deployment, receiving their OTLP traces and logs and forwarding them to a debug sink or one configured OTLP backend. Receiver authentication and production-tuned configurations remain out of scope.",
+        "features": [],
+        "milestones": []
+      },
+      {
+        "id": "sie/mcp",
+        "name": "MCP",
+        "current": "0.1",
+        "state": "planned",
+        "status": "planned",
+        "statusLabel": "Planned",
+        "scope": "The planned Model Context Protocol server for SIE. It is at an early stage: MCP access to policy-filtered, pinned definitions and bounded operations is on the roadmap and not yet implemented.",
+        "features": [
+          {
+            "id": "sie/mcp/mcp",
+            "name": "Governed AI context for agents via MCP",
+            "state": "planned",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "kind": "implementation",
+            "notes": "Give AI tools MCP access to policy-filtered, pinned definitions and bounded operations, alongside direct API access and independently of sourcing.",
+            "milestone": {
+              "version": "1.0",
+              "label": "MVP/GA — Governed AI context for agents via MCP",
+              "ga": true
+            }
+          }
+        ],
+        "milestones": [
+          {
+            "version": "1.0",
+            "label": "MVP/GA — Governed AI context for agents via MCP",
+            "status": "planned",
+            "statusLabel": "Planned",
+            "ga": true
           }
         ]
       }
@@ -1282,6 +1308,23 @@
             "ga": true
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "sim",
+    "solution": "SIM",
+    "products": [
+      {
+        "id": "sim/lm",
+        "name": "LM",
+        "current": "0.0",
+        "state": "planned",
+        "status": "planned",
+        "statusLabel": "Planned",
+        "scope": "The SIM language model is at an early stage. Training against GSM and SIE governed context is being explored; no model is released and no capability is claimed yet.",
+        "features": [],
+        "milestones": []
       }
     ]
   }
