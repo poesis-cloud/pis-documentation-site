@@ -2,13 +2,13 @@
 layout: default
 title: "SIE Roadmap"
 parent: SIE — the Systemic Intelligence Engine
-nav_order: 4
+nav_order: 5
 ---
 
 # SIE Roadmap
 {: .no_toc }
 
-Engine-level capabilities planned across the SIE products — the analytical and contextual layers SIE will expose over the governed model. Product-scoped capabilities live on each product's Features page: [Definition Manager]({% link sie/definition-manager/features.md %}), [Definition Operator]({% link sie/operator/features.md %}). Definition-sourcing capabilities live with the SIS [Blackboard Manager]({% link sis/blackboard-manager/features.md %}).
+Engine-level capabilities planned across the SIE products — the analytical and contextual layers SIE will expose over the governed model. Product-scoped capabilities live on each product's Features page: [Definition Manager]({% link sie/definition-manager/features.md %}), [Definition Operator]({% link sie/operator/features.md %}), [MCP]({% link sie/mcp/index.md %}). Definition-sourcing capabilities live with the SIS [Blackboard Manager]({% link sis/blackboard-manager/features.md %}).
 
 ## Table of contents
 {: .no_toc .text-delta }

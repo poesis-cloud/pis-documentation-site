@@ -210,6 +210,10 @@ and obligations — the state the four functions define, realize, evaluate, and 
   enforces their lifecycle — the API surface the whole loop reads and writes.
 - **[Definition Operator]({% link sie/operator/index.md %})** evaluates Norms and executes Mechanisms — the
   runtime that realizes supervision and operations.
+- The **[OTel Collector]({% link sie/otel-collector/index.md %})** receives the traces and logs the SIE
+  services emit — the shared telemetry pipeline of a deployment rather than a function of the loop.
+- **[MCP]({% link sie/mcp/index.md %})**, planned, is intended to serve the governed definitions to AI
+  agents through the Model Context Protocol.
 - The **[Blackboard Manager]({% link sis/blackboard-manager/index.md %})**, part of
   [SIS]({% link sis/index.md %}) rather than SIE, sources definitions collaboratively from
   evidence, keeping the model anchored to the state plane instead of drifting from it.
