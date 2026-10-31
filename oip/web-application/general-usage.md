@@ -1,17 +1,18 @@
 ---
 layout: default
 title: "DNA in Practice — Directives, Norms, Ascriptions"
-parent: ITIP Web Application
-grand_parent: ITIP — the IT Intelligence Platform
+parent: OIP Web Application
+grand_parent: OIP — the Organizational Intelligence Platform
 nav_order: 3
 redirect_from:
   - /itip/general-usage/
+  - /itip/web-application/general-usage/
 ---
 
 # DNA in Practice — Directives, Norms, Ascriptions
 {: .no_toc }
 
-This page walks through the three DNA primitives as a user encounters them in ITIP. Each section presents the grammar, practical examples, and how it appears in the ITIP interface.
+This page walks through the three DNA primitives as a user encounters them in OIP. Each section presents the grammar, practical examples, and how it appears in the OIP interface.
 
 <details open markdown="block">
   <summary>Table of contents</summary>
@@ -73,9 +74,9 @@ There is no threshold, no technical detail — just the governance intent. The D
 - **Not a technical constraint.** There is no threshold, metric, or CEL expression in a Directive. That is the Norm's job.
 - **Not a one-time decision.** Directives are governed artifacts with a lifecycle (DRAFT → ACTIVE → DEPRECATED → RETIRED). They evolve, they are versioned, they are auditable.
 
-### Using Directives in ITIP
+### Using Directives in OIP
 
-In ITIP, you create Directives in the **Governance Authoring** workspace:
+In OIP, you create Directives in the **Governance Authoring** workspace:
 
 1. Navigate to **Governance > Directives > New Directive**
 2. Select the **governing structure** (your team or board)
@@ -84,7 +85,7 @@ In ITIP, you create Directives in the **Governance Authoring** workspace:
 5. Select the **governed structure** (the entity you're governing)
 6. Submit for governance approval (DRAFT → PROPOSED → APPROVED → ACTIVE)
 
-ITIP's Copilot can assist: describe your intent in natural language, and the AI suggests the structured Directive form.
+OIP's Copilot can assist: describe your intent in natural language, and the AI suggests the structured Directive form.
 
 ---
 
@@ -149,7 +150,7 @@ This means you cannot create a Norm on a structure that no Directive governs. Th
 
 This is deliberate: **governance must be intentional, not accidental.** Every constraint traces back to a declared governance intent.
 
-### Using Norms in ITIP
+### Using Norms in OIP
 
 1. Navigate to **Governance > Norms > New Norm**
 2. Select the **governed structure** (shows only structures with active Directives)
@@ -159,13 +160,13 @@ This is deliberate: **governance must be intentional, not accidental.** Every co
 6. Choose the **tolerance mode** and configure temporal parameters if needed
 7. Submit for governance approval
 
-ITIP's Copilot can help: describe a natural-language NFR like *"The service should respond in under 200ms for 95% of requests"*, and the AI suggests the CEL assertion and tolerance mode.
+OIP's Copilot can help: describe a natural-language NFR like *"The service should respond in under 200ms for 95% of requests"*, and the AI suggests the CEL assertion and tolerance mode.
 
 ---
 
 ## Ascription — The Governed Snapshot
 
-An **Ascription** is the governed binding between a definition and its subject. Every artifact in ITIP — every Structure, every Directive, every Norm, every Mechanism — is an Ascription. It is the universal "is-typed-by" statement that carries:
+An **Ascription** is the governed binding between a definition and its subject. Every artifact in OIP — every Structure, every Directive, every Norm, every Mechanism — is an Ascription. It is the universal "is-typed-by" statement that carries:
 
 - **What** is being defined (the Definition — a stable identity)
 - **As what** it is typed (the Archetype — a JSON Schema)
@@ -173,7 +174,7 @@ An **Ascription** is the governed binding between a definition and its subject. 
 - **Its lifecycle state** (DRAFT → ... → RETIRED)
 - **Its version** (assigned at approval, monotonically increasing)
 
-Ascriptions are **fast-changing** and **technical**. They are what you actually create and edit in ITIP day-to-day. When you "create a Structure" in ITIP, you are creating an Ascription of type Structure. When you "update a Norm", you are creating a new Ascription version of an existing Norm Definition.
+Ascriptions are **fast-changing** and **technical**. They are what you actually create and edit in OIP day-to-day. When you "create a Structure" in OIP, you are creating an Ascription of type Structure. When you "update a Norm", you are creating a new Ascription version of an existing Norm Definition.
 
 ### Lifecycle states
 
@@ -226,9 +227,9 @@ When you update a definition, you don't edit the existing Ascription. You create
 
 This means every change is auditable, every version is preserved, and you can always diff between versions.
 
-### Using Ascriptions in ITIP
+### Using Ascriptions in OIP
 
-You rarely interact with "Ascriptions" directly — ITIP presents them as the definitions themselves (Structures, Directives, Norms, etc.). But understanding the Ascription model helps you understand:
+You rarely interact with "Ascriptions" directly — OIP presents them as the definitions themselves (Structures, Directives, Norms, etc.). But understanding the Ascription model helps you understand:
 
 - **Why everything has a lifecycle** — because everything *is* an Ascription
 - **Why you can't edit an ACTIVE definition directly** — you create a new version (new Ascription)
@@ -239,7 +240,7 @@ You rarely interact with "Ascriptions" directly — ITIP presents them as the de
 
 ## Ontologies — Governance Building Blocks
 
-Frameworks are **pre-built governance vocabularies** sourced from established standards (TOGAF, ISO 25010, GDPR, NIS2, etc.). They provide ready-made Archetypes, Directives, and Norms that you can adopt, compose, and customize in ITIP.
+Frameworks are **pre-built governance vocabularies** sourced from established standards (TOGAF, ISO 25010, GDPR, NIS2, etc.). They provide ready-made Archetypes, Directives, and Norms that you can adopt, compose, and customize in OIP.
 
 Instead of starting governance from scratch, you compose **ontology stacks** — layered combinations of regulatory, quality, and architectural standards that apply to your systems.
 
@@ -254,7 +255,7 @@ Instead of starting governance from scratch, you compose **ontology stacks** —
 
 ### Composing ontology stacks
 
-In ITIP, you compose frameworks into governance stacks:
+In OIP, you compose frameworks into governance stacks:
 
 1. **Browse** available ontologies in the ontology catalogue
 2. **Inspect** their Directives and Norms to understand what governance they encode
@@ -268,7 +269,7 @@ Once attached, framework Norms are evaluated alongside your custom Norms — sam
 
 Beyond governance constraints, frameworks provide the **vocabulary** you use to describe your IT landscape. TOGAF's architecture domains give you structured terminology for business, application, data, and technology layers. ISO quality models give you standardized dimensions for reliability, security, performance, and data quality.
 
-ITIP renders these vocabularies as browsable catalogs with framework-native labels. A TOGAF user sees "Application Component" where the underlying GSM model says "Structure". An ArchiMate user sees relationship types they recognize. The mapping is configurable per user profile.
+OIP renders these vocabularies as browsable catalogs with framework-native labels. A TOGAF user sees "Application Component" where the underlying GSM model says "Structure". An ArchiMate user sees relationship types they recognize. The mapping is configurable per user profile.
 
-**Next: [Usage Scenarios — Per IT Profile →]({% link itip/web-application/usage-scenarios/index.md %})**
+**Next: [Usage Scenarios — Per IT Profile →]({% link oip/web-application/usage-scenarios/index.md %})**
 {: .fs-5 .fw-300 }

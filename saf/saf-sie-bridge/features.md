@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "SAF SIE Bridge Features"
-parent: SAF SIE Bridge
+title: "SIE Bridge Features"
+parent: SIE Bridge
 grand_parent: SAF — the Systemic Agentic Framework
 nav_order: 1
 ---
 
-# SAF SIE Bridge Features
+# SIE Bridge Features
 {: .no_toc }
 
-Capability catalogue for the SAF SIE Bridge.
+Capability catalogue for the SIE Bridge.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -27,4 +27,4 @@ Capability catalogue for the SAF SIE Bridge.
 
 | Feature | Representative content | Milestone |
 |---------|------------------------|-----------|
-| Harness history sourcing | Reads committed artifacts and session logs from the Agentic Workspace and posts confidence-bearing identifications (participation, conformance, deviation) as contributions to the Definition Blackboard Manager | v1.0 (MVP/GA) |
+| Harness history sourcing | Reads committed artifacts and session logs from the Agentic Workspace and posts confidence-bearing identifications (participation, conformance, deviation) as contributions to the Blackboard Manager | v1.0 (MVP/GA) |

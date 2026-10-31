@@ -68,7 +68,7 @@ THINK is still waiting for its OpenTelemetry.
 
 GSM is the vendor-neutral standard for *defining systems*, the way OpenTelemetry is the vendor-neutral standard for *observing* them. Its generative governance grammar makes those definitions governable. A system definition should be portable: any tool should be able to produce it, and any tool should be able to consume it, without translation and without lock-in.
 
-This is why GSM is open by design. It is implemented today by **SIE (Systemic Intelligence Engine)** — the reference implementation that hosts the model and runs its governance — and applied by **ITIP**, the first domain application built on SIE. But the model is not the implementation. The standard is meant to be shared, so the THINK layer becomes common ground rather than fragmented territory.
+This is why GSM is open by design. It is implemented today by **SIE (Systemic Intelligence Engine)** — the reference implementation that hosts the model and runs its governance — and applied by **OIP**, the first domain application built on SIE. But the model is not the implementation. The standard is meant to be shared, so the THINK layer becomes common ground rather than fragmented territory.
 
 ---
 
@@ -98,10 +98,10 @@ This is why GSM is open by design. It is implemented today by **SIE (Systemic In
 
 ## An invitation
 
-GSM is young, and it is open. The model is implemented today by SIE and applied by ITIP, but the standard belongs to everyone who governs systems — and it sharpens with every domain that adopts it.
+GSM is young, and it is open. The model is implemented today by SIE and applied by OIP, but the standard belongs to everyone who governs systems — and it sharpens with every domain that adopts it.
 
-- **See it applied.** Read how ITIP brings GSM to IT governance in the **[ITIP overview](https://docs.poesis.cloud/itip/)**.
-- **Express your governance in it.** Learn the DNA grammar — Directives, Norms, and Ascriptions — in **[General Usage](https://docs.poesis.cloud/itip/web-application/general-usage/)**, and see how each IT role works in **[Usage Scenarios](https://docs.poesis.cloud/itip/web-application/usage-scenarios/)**.
+- **See it applied.** Read how OIP brings GSM to IT governance in the **[OIP overview](https://docs.poesis.cloud/oip/)**.
+- **Express your governance in it.** Learn the DNA grammar — Directives, Norms, and Ascriptions — in **[General Usage](https://docs.poesis.cloud/oip/web-application/general-usage/)**, and see how each IT role works in **[Usage Scenarios](https://docs.poesis.cloud/oip/web-application/usage-scenarios/)**.
 - **Help refine it.** GSM grows by being sourced, stressed, and extended. Follow the work and contribute on **[GitHub](https://github.com/poesis-cloud)**.
 
 Define once. Govern continuously. In the open.

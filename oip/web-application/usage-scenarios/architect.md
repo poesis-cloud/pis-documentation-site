@@ -4,9 +4,10 @@ title: Enterprise / Solution Architect
 nav_exclude: true
 redirect_from:
   - /itip/usage-scenarios/architect/
+  - /itip/web-application/usage-scenarios/architect/
 ---
 
-[← Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})
+[← Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})
 {: .fs-3 .fw-300 }
 
 # Enterprise / Solution Architect
@@ -20,11 +21,11 @@ redirect_from:
 
 ---
 
-## What you do in ITIP
+## What you do in OIP
 
 You are the primary **governance author**. You define Structures, write Directives and Norms, compose ontology stacks, and produce architecture deliverables — all from governed definitions.
 
-ITIP replaces the disconnected toolchain (EA tool + Confluence + spreadsheets + manual audits) with a single governed workspace where every definition is versioned, lifecycle-managed, and machine-evaluable.
+OIP replaces the disconnected toolchain (EA tool + Confluence + spreadsheets + manual audits) with a single governed workspace where every definition is versioned, lifecycle-managed, and machine-evaluable.
 
 ## Core workflows
 
@@ -44,11 +45,11 @@ A Structure is any dynamic entity with causal behavior — an application, a ser
 }
 ```
 
-Every Structure starts in `DRAFT` and follows the [Ascription lifecycle]({% link itip/web-application/general-usage.md %}#the-ascription-lifecycle).
+Every Structure starts in `DRAFT` and follows the [Ascription lifecycle]({% link oip/web-application/general-usage.md %}#the-ascription-lifecycle).
 
 ### Author Directives
 
-Directives express governance intent. You write them using the [Directive grammar]({% link itip/web-application/general-usage.md %}#the-directive):
+Directives express governance intent. You write them using the [Directive grammar]({% link oip/web-application/general-usage.md %}#the-directive):
 
 ```
 enterprise-architecture-board MUST ENSURE availability ON payment-gateway
@@ -60,7 +61,7 @@ Each Directive is owned by a governing Structure (the architecture board, a doma
 
 ### Author Norms (Copilot-assisted)
 
-Each Directive is operationalized into one or more measurable Norms using the [Norm grammar]({% link itip/web-application/general-usage.md %}#the-norm):
+Each Directive is operationalized into one or more measurable Norms using the [Norm grammar]({% link oip/web-application/general-usage.md %}#the-norm):
 
 ```
 payment-gateway ON availability:
@@ -77,21 +78,21 @@ Ontologies provide pre-built governance vocabulary. You compose them into layere
 
 1. Navigate to **Presets > Compose Stack**.
 2. Select layers: **Geopolitical** (EU), **Regulatory** (GDPR, NIS2), **Industry** (PCI-DSS), **Cross-framework** (ISO 27001).
-3. ITIP resolves cross-preset interactions and flags overlaps.
+3. OIP resolves cross-preset interactions and flags overlaps.
 4. Copilot proposes merged Norms where assertions are equivalent across frameworks.
 
 The stack becomes the normative baseline for all Structures under your governance scope.
 
 ### Produce architecture deliverables
 
-All architecture deliverables are authored within ITIP from governed definitions:
+All architecture deliverables are authored within OIP from governed definitions:
 
 - **Architecture Decision Records** — linked to the Directives and Norms that motivated them
 - **Solution design documents** — generated from Structure topology, Mechanism details, and Interaction graphs
 - **Component specifications** — authoritative framing for development teams
 - **Regulatory coverage maps** — visual mapping of which preset frameworks cover which governance dimensions
 
-Deliverables are published and served from ITIP. No manual export to Confluence required (though sync is available).
+Deliverables are published and served from OIP. No manual export to Confluence required (though sync is available).
 
 ## Using ontologies
 
@@ -118,7 +119,7 @@ Use ISO 25010 quality characteristics as the vocabulary for Norm assertions on s
 - **PerformanceEfficiency** — time behavior, capacity, resource utilization
 - **Maintainability** — modularity, reusability, analyzability
 
-Each characteristic is a sourced Archetype in ITIP. You reference these in Norm `assertion` fields to create quality-governed definitions.
+Each characteristic is a sourced Archetype in OIP. You reference these in Norm `assertion` fields to create quality-governed definitions.
 
 ### ISO 25012 — Data Quality
 
@@ -137,12 +138,12 @@ These apply when a Structure handles personal data, financial data, or other qua
 2. **Attach regulatory presets** — select GDPR, PCI-DSS, NIS2 from the Normative catalog. Copilot proposes applicable Directives and Norms.
 3. **Author tenant Directives** — express governance intent specific to your organization.
 4. **Author tenant Norms** — operationalize each Directive into measurable constraints.
-5. **Generate governance diagram** — ITIP produces a topology diagram showing the Structure, its Mechanisms, and regulatory coverage.
+5. **Generate governance diagram** — OIP produces a topology diagram showing the Structure, its Mechanisms, and regulatory coverage.
 6. **Submit for approval** — transition to `PROPOSED` → governance review → `APPROVED` → `ACTIVE`.
 
 **Result**: The Payment Gateway has a machine-evaluable compliance baseline before a single line of code is written.
 
-## Example: Map an existing EA landscape into ITIP
+## Example: Map an existing EA landscape into OIP
 
 **Context**: 120+ applications documented in LeanIX/Mega/Ardoq need continuous governance.
 

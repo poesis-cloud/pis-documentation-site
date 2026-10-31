@@ -1,18 +1,19 @@
 ---
 layout: default
 title: Rules
-parent: ITIP Web Application
-grand_parent: ITIP — the IT Intelligence Platform
+parent: OIP Web Application
+grand_parent: OIP — the Organizational Intelligence Platform
 nav_order: 5
 redirect_from:
   - /itip/rules/
+  - /itip/web-application/rules/
 ---
 
 # Rules
 
 {: .no_toc }
 
-These are the rules that govern how definitions behave in ITIP. Understanding them prevents surprises when creating, updating, or deprecating governed definitions.
+These are the rules that govern how definitions behave in OIP. Understanding them prevents surprises when creating, updating, or deprecating governed definitions.
 
 ## Table of contents
 
@@ -25,7 +26,7 @@ These are the rules that govern how definitions behave in ITIP. Understanding th
 
 ## Lifecycle rules
 
-Every definition in ITIP — every Structure, Directive, Norm, Mechanism, and Archetype — follows the same Ascription lifecycle. This lifecycle is enforced by the engine; it cannot be bypassed.
+Every definition in OIP — every Structure, Directive, Norm, Mechanism, and Archetype — follows the same Ascription lifecycle. This lifecycle is enforced by the engine; it cannot be bypassed.
 
 ### The lifecycle states
 
@@ -170,7 +171,7 @@ Because of referee preconditions, you must activate definitions in dependency or
 
 ## Cascade rules
 
-When a definition transitions, other definitions that depend on it may need to transition too. ITIP handles this automatically through three cascade types.
+When a definition transitions, other definitions that depend on it may need to transition too. OIP handles this automatically through three cascade types.
 
 ### Constitutive cascades (Mechanism → Effector/Receptor)
 
@@ -261,7 +262,7 @@ Framework presets (GDPR, NIS2, PCI-DSS, ISO 27001) are sourced from the Poesis N
 
 ### Frameworks compose, they don't conflict
 
-When multiple frameworks are attached to the same Structure, ITIP resolves overlaps:
+When multiple frameworks are attached to the same Structure, OIP resolves overlaps:
 
 - Equivalent assertions across frameworks are merged (one Norm satisfies both)
 - Complementary assertions coexist (each Norm evaluates independently)
@@ -269,4 +270,4 @@ When multiple frameworks are attached to the same Structure, ITIP resolves overl
 
 ### Vocabulary mapping is per-framework
 
-Each framework maps its concepts to ITIP's domain labels. TOGAF uses "Application Component" for Structure, "Architecture Principle" for Directive. ISO 25010 uses quality characteristic names as Archetype titles. The underlying GSM primitive is the same; the label changes per framework context.
+Each framework maps its concepts to OIP's domain labels. TOGAF uses "Application Component" for Structure, "Architecture Principle" for Directive. ISO 25010 uses quality characteristic names as Archetype titles. The underlying GSM primitive is the same; the label changes per framework context.

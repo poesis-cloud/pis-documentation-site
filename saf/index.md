@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SAF — the Systemic Agentic Framework"
-nav_order: 4
+nav_order: 5
 has_children: true
 redirect_from:
   - /safe-agentic-framework/
@@ -13,7 +13,7 @@ redirect_from:
 
 The **Systemic Agentic Framework (SAF)** is a governed, local-first way to run **SAFe** with AI agents. Multi-agent orchestrations — portfolio, program, and iteration — run on your own machine inside your agent host (VS Code / GitHub Copilot today; the harness is host-agnostic), producing standard, schema-validated SAFe artifacts — Epics, Features, Stories, ADRs, kanbans, gate records — synchronized through your organization's own git host. A human ★ gate closes every layer: agents propose through evidence and sequence; the decision stays with you.
 
-SAF complements **[ITIP]({% link itip/index.md %})** and integrates with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes, and its agents can consume the organization's governed definitions as context while they work.
+SAF complements **[OIP]({% link oip/index.md %})** and integrates with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes, and its agents can consume the organization's governed definitions as context while they work.
 
 ## The framework's architecture
 
@@ -30,7 +30,7 @@ Three orchestrators, one per SAFe layer, drive the model — dispatched from a s
 flowchart LR
     CS["Central Supervisor<br/>human value authority<br/>owns every gate"]
 
-    subgraph FW["SAFe Agentic Framework in your IDE"]
+    subgraph FW["SAFe Agentic Organization in your IDE"]
       direction TB
       subgraph PORT["Portfolio layer - vmo-orchestrator"]
         direction LR
@@ -103,7 +103,7 @@ flowchart LR
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared data plane storing the artifacts local agentic workflows produce. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
-- **[SAF SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning the harness-governed agentic-execution history into GSM contributions on the Definition Blackboard Manager. *Documentation in construction.*
+- **[SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning the harness-governed agentic-execution history into GSM contributions on the Blackboard Manager. *Documentation in construction.*
   - [Features]({% link saf/saf-sie-bridge/features.md %}) — the capability catalogue with milestones
 
 **Next: [Quickstart — your first orchestrated PR →]({% link saf/quickstart.md %})**

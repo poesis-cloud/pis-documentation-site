@@ -1,7 +1,7 @@
 # Poesis Documentation
 
 Source of [docs.poesis.cloud](https://docs.poesis.cloud) — the user documentation for Poesis
-solutions and products (ITIP, SIE, GSM, SAF). The corporate site lives at
+solutions and products (OIP, SIE, SIS, GSM, SAF). The corporate site lives at
 [poesis.cloud](https://poesis.cloud) ([poesis-cloud/corporate](https://github.com/poesis-cloud/corporate)).
 
 ## Stack
@@ -19,8 +19,9 @@ Content mirrors the Poesis portfolio taxonomy — Solutions → Products → Pag
 
 | Section | Solution |
 |---|---|
-| `itip/` | ITIP — IT Intelligence Platform (Web Application, Definition Blackboard Code Sourcer) |
-| `sie/` | SIE — Systemic Intelligence Engine (Definition Manager, Operator, Definition Blackboard Manager) |
+| `oip/` | OIP — Organizational Intelligence Platform (Web Application) |
+| `sie/` | SIE — Systemic Intelligence Engine (Definition Manager, Definition Operator) |
+| `sis/` | SIS — Systemic Intelligence Sourcing (Code Sourcer, Blackboard Manager) |
 | `gsm/` | GSM — the standard (Specifications, Research Lab, Ontology) |
 | `saf/` | SAF — Systemic Agentic Framework (Agentic Harness, SAFe Agentic Organization, Agentic Workspace) |
 

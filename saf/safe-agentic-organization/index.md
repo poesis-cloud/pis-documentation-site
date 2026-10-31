@@ -49,7 +49,7 @@ the whole picture — both surfaces, both filesystems, and the synchronization b
 flowchart LR
     CS["Central Supervisor<br/>human value authority<br/>owns every gate"]
 
-    subgraph FW["SAFe Agentic Framework in your IDE"]
+    subgraph FW["SAFe Agentic Organization in your IDE"]
       direction TB
       subgraph PORT["Portfolio layer - vmo-orchestrator"]
         direction LR
@@ -115,7 +115,7 @@ How to read it, from the outside in:
 - The **Central Supervisor** (you) sits *outside* the framework. You are the value authority
   and the owner of **every ★ gate** — each orchestrator **returns its layer's gates to you**
   for the decision and never crosses one on its own.
-- The **SAFe Agentic Framework** box runs in your IDE. The three SAFe layers stack
+- The **SAFe Agentic Organization** box runs in your IDE. The three SAFe layers stack
   vertically; each layer's **orchestrator is its entry point** (carrying your use case for
   that layer), and inside each layer the **ceremonies and practices** sit side by side, each
   naming the **Agents** it convenes from the bench.

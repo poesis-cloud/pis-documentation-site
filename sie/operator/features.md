@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "Operator Features"
-parent: Operator
+title: "Definition Operator Features"
+parent: Definition Operator
 grand_parent: SIE — the Systemic Intelligence Engine
 nav_order: 1
 ---
 
-# Operator Features
+# Definition Operator Features
 {: .no_toc }
 
-Capability catalogue for the Operator, grouped by functional component.
+Capability catalogue for the Definition Operator, grouped by functional component.
 
 ## Table of contents
 {: .no_toc .text-delta }

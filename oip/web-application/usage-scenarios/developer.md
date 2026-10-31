@@ -4,9 +4,10 @@ title: Developer / Tech Lead
 nav_exclude: true
 redirect_from:
   - /itip/usage-scenarios/developer/
+  - /itip/web-application/usage-scenarios/developer/
 ---
 
-[← Usage Scenarios]({% link itip/web-application/usage-scenarios/index.md %})
+[← Usage Scenarios]({% link oip/web-application/usage-scenarios/index.md %})
 {: .fs-3 .fw-300 }
 
 # Developer / Tech Lead
@@ -20,20 +21,20 @@ redirect_from:
 
 ---
 
-## What you do in ITIP
+## What you do in OIP
 
 You **consult** governed definitions as your authoritative architecture specification. You **verify** that code-sourced definitions match governance expectations. You **check** Norm compliance before merging code.
 
-ITIP replaces stale Confluence pages and outdated architecture diagrams with a live, governed source of truth — always current, always traceable.
+OIP replaces stale Confluence pages and outdated architecture diagrams with a live, governed source of truth — always current, always traceable.
 
 ## Core workflows
 
 ### Consult architecture specifications
 
-When starting work on a component, navigate to its Structure in ITIP:
+When starting work on a component, navigate to its Structure in OIP:
 
 1. Open **Structures > payment-gateway**.
-2. ITIP serves the complete governed definition:
+2. OIP serves the complete governed definition:
    - Structure properties (purpose, owning team, data classification)
    - Attached Directives — what the architecture board requires
    - Attached Norms — measurable constraints you must satisfy
@@ -44,7 +45,7 @@ This is the authoritative specification. It is the live governed definition, not
 
 ### Review code-sourced definitions
 
-ITIP ingests definitions directly from your code repository — module boundaries, class structures, API contracts, dependency graphs, deployment topology. These become first-class governed definitions.
+OIP ingests definitions directly from your code repository — module boundaries, class structures, API contracts, dependency graphs, deployment topology. These become first-class governed definitions.
 
 The **Reconciliation view** compares:
 
@@ -64,13 +65,13 @@ Before submitting a pull request, verify that your implementation satisfies the 
 2. Check each Norm assertion against the current code-sourced state.
 3. Red indicators flag violations (e.g., missing encryption standard, exceeded latency bounds, uncovered quality dimension).
 
-This is not a manual checklist. ITIP evaluates Norm assertions against the actual code-sourced definitions.
+This is not a manual checklist. OIP evaluates Norm assertions against the actual code-sourced definitions.
 
 **Jira integration**: compliance status is reflected on the linked story/epic. Your PR review includes governance status automatically.
 
 ### Browse generated diagrams
 
-ITIP generates architecture and design diagrams from governed definitions:
+OIP generates architecture and design diagrams from governed definitions:
 
 - **Structure topology** — the component with its Mechanisms, Effectors, Receptors, and Interactions
 - **Governance overlay** — Directives and Norms overlaid onto the topology, showing which constraints apply where
@@ -82,7 +83,7 @@ Diagrams are available in PlantUML source, C4, SVG, and PDF. Use whichever forma
 
 ### TOGAF (as a consumer)
 
-As a developer, you consume TOGAF-structured definitions rather than author them. ITIP presents:
+As a developer, you consume TOGAF-structured definitions rather than author them. OIP presents:
 
 - **Application Architecture** — the Structure you implement, its position in the component landscape
 - **Technology Architecture** — platform constraints, infrastructure requirements
@@ -120,7 +121,7 @@ These appear as Norm assertions on your Structure when it processes quality-sens
 
 1. **Consult the Mechanism specification** — open *Structures > payment-gateway > Mechanisms > fraud-detection*. Read the Receptors (input contracts), Effectors (output contracts), and attached Norms.
 2. **Implement** — write code aligned with the specification.
-3. **Check reconciliation** — ITIP ingests your branch. The reconciliation view shows whether your implementation's API contract matches the governed Effector/Receptor definitions.
+3. **Check reconciliation** — OIP ingests your branch. The reconciliation view shows whether your implementation's API contract matches the governed Effector/Receptor definitions.
 4. **Check Norm compliance** — verify that quality assertions pass (latency, accuracy, security constraints).
 5. **Submit PR** — Jira status updates automatically. Reviewers see governance compliance alongside code changes.
 
@@ -130,7 +131,7 @@ These appear as Norm assertions on your Structure when it processes quality-sens
 
 **Context**: The architecture team has deprecated `fraud-detection-v1` and published `fraud-detection-v2` with a new ML-based approach. You need to understand what changed.
 
-1. **Compare versions** — ITIP shows the old and new Mechanism side by side: changed Receptors, new Effectors, updated Norms.
+1. **Compare versions** — OIP shows the old and new Mechanism side by side: changed Receptors, new Effectors, updated Norms.
 2. **Check Interaction impact** — see which other Mechanisms connect to the changed ports.
 3. **Read updated Norms** — a new explainability Norm requires ML output to include confidence scores.
 4. **Consult generated diagrams** — the updated topology diagram shows the new Interaction paths.

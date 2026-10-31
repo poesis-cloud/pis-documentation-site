@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GSM — the standard"
-nav_order: 3
+nav_order: 4
 has_children: true
 ---
 
@@ -9,7 +9,7 @@ has_children: true
 
 {: .no_toc }
 
-The **Generative System Model (GSM)** is the vendor-neutral systemic standard at the foundation of Poesis. It is not a product you deploy — it is the shared model that every Poesis product implements: the **[SIE]({% link sie/index.md %})** engine hosts and enforces it, and domain applications such as **[ITIP]({% link itip/index.md %})** translate it into their domain.
+The **Generative System Model (GSM)** is the vendor-neutral systemic standard at the foundation of Poesis. It is not a product you deploy — it is the shared model that every Poesis product implements: the **[SIE]({% link sie/index.md %})** engine hosts and enforces it, and domain applications such as **[OIP]({% link oip/index.md %})** translate it into their domain.
 
 GSM is the vendor-neutral standard for *defining systems*, as OpenTelemetry is the vendor-neutral standard for *observing* them. Its generative governance grammar makes system definitions governed, typed, versioned, and machine-evaluable instead of trapping them in prose or proprietary tools.
 

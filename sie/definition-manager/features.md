@@ -11,7 +11,7 @@ redirect_from:
 # Definition Manager Features
 {: .no_toc }
 
-Capability catalogue for the Definition Manager, grouped by functional component. Capabilities of the other SIE products live on their own pages — see the [Operator features]({% link sie/operator/features.md %}), the [Definition Blackboard Manager features]({% link sie/definition-blackboard-manager/features.md %}), and the engine-level [SIE Roadmap]({% link sie/roadmap.md %}).
+Capability catalogue for the Definition Manager, grouped by functional component. Capabilities of the other SIE products live on their own pages — see the [Definition Operator features]({% link sie/operator/features.md %}), the engine-level [SIE Roadmap]({% link sie/roadmap.md %}), and, for definition sourcing, the SIS [Blackboard Manager features]({% link sis/blackboard-manager/features.md %}).
 
 ## Table of contents
 {: .no_toc .text-delta }
