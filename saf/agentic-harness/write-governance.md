@@ -112,6 +112,12 @@ Preconditions are checked at dispatch and not re-checked at promotion. Concurren
 
 ## When the hooks do not fire
 
-A host whose hook fails open (a timeout, a hook that fails to spawn) can let a write or a dispatch bypass the harness. The bypass is bounded: the unmediated bytes stay in the working tree, never in a commit or in workspace state, and the dirtied path then fails the clean-baseline check for every later governed write to it while it is unclaimed.
+A host whose hook fails open (a timeout, a hook that fails to spawn) can let a write or a dispatch bypass a check. The guarantees are then narrower:
+
+- **A write that bypassed authorization** lands in the working tree without an artifact lock. If no later hook runs on it, it stays uncommitted, and the dirtied path fails the clean-baseline check for every later governed write to it while it is unclaimed. If the write-ended hook still runs, function 9 validates it and, when it is valid, commits it onto the step ref: function 9 does not re-check authorization or the lock.
+- **Function 9 commits a path's working-tree bytes.** A change made outside the file-edit tools, for example through the shell, to a path the step instance holds is swept into that path's next validated commit.
+- **Commits made by hand on the workspace branch bypass promotion entirely.** The harness checks only the writes it mediates. A hand commit that changes a locked path makes the next promotion fail with `step-rebase-conflict`.
+
+What still holds: function 9 never commits invalid bytes, and only a step instance that passes delivery and its postconditions is promoted. After a hook failure, inspect the workspace before you continue: `git status` for working-tree changes, `git for-each-ref refs/harness/` for step refs and held locks, and `git log` on the step ref for what it committed. A guarantee on the shared branch needs a required CI check that validates every committed artifact; the harness does not ship one in this release.
 
 An abandoned workflow instance keeps its artifact locks until it resumes, or until a person deletes the lock ref and restores the path in the working tree. There are no timeouts. The internal sweep of the store (a capability for tooling such as a CI check, not a function) reports every step ref, every held lock with its holder, and every working-tree change without a lock.
