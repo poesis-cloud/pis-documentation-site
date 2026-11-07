@@ -39,7 +39,7 @@ saf-agentic-harness/.venv/bin/python -m pip install -r saf-agentic-harness/requi
 PY="$PWD/saf-agentic-harness/.venv/bin/python"; ORG="$PWD/saf-agentic-organization"
 ```
 
-On Windows, run the same steps from PowerShell with `$Py` set to `saf-agentic-harness\.venv\Scripts\python.exe`, as in the [Copilot app / CLI guide]({% link saf/quickstart/github-copilot-cli.md %}#1-clone-both-repositories-and-create-the-harness-virtual-environment).
+On Windows, run step 1 from PowerShell as in the [Copilot app / CLI guide]({% link saf/quickstart/github-copilot-cli.md %}#1-clone-both-repositories-and-create-the-harness-virtual-environment): it sets `$Py` and `$Org`, which the PowerShell blocks of steps 3 and 4 use. The commands of step 2 are the same in PowerShell.
 
 ## 2. Point the organization at your workspace repository
 
@@ -67,6 +67,11 @@ BUNDLE=/tmp/github-copilot-bundle
 # or: make -C "$ORG" bundle BUNDLE_DIR="$BUNDLE"
 ```
 
+```powershell
+$Bundle = "$env:TEMP\github-copilot-bundle"
+& $Py "$Org\builds\github-copilot\render_bundle.py" $Org $Bundle
+```
+
 ## 4. Install the harness hooks
 
 The harness README's command is `make install-hooks FRAMEWORK_DIR=<framework root> BUNDLE_DIR=<bundle>`. In v1.0.0-alpha.1 that target looks for the workflow catalog in `<framework>/conf/workflows`, and the organization's `main` keeps it in `workflows/`, so the target stops with `render_hooks: no workflow catalog at …`. Run the renderer the target wraps, and name the catalog:
@@ -74,6 +79,11 @@ The harness README's command is `make install-hooks FRAMEWORK_DIR=<framework roo
 ```bash
 "$PY" saf-agentic-harness/adapters/render_hooks.py --env vscode-github-copilot-chat \
     --framework-dir "$ORG" --bundle-dir "$BUNDLE" --workflows-dir "$ORG/workflows"
+```
+
+```powershell
+& $Py saf-agentic-harness\adapters\render_hooks.py --env vscode-github-copilot-chat `
+    --framework-dir $Org --bundle-dir $Bundle --workflows-dir "$Org\workflows"
 ```
 
 Run it with the virtual-environment interpreter: it records that interpreter (`SAF_HARNESS_PYTHON`) and `FRAMEWORK_DIR` in every hook entry's `env`, and refuses to render when the interpreter cannot import the harness requirements. It writes three targets in one all-or-nothing run:
@@ -101,8 +111,10 @@ The orchestrator asks the harness with one plain `run_in_terminal` command, alon
 
 ```text
 python <harness.py> resolve-step --workflow-slug <slug>
-python <harness.py> resolve-step-model --workflow-slug <slug>
+python <harness.py> resolve-step-model
 ```
+
+`resolve-step-model` takes no flag: the harness deduces the step from the orchestrator session's step in flight, and rejects `--workflow-slug` there (the adapter README's example still shows it).
 
 The terminal never runs the line. The `PreToolUse` hook runs the request for the orchestrator session and returns the report as the tool result `Tool execution denied: SAFe agentic harness RESULT (<function>): …`. That denial is the successful answer. You also see a `Tried to use run_in_terminal` block holding the report in the chat.
 
