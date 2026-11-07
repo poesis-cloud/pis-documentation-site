@@ -2,7 +2,7 @@
 layout: default
 title: Agentic Harness
 parent: SAF — the Systemic Agentic Framework
-nav_order: 2
+nav_order: 3
 has_children: true
 redirect_from:
   - /safe-agentic-framework/safe-as-the-harness/
@@ -12,11 +12,14 @@ redirect_from:
 
 {: .no_toc }
 
-The **Agentic Harness** is the deterministic execution core of the Systemic Agentic Framework: it resolves workflows, steps, models, and agent session context (instructions and skills — injected at session open), checks step conditions, authorization, and artifacts, and journals all of it — deterministically, from persisted state and validated configuration only. Probabilistic agents propose; the harness verifies.
+The **Agentic Harness** is the deterministic execution core of the Systemic Agentic Framework. It resolves workflow steps, models, and the context of orchestrator and worker sessions (instructions and skills, injected when they open). It checks step conditions, write authorization and artifacts, and journals all of it, from persisted state and validated configuration only. The agents generate content, judge within a step and use host tools; the harness resolves, checks and records.
 
-The harness core is fully **methodology- and host-agnostic**. It knows nothing about SAFe or any particular agent host: the embedding framework and the data plane are supplied as environment-anchored paths (`FRAMEWORK_DIR`, `FRAMEWORK_WORKSPACE_DIR`), and host-specific bindings live in separate adapter specifications (VS Code / GitHub Copilot Chat today). The same workflows run unchanged in an IDE, a CI runner, or another agent host.
+The harness does not orchestrate. The **orchestrator agent** converses with you, starts a workflow on your assent and dispatches its steps; the harness answers what comes next and whether each step delivered.
+
+The harness core is **methodology- and host-agnostic**. It knows nothing of SAFe and nothing of any agent host: the embedding framework and the workspace are supplied as environment-anchored paths (`FRAMEWORK_DIR`, `FRAMEWORK_WORKSPACE_DIR`), and each host binding is a separate adapter with its own specification.
 
 ## Table of contents
+
 {: .no_toc .text-delta }
 
 1. TOC
@@ -24,39 +27,45 @@ The harness core is fully **methodology- and host-agnostic**. It knows nothing a
 
 ---
 
+## Current release: v1.0.0-alpha.1
+
+**v1.0.0-alpha.1** is the first pinnable pre-release, published as a GitHub pre-release with a source tarball and its SHA-256 checksum ([release notes](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/CHANGELOG.md)). It ships:
+
+- **the harness core**: the twelve functions, from `start-session` to `end-session`, driven by declarative workflow contracts with CEL conditions;
+- **step transactions**: each step instance writes onto its own step ref, under artifact locks, and enters workspace state only by promotion;
+- **the condition language**, type-checked when the configuration loads;
+- **the recovery procedure** for a workflow instance an interrupted orchestrator session left busy;
+- **JSON Schema contracts** for the configuration, the logs and the adapter bindings;
+- **two host adapters**: `github-copilot-cli` (the GitHub Copilot app and the Copilot CLI) and `vscode-github-copilot-chat` (VS Code with Copilot Chat; not live-verified for this release).
+
+Requirements: Python 3.10–3.12, Git 2.38 or later, and a Git identity in the governed workspace. Install it through the [Quickstart]({% link saf/quickstart.md %}).
+
 ## What it does
 
-- **Workflow & step resolution** — workflow and step graphs are resolved deterministically from plain files; the next orchestration action (dispatch, halt, done) is computed, never guessed.
-- **Session context injection** — the skills and instructions a step needs are resolved and injected into the agent's context at session open.
-- **LLM resolution** — the model backing each step is resolved from declared model profiles: deterministic tier and capability-score routing, no hard-wired vendor.
-- **Condition checks & authorization** — pre, invariant, and post conditions gate every step; an access-control list decides which agent may execute it.
-- **Artifact validation** — agents stage writes in the working tree; the harness validates the staged bytes against the framework's JSON Schema artifact contracts before commit. One validated write = one commit, attributed to the acting session. Invalid bytes never land.
-- **Journaling** — every step execution appends to a session ledger, so the delivery history is an auditable event log, not a chat scrollback.
+- **Step resolution** — `resolve-step` returns the next eligible step of a workflow instance, deduced from the logs alone; no agent selects steps. A failed step is resolved again.
+- **Model resolution** — `resolve-step-model` scores the framework's model catalogue against the step's declared capability weights and returns a canonical model profile; each host adapter maps that profile to a host model.
+- **Context injection** — the orchestrator session receives its workflow instructions and skills when it opens; each worker session receives its step's instructions and skills.
+- **Condition checks** — preconditions gate the dispatch of a step; delivery and postconditions decide its outcome. Conditions are written in a typed [condition language]({% link saf/agentic-harness/conditions.md %}).
+- **Write governance** — every write is authorized against the access-control list, validated against its artifact schema, and committed onto the step instance's step ref; only a passing step instance is promoted into the workspace branch. See [Write governance]({% link saf/agentic-harness/write-governance.md %}).
+- **Journaling** — every completed function call appends one entry to the log of the orchestrator or worker session it ran in (the few exceptions are listed in [Outcomes and refusal codes]({% link saf/agentic-harness/outcomes.md %})), so the delivery history is an audit trail, not a chat scrollback.
 
-See **[Features]({% link saf/agentic-harness/features.md %})** for the capability catalogue.
+## How it is invoked
 
-## Using the CLI
+There is no general-purpose harness CLI for you to drive. `harness.py` is one entry point into the twelve functions (`python3 harness.py <function> [flags]`), and its callers are:
 
-The harness is a stable CLI over plain files — `harness.py` in the [`saf-agentic-harness`](https://github.com/poesis-cloud/saf-agentic-harness) repository. Global options (`--portfolio-root`, `--strict`, `--json`) come before the command:
+- **the host adapter's hooks**, which call `start-session`, `end-session`, the context functions and the check functions at the host's lifecycle events;
+- **the orchestrator**, which asks for `resolve-step` and `resolve-step-model` with one plain command that the hook runs for it (see [How the orchestrator asks the harness]({% link saf/usage.md %}#how-the-orchestrator-asks-the-harness));
+- **you**, in one case only: ending the orchestrator session that holds an interrupted workflow instance with `end-session` ([recovery procedure]({% link saf/usage.md %}#recovering-an-interrupted-workflow-instance)).
 
-```bash
-# STATE — validate Epic/Feature/Story artifacts (FSM, linkage, schema, gates, derived fields)
-python3 harness.py --portfolio-root /path/to/portfolio \
-  check-artifact --unit-id <unit-id>
+## Reference
 
-# DRIVE — resolve the next orchestration action (dispatch | halt | done)
-python3 harness.py orchestrate --workflow <workflow> --unit <unit-id>
-
-# CONDITIONS — evaluate one step's conditions and append the session ledger line
-python3 harness.py check-step --orchestration <workflow> --step <step-id>
-```
-
-Point the harness at the framework application with `FRAMEWORK_DIR` and at the data plane with `FRAMEWORK_WORKSPACE_DIR`:
-
-```bash
-FRAMEWORK_DIR=/abs/path/to/saf-agentic-organization
-FRAMEWORK_WORKSPACE_DIR=../saf-agentic-workspace
-```
+- [Session model]({% link saf/agentic-harness/sessions.md %}) — orchestrator and worker sessions; workflow, step and artifact instances.
+- [Functions]({% link saf/agentic-harness/functions.md %}) — the twelve functions at a glance.
+- [Write governance]({% link saf/agentic-harness/write-governance.md %}) — authorization, validation, step refs, artifact locks, promotion.
+- [Condition language]({% link saf/agentic-harness/conditions.md %}) — variables, the typing rule, examples.
+- [Outcomes and refusal codes]({% link saf/agentic-harness/outcomes.md %}) — statuses, error codes, what to do.
+- [Known alpha limitations]({% link saf/agentic-harness/limitations.md %}) — what v1.0.0-alpha.1 does not do yet.
+- [Features]({% link saf/agentic-harness/features.md %}) — the capability catalogue with milestones.
 
 ## In the SAF solution
 
@@ -66,4 +75,4 @@ FRAMEWORK_WORKSPACE_DIR=../saf-agentic-workspace
 | [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) | the SAFe-shaped framework application the harness executes |
 | [Agentic Workspace]({% link saf/agentic-workspace/index.md %}) | the shared data plane the harness checks and commits into |
 
-The canonical harness-core specification — terminology, invariants, the eleven-function contract, design, and implementation — lives in the repository at [`def/core/spec.md`](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/def/core/spec.md); each host binding has its own specification under `def/adapter/<host>/spec.md`.
+The canonical harness-core specification — terminology, invariants, the twelve-function contract, design and implementation — is [`def/core/spec.md`](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/def/core/spec.md). Each host binding has its own specification: [`github-copilot-cli`](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/def/adapter/github-copilot-cli/spec.md) and [`vscode-github-copilot-chat`](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/def/adapter/vscode-github-copilot-chat/spec.md).

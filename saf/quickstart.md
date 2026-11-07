@@ -1,18 +1,21 @@
 ---
 layout: default
-title: "Quickstart — the Systemic Agentic Framework"
+title: Quickstart
 parent: SAF — the Systemic Agentic Framework
 nav_order: 1
+has_children: true
 redirect_from:
   - /safe-agentic-framework/quickstart/
 ---
 
-# Quickstart — the Systemic Agentic Framework
+# Quickstart
 
 {: .no_toc }
 
-This guide takes you from a fresh install to your first successful orchestrated PR.
-Target: **under 30 minutes**.
+SAF runs on your own machine, inside an agent host. This quickstart installs the two products that run there, then gets you to your first governed workflow:
+
+- the **[Agentic Harness]({% link saf/agentic-harness/index.md %})**, release **v1.0.0-alpha.1** (a pre-release). It governs every workflow the agents run, through hooks it registers in the host;
+- the **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})**, from its `main` branch. It holds the agents, skills, workflows and artifact schemas, and you render it into a bundle the host loads.
 
 ## Table of contents
 
@@ -23,140 +26,31 @@ Target: **under 30 minutes**.
 
 ---
 
-## Prerequisites
+## Choose your host
 
-Before you start, you need:
+| Host | Harness adapter | Status in v1.0.0-alpha.1 | Guide |
+|---|---|---|---|
+| **GitHub Copilot app** or **GitHub Copilot CLI** (Windows, macOS, Linux) | `github-copilot-cli` | Live trials in the GitHub Copilot app (Windows) and on the standalone CLI (Linux); some paths are covered by CI only | [GitHub Copilot app / Copilot CLI]({% link saf/quickstart/github-copilot-cli.md %}) |
+| **VS Code** with GitHub Copilot Chat | `vscode-github-copilot-chat` | **Not live-verified for this release.** It has CI coverage only. | [VS Code with Copilot Chat]({% link saf/quickstart/vscode.md %}) |
 
-1. **VS Code** (1.90 or later) with the **GitHub Copilot** extension installed and signed in.
-2. **Git** (any recent version).
-3. The following **external prerequisites**, each installed via the same APM convention
-   (`git clone` into `~/.vscode/agent-plugins/<publisher>/<repo>`):
+The GitHub Copilot app embeds the Copilot CLI agent runtime, so one adapter and one install serve both.
 
----
+## Installation is manual today
 
-## Step 1 — Install (APM)
+Both guides install from source: you clone the two repositories, render the organization's bundle for your host, and run the harness installer on that bundle. Marketplace distribution is planned; it does not exist yet.
 
-The VS Code **Agent Plugin Manager (APM)** is a directory that GitHub Copilot scans automatically
-at startup — there is no `apm` CLI or separate tool to install. The install mechanism is a plain
-`git clone` into `~/.vscode/agent-plugins/<publisher>/<repo>`.
+The installer writes absolute paths of your machine into the bundle (the interpreter, the harness, the framework). These files are generated, never committed. Re-run the installer whenever you re-render the bundle, move either checkout, or recreate the harness virtual environment.
 
-This framework and its prerequisites all follow that convention:
+## Prerequisites, all hosts
 
-```bash
-# The SAFe Agentic Organization (the framework application)
-git clone https://github.com/poesis-cloud/saf-agentic-organization \
-  ~/.vscode/agent-plugins/github.com/poesis-cloud/saf-agentic-organization
-```
+- **Python 3.10, 3.11 or 3.12**, in a virtual environment holding the harness's `requirements.txt`. The installer records that interpreter in every hook, and refuses one that cannot import the requirements.
+- **Git 2.38 or later** on `PATH`. The harness rebases step instances in memory with `git merge-tree --write-tree`.
+- **A workspace**: a Git repository where the agents write artifacts and the harness writes its logs. In SAF this is your portfolio repository. It needs at least one commit, because the harness reads workspace state from the checked-out branch (`HEAD`).
+- **A Git identity in that workspace** (`git config user.name` and `git config user.email`, in the repository or globally). The harness commits every validated write onto a step ref, and replays those commits when it promotes a step instance.
 
-Reload VS Code. All three orchestrators (`@vmo-orchestrator`, `@rte-orchestrator`,
-`@sm-orchestrator`) agents appear in your Copilot Chat `@` list automatically.
+The harness keeps its own refs under `refs/harness/*` (step refs and artifact locks). They are local-only: Git's default refspecs never push or fetch them. It also excludes the `logs/` folder from Git in the workspace's `.git/info/exclude`.
 
-**To pin to a specific version:**
+## After the install
 
-```bash
-cd ~/.vscode/agent-plugins/github.com/poesis-cloud/saf-agentic-organization
-git fetch --tags
-git checkout v0.1.0
-```
-
-**To update to the latest:**
-
-```bash
-cd ~/.vscode/agent-plugins/github.com/poesis-cloud/saf-agentic-organization
-git pull
-# then reload VS Code: Ctrl+Shift+P → "Developer: Reload Window"
-```
-
-> **There is no auto-update.** APM is a directory convention — VS Code reads whatever files are on
-> disk at startup. There is no background sync and no notification that a new version is available.
-> Updates are manual `git pull`s, applied when you choose.
-
-**Full plugin lifecycle:**
-
-| Operation | Command |
-|---|---|
-| Install | `git clone <url> ~/.vscode/agent-plugins/<publisher>/<repo>` |
-| Update to latest | `cd <apm-path> && git pull` |
-| Pin to a version | `cd <apm-path> && git fetch --tags && git checkout vX.Y.Z` |
-| Uninstall | `rm -rf ~/.vscode/agent-plugins/<publisher>/<repo>` |
-
-Reload VS Code after any of the above.
-
----
-
-## Step 2 — Verify agents are visible
-
-1. Restart VS Code (or reload the window: `Ctrl+Shift+P` → "Developer: Reload Window").
-2. Open GitHub Copilot Chat.
-3. Type `@` — you should see the following agents listed:
-   - `@rte-orchestrator` — Release Train Engineer (program/ART layer)
-   - `@sm-orchestrator` — Scrum Master (team/iteration layer)
-   - `@vmo-orchestrator` — Value Management Office (portfolio layer)
-
-If agents do not appear, see [Troubleshooting](#troubleshooting).
-
----
-
-## Step 3 — Run your first orchestration
-
-The entry point for new work is `@vmo-orchestrator`. It receives your Epic (the high-level
-intent), approves it at ★ Gate 0, and hands it to `@rte-orchestrator` for Feature breakdown.
-
-**Minimal example — start a new Epic:**
-
-Open Copilot Chat and type:
-
-```
-@vmo-orchestrator I want to start a new Epic:
-"Build a REST API for user authentication (JWT, refresh tokens)"
-```
-
-The VMO will:
-
-1. Help you shape the Epic hypothesis and WSJF scoring.
-2. Approve it at ★ Gate 0.
-3. Dispatch `@rte-orchestrator` to derive Features and plan the sprint.
-
-**Continue to your first PR:**
-
-```
-@rte-orchestrator Continue. Derive Features from the Epic and dispatch the SM for Sprint 1.
-```
-
-The RTE will derive Features, run architecture triage (★ Gate 2 if needed), and dispatch
-`@sm-orchestrator` for Story decomposition and pair programming execution.
-
----
-
-## Step 4 — Validate success
-
-You have completed the quickstart when:
-
-- [ ] `@vmo-orchestrator`, `@rte-orchestrator`, `@sm-orchestrator` all appear in the agent list.
-- [ ] A planning repo structure exists under `portfolio/<slug>/` in your workspace.
-- [ ] At least one Story has been executed and a PR has been opened by the SM.
-
----
-
-## Troubleshooting
-
-**Agents do not appear in the Copilot Chat `@` list**
-
-- Ensure the clone is at the exact path `~/.vscode/agent-plugins/github.com/poesis-cloud/saf-agentic-organization`.
-  The `github.com/<org>/<repo>` path structure is required by the VS Code APM convention.
-- Reload VS Code window (`Ctrl+Shift+P` → "Developer: Reload Window").
-- Check that GitHub Copilot extension is up to date (v1.270 or later recommended).
-- Verify `plugins/poesis-saf-agentic-organization/agents/` contains `*.agent.md` files.
-
-**Skills fail to load (agent says "skill not found")**
-
-- Confirm that the orchestration-core skill is present:
-  `ls ~/.vscode/agent-plugins/github.com/poesis-cloud/saf-agentic-organization/plugins/poesis-saf-agentic-organization/skills/`
-
----
-
-## What's next
-
-- Read [CONTRIBUTING.md](https://github.com/poesis-cloud/saf-agentic-organization/blob/main/CONTRIBUTING.md) to understand how to contribute improvements.
-- Check [GitHub Releases](https://github.com/poesis-cloud/saf-agentic-organization/releases) for version history.
-- File issues at [github.com/poesis-cloud/saf-agentic-organization/issues](https://github.com/poesis-cloud/saf-agentic-organization/issues).
+- **[Running workflows]({% link saf/usage.md %})** — run a first workflow, continue it, and recover an interrupted workflow instance.
+- **[Known alpha limitations]({% link saf/agentic-harness/limitations.md %})** — what this pre-release does not do yet.

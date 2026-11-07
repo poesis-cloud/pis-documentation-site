@@ -62,13 +62,14 @@ The **Generative System Model (GSM)** is the vendor-neutral standard for the THI
 
 ### [SAF — Systemic Agentic Framework]({% link saf/index.md %})
 
-A governed, local-first, multi-agent way to run SAFe — today in VS Code / GitHub Copilot, portable to any host the harness adapts to. Portfolio–program–iteration orchestration runs on your own machine, with a human gate at every layer, producing standard SAFe artifacts synchronized through your own git host.
+A governed, local-first, multi-agent way to run SAFe — today in the GitHub Copilot app / Copilot CLI and in VS Code with Copilot Chat, portable to any host the harness adapts to. Portfolio, program and team workflows run on your own machine, each ending at a human gate, and produce schema-validated SAFe artifacts in a Git repository you own.
 
 - [Overview]({% link saf/index.md %}) — the solution, its architecture, and its products
-- [Quickstart]({% link saf/quickstart.md %}) — install and run your first orchestrated PR in under 30 minutes
-- **[Agentic Harness]({% link saf/agentic-harness/index.md %})** — the deterministic execution core: step resolution, condition checks, artifact validation, journaling
+- [Quickstart]({% link saf/quickstart.md %}) — install the harness and the organization for your agent host
+- [Running workflows]({% link saf/usage.md %}) — run, continue and recover a workflow instance
+- **[Agentic Harness]({% link saf/agentic-harness/index.md %})** — the deterministic execution core (v1.0.0-alpha.1): step resolution, condition checks, write governance, journaling
   - [Features]({% link saf/agentic-harness/features.md %}) — the capability catalogue with milestones
-- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — orchestrators, layers, ceremonies, agents, and the filesystem ⇆ central-systems sync
+- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — orchestrators, the specialist bench, and the workflow catalog
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared remote workspace for agentic workflow artifacts. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
