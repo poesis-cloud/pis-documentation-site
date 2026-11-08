@@ -1,0 +1,4 @@
+# Overlay used only when SOURCE_GSM_CONTENT is "true" in the Pages workflow
+# (or locally after scripts/sync-gsm-content.sh):
+#   bundle exec jekyll build --config _config.yml,_config_gsm.yml
+gsm_sources: true

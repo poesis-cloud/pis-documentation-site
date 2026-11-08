@@ -33,8 +33,12 @@ competitive positioning, ROI, CTAs — belongs on [poesis.cloud](https://poesis.
 
 ## Local build
 
+**GSM sourcing is currently disabled** (`SOURCE_GSM_CONTENT: "false"` in
+`.github/workflows/pages.yaml`); the site builds without the GSM content or the
+secret below. To re-enable, set it to `"true"` and add the secret.
+
 GSM research programs, base schemas, and the Starlark Rule API are **not**
-stored in this repository. Pages CI checks out the private
+stored in this repository. When enabled, Pages CI checks out the private
 [gsm-specifications](https://github.com/poesis-cloud/gsm-specifications) and
 [gsm-research-lab](https://github.com/poesis-cloud/gsm-research-lab) repos,
 runs `scripts/sync-gsm-content.sh`, then builds. Local preview does the same
@@ -42,6 +46,7 @@ from sibling checkouts:
 
 ```bash
 ./scripts/sync-gsm-content.sh
+bundle exec jekyll serve --config _config.yml,_config_gsm.yml
 ```
 
 Override source roots with `GSM_SPECIFICATIONS_ROOT` and `GSM_RESEARCH_LAB_ROOT`
