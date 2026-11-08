@@ -11,100 +11,71 @@ redirect_from:
 
 {: .no_toc }
 
-The **Systemic Agentic Framework (SAF)** is a governed, local-first way to run **SAFe** with AI agents. Multi-agent orchestrations — portfolio, program, and iteration — run on your own machine inside your agent host (VS Code / GitHub Copilot today; the harness is host-agnostic), producing standard, schema-validated SAFe artifacts — Epics, Features, Stories, ADRs, kanbans, gate records — synchronized through your organization's own git host. A human ★ gate closes every layer: agents propose through evidence and sequence; the decision stays with you.
+The **Systemic Agentic Framework (SAF)** is a governed, local-first way to run **SAFe** with AI agents. Portfolio, program and team workflows run on your own machine, inside GitHub Copilot — the Copilot CLI, the GitHub Copilot app, or VS Code (Session Target: Copilot) — and produce schema-validated SAFe artifacts (Epics, Features, Stories, ADRs, kanbans, gate records) in a Git repository you own. Every workflow ends at a human gate: agents draft, challenge and rewrite; the decision stays with you.
 
-SAF complements **[OIP]({% link oip/index.md %})** and integrates with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes, and its agents can consume the organization's governed definitions as context while they work.
+**Status.** The [Agentic Harness]({% link saf/agentic-harness/index.md %}) and the [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) are two Copilot plugins, installed from the `poesis-saf` marketplace (stable) or `poesis-saf-preview` (pre-releases), or with a one-line installer.
+
+SAF complements **[OIP]({% link oip/index.md %})** and is designed to integrate with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes, and the planned [SIE Bridge]({% link saf/saf-sie-bridge/index.md %}) turns its execution history into GSM contributions.
 
 ## The framework's architecture
 
 Four properties make it work:
 
-1. **Local-first** — the agent loop runs on each user's machine, in the IDE, against the real working tree. Sensitive information never leaves the machine; only the artifacts you commit sync out transparently to your organization's git host.
-2. **Governed** — a portfolio → program → iteration hierarchy of role agents, with a human ★ gate at every layer. An org chart with human authority, not a flat swarm.
-3. **Sovereign** — work state lives in your own files and git history (the event log), not a vendor's cloud. Nothing is trapped in an unmanaged session.
-4. **Portable** — the harness is methodology- and host-agnostic: plain files, a stable CLI, host-specifics isolated behind a thin adapter. The same familiar agentic work method follows you from host to host — VS Code today, another IDE, CI runner, or agent host tomorrow — with no relearning.
+1. **Local-first** — the agent loop runs on your machine, in your agent host, against a real Git working tree. Work state stays in your files; only what you push leaves through your Git host. (Model calls go to your agent host's model provider.)
+2. **Governed** — three layer orchestrators and a specialist bench, with a human gate at the end of every workflow. The harness resolves every step, authorizes and validates every write, and only accepts a step that delivered its artifact.
+3. **Sovereign** — work state lives in your own files and Git history, not in a vendor's cloud. Nothing is trapped in an unmanaged chat.
+4. **Portable** — the harness is methodology- and host-agnostic: plain files, a fixed set of twelve functions, and host specifics isolated in thin adapters. Two hosts are supported today; the same workflows run on both.
 
-Three orchestrators, one per SAFe layer, drive the model — dispatched from a single entry point, `@vmo-orchestrator`:
+You talk to the orchestrator of the layer your concern belongs to. A concern of another layer's grain is a handoff: the orchestrator tells you which orchestrator to invoke.
 
 ```mermaid
 flowchart LR
-    CS["Central Supervisor<br/>human value authority<br/>owns every gate"]
-
-    subgraph FW["SAFe Agentic Organization in your IDE"]
+    U["You<br/>value authority, own every gate"]
+    subgraph HOST["Your agent host: GitHub Copilot app / CLI, or VS Code"]
       direction TB
-      subgraph PORT["Portfolio layer - vmo-orchestrator"]
-        direction LR
-        VMO["vmo-orchestrator"]
-        ELBC["Epic Lean Business Case<br/>Agents: BO, EA, Sec, RAI"]
-        AV["Architectural Vision<br/>Agents: EA, BO"]
-        SPR["Strategic Portfolio Review<br/>Agents: BO, EA"]
-        PB["Participatory Budgeting<br/>Agents: BO, EA"]
-        PS["Portfolio Sync<br/>Agents: VMO, Epic owners"]
-      end
-      subgraph PROG["Program or ART layer - rte-orchestrator"]
-        direction LR
-        RTE["rte-orchestrator"]
-        FBR["Feature Backlog Refinement<br/>Agents: PM, Arch, Dev, QA, UX, Sec"]
-        ARE["Architectural Runway Extension<br/>Agents: SA, Sec, DevOps, Dev"]
-        PIP["PI Planning<br/>Agents: the ART"]
-        SD["System Demo<br/>Agents: the ART"]
-        ASY["ART Sync<br/>Agents: Arch, leads"]
-        IA["Inspect and Adapt<br/>Agents: the ART"]
-      end
-      subgraph ITER["Team or Iteration layer - sm-orchestrator"]
-        direction LR
-        SM["sm-orchestrator"]
-        IP["Iteration Planning<br/>Agents: PO, pairs"]
-        SBR["Story Backlog Refinement<br/>Agents: PO"]
-        PAIR["Pair micro-cycle<br/>Agents: Dev, Dev, Sec"]
-        VS["Verification and Sign-off<br/>Agents: QA, Sec"]
-        DSR["Daily, Review, Retro<br/>Agents: the team"]
-      end
-      FSL["local filesystem blackboard<br/>portfolio artifacts in Markdown"]
+      VMO["value-management-officer<br/>Portfolio: Epics"]
+      RTE["release-train-engineer<br/>Program: Features"]
+      SM["scrum-master<br/>Team: Stories"]
+      BENCH["Specialist bench<br/>one worker per step"]
+      H["Agentic Harness<br/>resolves, checks, records"]
     end
-
-    subgraph CENTRAL["Central systems synced from the git host"]
-      direction TB
-      GH["Git host<br/>GitHub or GitLab<br/>boards, issues, artifact files"]
-      JIRA["Ticketing, Jira<br/>SAFe Epics, Features, Stories, PIs"]
-      CONF["Knowledge base, Confluence<br/>ADRs, PRDs, reports"]
-      GH -->|"tickets"| JIRA
-      GH -->|"knowledge"| CONF
-    end
-
-    CS ==>|"strategic intent to governed delivery"| VMO
-    VMO -.->|"dispatch approved Epic to demoed Features"| RTE
-    RTE -.->|"dispatch committed Feature to merged Stories"| SM
-    VMO -->|"returns Epic gates"| CS
-    RTE -->|"returns Architecture, Demo, PR gates"| CS
-    SM -->|"returns Story, PR packet gates"| CS
-    VMO --> FSL
-    RTE --> FSL
-    SM --> FSL
-    FSL -->|"sync push or pull, the only external link"| GH
+    WS["Workspace<br/>your Git repository"]
+    GH["Your Git host"]
+    U -->|"concern, assent, gate decision"| VMO
+    U --> RTE
+    U --> SM
+    VMO -->|"dispatch steps"| BENCH
+    RTE --> BENCH
+    SM --> BENCH
+    H -.->|"governs each step and write"| BENCH
+    BENCH -->|"governed writes"| WS
+    WS -->|"push and pull"| GH
 
     classDef orch fill:#10b981,stroke:#065f46,color:#ffffff;
     classDef fs fill:#e0e7ff,stroke:#6366f1,color:#1e1b4b;
-    classDef ext fill:#fde68a,stroke:#b45309,color:#3f2d00;
     class VMO,RTE,SM orch
-    class FSL fs
-    class GH,JIRA,CONF ext
+    class WS fs
 ```
 
-*Each orchestrator is an entry point carrying your use case for its layer, and **returns that layer's ★ gates to you**. The framework's only external link is the git host — Jira and Confluence sync from there. The full model is on the **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** page.*
+*Each orchestrator drives one workflow at a time and returns its main artifacts to you at the gate. The full model is on the **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** page.*
 
 ---
 
+## Get started
+
+- **[Quickstart]({% link saf/quickstart.md %})** — install the two plugins from the marketplace or with a one-line installer, then initialise a workspace.
+- **[Running workflows]({% link saf/usage.md %})** — run a first workflow, continue it, recover an interrupted workflow instance.
+
 ## Products
 
-- **[Agentic Harness]({% link saf/agentic-harness/index.md %})** — the deterministic execution core: it resolves workflows, steps, models, and session context, checks conditions, authorization, and artifacts, and journals every step.
+- **[Agentic Harness]({% link saf/agentic-harness/index.md %})** — the deterministic execution core: it resolves workflow steps, models and the context of orchestrator and worker sessions, checks conditions, authorization and artifacts, governs every write through step transactions, and journals every step.
   - [Features]({% link saf/agentic-harness/features.md %}) — the capability catalogue with milestones
-- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — the SAFe-shaped framework application the harness executes: orchestrators, the specialist agent bench, skills, workflows, instructions, and artifact schemas.
+- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — the SAFe-shaped framework application the harness executes: orchestrators, the specialist bench, skills, workflows, instructions, and artifact schemas.
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared data plane storing the artifacts local agentic workflows produce. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
 - **[SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning the harness-governed agentic-execution history into GSM contributions on the Blackboard Manager. *Documentation in construction.*
   - [Features]({% link saf/saf-sie-bridge/features.md %}) — the capability catalogue with milestones
 
-**Next: [Quickstart — your first orchestrated PR →]({% link saf/quickstart.md %})**
+**Next: [Quickstart →]({% link saf/quickstart.md %})**
 {: .fs-5 .fw-300 }

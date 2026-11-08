@@ -27,4 +27,4 @@ Capability catalogue for the SIE Bridge.
 
 | Feature | Representative content | Milestone |
 |---------|------------------------|-----------|
-| Harness history sourcing | Reads committed artifacts and session logs from the Agentic Workspace and posts confidence-bearing identifications (participation, conformance, deviation) as contributions to the Blackboard Manager | v1.0 (MVP/GA) |
+| Harness history sourcing | Reads committed artifacts and harness logs from the Agentic Workspace and posts confidence-bearing identifications (participation, conformance, deviation) as contributions to the Blackboard Manager | v1.0 (MVP/GA) |

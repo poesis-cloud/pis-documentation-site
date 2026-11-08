@@ -25,10 +25,14 @@ Capability catalogue for the SAFe Agentic Organization.
 
 ## Capabilities
 
+The content below is on the organization's `main` branch, which the [Quickstart]({% link saf/quickstart.md %}) installs as a Copilot plugin.
+
 | Feature | Representative content | Milestone |
 |---------|------------------------|-----------|
-| Agents | Three orchestrators + framework-owned specialist bench | v1.0 (MVP/GA) |
-| Skills | SAFe ceremony, practice, authoring, and orchestration playbooks | v1.0 (MVP/GA) |
-| Workflows | SAFe ceremonies as governed workflows across the three layers | v1.0 (MVP/GA) |
-| Instructions | Persistent conventions injected into agent sessions | v1.0 (MVP/GA) |
-| Artifacts | JSON Schema contracts and templates for every artifact kind | v1.0 (MVP/GA) |
+| Agents | 14 agents: three layer orchestrators (`value-management-officer`, `release-train-engineer`, `scrum-master`) and an 11-agent specialist bench | On `main` · target v1.0 (MVP/GA) |
+| Skills | 37 SAFe ceremony, practice, authoring and orchestration playbooks, injected per step by the harness | On `main` · target v1.0 (MVP/GA) |
+| Workflows | 25 governed workflows across the three layers, as challenge loops ending at a human gate; harness-checked conditions on the critical transitions | On `main` · target v1.0 (MVP/GA) |
+| Instructions | Step instructions per actor, and the orchestrators' workflow instructions, injected when orchestrator and worker sessions open | On `main` · target v1.0 (MVP/GA) |
+| Artifacts | JSON Schema contracts and templates for every artifact kind, each recording its `stepOutcomes` | On `main` · target v1.0 (MVP/GA) |
+| Model catalogue | Canonical model profiles the harness scores per step; bound to host models by each harness adapter | On `main` · target v1.0 (MVP/GA) |
+| Copilot plugin | One Agent Plugins 1.0 plugin for the Copilot CLI, the GitHub Copilot app and VS Code (Session Target: Copilot); installed from the marketplace or with a one-line installer, with an `init` skill for workspaces | On `main` · target v1.0 (MVP/GA) |
