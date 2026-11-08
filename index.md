@@ -62,7 +62,7 @@ The **Generative System Model (GSM)** is the vendor-neutral standard for the THI
 
 ### [SAF — Systemic Agentic Framework]({% link saf/index.md %})
 
-A governed, local-first, multi-agent way to run SAFe — today in the Copilot CLI, the GitHub Copilot app and VS Code (Session Target: Copilot), portable to any host the harness adapts to. Portfolio, program and team workflows run on your own machine, each ending at a human gate, and produce schema-validated SAFe artifacts in a Git repository you own.
+A framework for building self-evolving agentic organizations — a deterministic harness plus organizations that define roles, workflows and artifacts, with a ready-made SAFe-shaped organization included. Today in the Copilot CLI, the GitHub Copilot app and VS Code (Session Target: Copilot), portable to any host the harness adapts to. Workflows run on your own machine, each ending at a human gate, and produce schema-validated artifacts in a Git repository you own.
 
 - [Overview]({% link saf/index.md %}) — the solution, its architecture, and its products
 - **[Quickstart]({% link saf/quickstart.md %})** — install the two plugins and initialise a workspace.
