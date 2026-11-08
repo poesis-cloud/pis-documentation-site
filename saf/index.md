@@ -11,7 +11,9 @@ redirect_from:
 
 {: .no_toc }
 
-The **Systemic Agentic Framework (SAF)** is a governed, local-first way to run **SAFe** with AI agents. Portfolio, program and team workflows run on your own machine, inside GitHub Copilot — the Copilot CLI, the GitHub Copilot app, or VS Code (Session Target: Copilot) — and produce schema-validated SAFe artifacts (Epics, Features, Stories, ADRs, kanbans, gate records) in a Git repository you own. Every workflow ends at a human gate: agents draft, challenge and rewrite; the decision stays with you.
+The **Systemic Agentic Framework (SAF)** puts teams and AI on rails to objectives. It is a framework for building self-evolving agentic organizations: a deterministic **harness** orchestrates workflows, resolves steps, models, skills and instructions, and authorizes what each agent may write, while an **organization** defines the roles, workflows and artifacts that do the work. Everything runs locally in GitHub Copilot — the CLI, the app or VS Code (Session Target: Copilot) — and produces schema-validated artifacts in a Git repository you own. Workflows end at human gates: agents draft, challenge and rewrite; the decision stays with you.
+
+SAF ships with a ready-made **SAFe-shaped organization**, which is one organization among others you can build on the harness.
 
 **Status.** The [Agentic Harness]({% link saf/agentic-harness/index.md %}) and the [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) are two Copilot plugins, installed from the `poesis-saf` marketplace (stable) or `poesis-saf-preview` (pre-releases), or with a one-line installer.
 
