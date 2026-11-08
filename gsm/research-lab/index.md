@@ -25,4 +25,6 @@ Current version: **v1.0.0-beta.1**.
 ## In this section
 
 - **[Features]({% link gsm/research-lab/features.md %})** — the capability catalogue with milestones
+{% if site.gsm_sources %}
 - **[Research programs]({% link gsm/research-lab/programs/index.md %})** — generative governance and the archetype referential model
+{% endif %}
