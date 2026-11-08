@@ -10,7 +10,7 @@ nav_order: 4
 
 {: .no_toc }
 
-The workspace is a Git repository, and **workspace state is its committed state**: the checked-out branch (`HEAD`), which the harness calls the workspace branch. Agents write in the working tree; the harness decides what becomes workspace state. Every artifact write happens inside a governed step instance, lands first on that step instance's own **step ref**, and enters workspace state only when the step instance passes and is **promoted**. These are the **step transactions** of v1.0.0-alpha.1.
+The workspace is a Git repository, and **workspace state is its committed state**: the checked-out branch (`HEAD`), which the harness calls the workspace branch. Agents write in the working tree; the harness decides what becomes workspace state. Every artifact write happens inside a governed step instance, lands first on that step instance's own **step ref**, and enters workspace state only when the step instance passes and is **promoted**. These are the **step transactions** of the harness.
 
 ## Table of contents
 

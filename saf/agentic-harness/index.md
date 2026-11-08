@@ -27,18 +27,18 @@ The harness core is **methodology- and host-agnostic**. It knows nothing of SAFe
 
 ---
 
-## Current release: v1.0.0-alpha.1
+## What ships
 
-**v1.0.0-alpha.1** is the first pinnable pre-release, published as a GitHub pre-release with a source tarball and its SHA-256 checksum ([release notes](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/CHANGELOG.md)). It ships:
+The harness is the Copilot plugin `poesis-saf-agentic-harness`, installed through the [Quickstart]({% link saf/quickstart.md %}). It ships:
 
 - **the harness core**: the twelve functions, from `start-session` to `end-session`, driven by declarative workflow contracts with CEL conditions;
 - **step transactions**: each step instance writes onto its own step ref, under artifact locks, and enters workspace state only by promotion;
 - **the condition language**, type-checked when the configuration loads;
 - **the recovery procedure** for a workflow instance an interrupted orchestrator session left busy;
 - **JSON Schema contracts** for the configuration, the logs and the adapter bindings;
-- **two host adapters**: `github-copilot-cli` (the GitHub Copilot app and the Copilot CLI) and `vscode-github-copilot-chat` (VS Code with Copilot Chat; not live-verified for this release).
+- **one host adapter**, `github-copilot`, for the Copilot CLI, the GitHub Copilot app and VS Code (Session Target: Copilot).
 
-Requirements: Python 3.10–3.12, Git 2.38 or later, and a Git identity in the governed workspace. Install it through the [Quickstart]({% link saf/quickstart.md %}).
+Requirements: Python 3.10 or later, Git 2.38 or later, and a Git identity in the governed workspace.
 
 ## What it does
 
@@ -64,7 +64,7 @@ There is no general-purpose harness CLI for you to drive. `harness.py` is one en
 - [Write governance]({% link saf/agentic-harness/write-governance.md %}) — authorization, validation, step refs, artifact locks, promotion.
 - [Condition language]({% link saf/agentic-harness/conditions.md %}) — variables, the typing rule, examples.
 - [Outcomes and refusal codes]({% link saf/agentic-harness/outcomes.md %}) — statuses, error codes, what to do.
-- [Known alpha limitations]({% link saf/agentic-harness/limitations.md %}) — what v1.0.0-alpha.1 does not do yet.
+- [Known alpha limitations]({% link saf/agentic-harness/limitations.md %}) — what the harness does not do yet.
 - [Features]({% link saf/agentic-harness/features.md %}) — the capability catalogue with milestones.
 
 ## In the SAF solution
@@ -75,4 +75,4 @@ There is no general-purpose harness CLI for you to drive. `harness.py` is one en
 | [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) | the SAFe-shaped framework application the harness executes |
 | [Agentic Workspace]({% link saf/agentic-workspace/index.md %}) | the shared data plane the harness checks and commits into |
 
-The canonical harness-core specification — terminology, invariants, the twelve-function contract, design and implementation — is [`def/core/spec.md`](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/def/core/spec.md). Each host binding has its own specification: [`github-copilot-cli`](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/def/adapter/github-copilot-cli/spec.md) and [`vscode-github-copilot-chat`](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/def/adapter/vscode-github-copilot-chat/spec.md).
+The canonical harness-core specification — terminology, invariants, the twelve-function contract, design and implementation — is [`def/core/spec.md`](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/def/core/spec.md). The host binding has its own specification: [`github-copilot`](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/def/adapter/github-copilot/spec.md).

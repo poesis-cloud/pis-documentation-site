@@ -10,7 +10,7 @@ nav_order: 7
 
 {: .no_toc }
 
-v1.0.0-alpha.1 is a pre-release. These are its known limitations, from the [release notes](https://github.com/poesis-cloud/saf-agentic-harness/blob/v1.0.0-alpha.1/CHANGELOG.md#known-alpha-limitations) and the adapter READMEs.
+These are the harness's known limitations, from the [release notes](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/CHANGELOG.md#known-alpha-limitations) and the adapter README.
 
 ## Table of contents
 
@@ -23,13 +23,11 @@ v1.0.0-alpha.1 is a pre-release. These are its known limitations, from the [rele
 
 ## Hosts and verification
 
-- **Supported hosts:** VS Code with GitHub Copilot Chat, and the GitHub Copilot app / Copilot CLI. VS Code hooks are a preview feature, so settings and events may drift; the VS Code adapter specification (I13) lists the open host verifications.
-- **VS Code adapter: not live-verified for this release.** It has CI coverage only.
+- **Supported hosts:** the Copilot CLI, the GitHub Copilot app, and VS Code with Session Target: Copilot. VS Code Local is not supported.
 - **Not exercised live, CI only:**
   - `apply_patch` deletes, and the all-or-nothing revert of a multi-file write: no model bound in the Copilot app writes with `apply_patch`;
   - the lock conflict between two step instances, a compare-and-swap failure at promotion, stale artifact locks, and the sweep.
 - **Copilot CLI:** the standalone CLI was verified live only on Linux, offline, with a scripted model. A GitHub-authenticated CLI with real models, the CLI on Windows and macOS, the interactive CLI (`ask_user`, the trust prompt) and marketplace installs on the CLI are not yet verified live. In the app, `exec` hook entries and the wrapper around the deny reason are not byte-verified.
-- **Installation is manual.** Marketplace distribution is planned.
 
 ## Hook behavior
 

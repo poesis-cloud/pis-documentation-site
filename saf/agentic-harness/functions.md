@@ -51,7 +51,7 @@ Every function takes the same envelope: the `sessionId` and nullable `parentSess
 
 Every function answers with a **report**: a `context` (`function`, `sessionId`, `parentSessionId`, `workflowInstanceId`), an `outcome` (`status`, plus an `error` object on error statuses), and its own payload. The report is persisted byte for byte as the log entry. The statuses are listed in [Outcomes and refusal codes]({% link saf/agentic-harness/outcomes.md %}).
 
-The JSON Schemas live in the repository under [`contracts/api/`](https://github.com/poesis-cloud/saf-agentic-harness/tree/v1.0.0-alpha.1/contracts/api).
+The JSON Schemas live in the repository under [`contracts/api/`](https://github.com/poesis-cloud/saf-agentic-harness/tree/main/contracts/api).
 
 ## The command line
 

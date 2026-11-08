@@ -13,7 +13,7 @@ redirect_from:
 
 The **SAFe Agentic Organization** is the SAFe-shaped framework application the [Agentic Harness]({% link saf/agentic-harness/index.md %}) executes: 14 agents, 37 skills, 25 workflows, their instructions, and the JSON Schemas and templates of every artifact kind. It is not one agent that "does Scrum". It is a *distributed* system: SAFe governance is split across specialized agents at three layers, and the work state is externalized to committed artifacts in a Git repository. We call this model **Distributed Agentic SAFe**, to contrast it with *centralized* agentic, where a single monolithic agent tries to hold the whole lifecycle in one context window.
 
-This page describes the organization's `main` branch, the one the [Quickstart]({% link saf/quickstart.md %}) installs. Its repository is [`poesis-cloud/saf-agentic-organization`](https://github.com/poesis-cloud/saf-agentic-organization).
+This page describes the organization's `main` branch. The [Quickstart]({% link saf/quickstart.md %}) installs it as the Copilot plugin `poesis-saf-agentic-organization`. Its repository is [`poesis-cloud/saf-agentic-organization`](https://github.com/poesis-cloud/saf-agentic-organization).
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -170,7 +170,7 @@ The repository root is host-agnostic source; the installable artifact is a bundl
 | `conf/` | `access-control-list`, `model-profiles`, `workspace` (the workspace layout) |
 | `artifacts/` | artifact JSON Schemas, grouped by the producing actor |
 | `templates/` | artifact templates, by layer and actor |
-| `builds/` | host bundle renderers: `github-copilot-cli/` (GitHub Copilot app / Copilot CLI) and `github-copilot/` (VS Code Copilot Chat) |
+| `builds/` | the Copilot plugin renderer (`plugin/`) |
 
 ---
 

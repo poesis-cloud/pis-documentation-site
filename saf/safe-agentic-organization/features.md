@@ -25,7 +25,7 @@ Capability catalogue for the SAFe Agentic Organization.
 
 ## Capabilities
 
-The content below is on the organization's `main` branch, which the [Quickstart]({% link saf/quickstart.md %}) installs. It is not released yet: the last release, v0.1.0, predates it.
+The content below is on the organization's `main` branch, which the [Quickstart]({% link saf/quickstart.md %}) installs as a Copilot plugin.
 
 | Feature | Representative content | Milestone |
 |---------|------------------------|-----------|
@@ -35,4 +35,4 @@ The content below is on the organization's `main` branch, which the [Quickstart]
 | Instructions | Step instructions per actor, and the orchestrators' workflow instructions, injected when orchestrator and worker sessions open | On `main` · target v1.0 (MVP/GA) |
 | Artifacts | JSON Schema contracts and templates for every artifact kind, each recording its `stepOutcomes` | On `main` · target v1.0 (MVP/GA) |
 | Model catalogue | Canonical model profiles the harness scores per step; bound to host models by each harness adapter | On `main` · target v1.0 (MVP/GA) |
-| Host bundles | Renderers for the GitHub Copilot app / Copilot CLI plugin and the VS Code Copilot Chat bundle; installed by hand, marketplace distribution planned | On `main` · target v1.0 (MVP/GA) |
+| Copilot plugin | One Agent Plugins 1.0 plugin for the Copilot CLI, the GitHub Copilot app and VS Code (Session Target: Copilot); installed from the marketplace or with a one-line installer, with an `init` skill for workspaces | On `main` · target v1.0 (MVP/GA) |

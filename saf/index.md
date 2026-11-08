@@ -11,9 +11,9 @@ redirect_from:
 
 {: .no_toc }
 
-The **Systemic Agentic Framework (SAF)** is a governed, local-first way to run **SAFe** with AI agents. Portfolio, program and team workflows run on your own machine, inside your agent host — the GitHub Copilot app or Copilot CLI, or VS Code with GitHub Copilot Chat — and produce schema-validated SAFe artifacts (Epics, Features, Stories, ADRs, kanbans, gate records) in a Git repository you own. Every workflow ends at a human gate: agents draft, challenge and rewrite; the decision stays with you.
+The **Systemic Agentic Framework (SAF)** is a governed, local-first way to run **SAFe** with AI agents. Portfolio, program and team workflows run on your own machine, inside GitHub Copilot — the Copilot CLI, the GitHub Copilot app, or VS Code (Session Target: Copilot) — and produce schema-validated SAFe artifacts (Epics, Features, Stories, ADRs, kanbans, gate records) in a Git repository you own. Every workflow ends at a human gate: agents draft, challenge and rewrite; the decision stays with you.
 
-**Status.** The [Agentic Harness]({% link saf/agentic-harness/index.md %}) is at **v1.0.0-alpha.1**, a pre-release. The [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) is used from its `main` branch. Installation is manual; marketplace distribution is planned.
+**Status.** The [Agentic Harness]({% link saf/agentic-harness/index.md %}) and the [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) are two Copilot plugins, installed from the `poesis-saf` marketplace (stable) or `poesis-saf-preview` (pre-releases), or with a one-line installer.
 
 SAF complements **[OIP]({% link oip/index.md %})** and is designed to integrate with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes, and the planned [SIE Bridge]({% link saf/saf-sie-bridge/index.md %}) turns its execution history into GSM contributions.
 
@@ -63,7 +63,7 @@ flowchart LR
 
 ## Get started
 
-- **[Quickstart]({% link saf/quickstart.md %})** — install the harness and the organization for the GitHub Copilot app / Copilot CLI or for VS Code.
+- **[Quickstart]({% link saf/quickstart.md %})** — install the two plugins from the marketplace or with a one-line installer, then initialise a workspace.
 - **[Running workflows]({% link saf/usage.md %})** — run a first workflow, continue it, recover an interrupted workflow instance.
 
 ## Products
