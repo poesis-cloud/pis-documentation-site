@@ -13,6 +13,10 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  # Set to "true" to re-enable sourcing GSM specs/research lab (needs secret GSM_CONTENT_READ_TOKEN).
+  SOURCE_GSM_CONTENT: "false"
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -25,6 +29,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Require GSM_CONTENT_READ_TOKEN
+        if: env.SOURCE_GSM_CONTENT == 'true'
         env:
           TOKEN: ${{ secrets.GSM_CONTENT_READ_TOKEN }}
         run: |
@@ -37,6 +42,7 @@ jobs:
       # with contents:read on poesis-cloud/gsm-specifications and
       # poesis-cloud/gsm-research-lab. Do not commit generated copies.
       - name: Checkout GSM specifications
+        if: env.SOURCE_GSM_CONTENT == 'true'
         uses: actions/checkout@v4
         with:
           repository: poesis-cloud/gsm-specifications
@@ -45,6 +51,7 @@ jobs:
           persist-credentials: false
 
       - name: Checkout GSM research lab
+        if: env.SOURCE_GSM_CONTENT == 'true'
         uses: actions/checkout@v4
         with:
           repository: poesis-cloud/gsm-research-lab
@@ -63,13 +70,19 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Sync GSM content
+        if: env.SOURCE_GSM_CONTENT == 'true'
         env:
           GSM_SPECIFICATIONS_ROOT: ${{ github.workspace }}/_sources/gsm-specifications
           GSM_RESEARCH_LAB_ROOT: ${{ github.workspace }}/_sources/gsm-research-lab
         run: ./scripts/sync-gsm-content.sh
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: |
+          if [ "$SOURCE_GSM_CONTENT" = "true" ]; then
+            bundle exec jekyll build --config _config.yml,_config_gsm.yml
+          else
+            bundle exec jekyll build
+          fi
         env:
           JEKYLL_ENV: production
 
