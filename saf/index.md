@@ -65,6 +65,7 @@ flowchart LR
 
 - **[Quickstart]({% link saf/quickstart.md %})** — install the two plugins from the marketplace or with a one-line installer, then initialise a workspace.
 - **[Running workflows]({% link saf/usage.md %})** — run a first workflow, continue it, recover an interrupted workflow instance.
+- **[Create your own organization]({% link saf/create-your-own-organization.md %})** — build an agentic organization as a Copilot plugin on top of the harness.
 
 ## Products
 
