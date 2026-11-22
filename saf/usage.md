@@ -22,35 +22,39 @@ This page assumes you finished a [Quickstart]({% link saf/quickstart.md %}). It 
 
 ## Talk to the orchestrator of your layer
 
-You talk to one of three orchestrators. Each one writes, or thickens, work items of its layer's grain:
+You talk to one of four orchestrators, one per SAFe layer. Each one writes, or thickens, work items of its layer's grain:
 
 | Orchestrator | Layer | Grain |
 |---|---|---|
 | `value-management-officer` | Portfolio | Epic |
-| `release-train-engineer` | Program (ART) | Feature |
+| `solution-train-engineer` | Large Solution | Capability |
+| `release-train-engineer` | ART | Feature |
 | `scrum-master` | Team | Story |
 
-State your concern in your own words: you don't name a ceremony or a workflow. The orchestrator maps the concern to the one workflow of its layer whose purpose matches, or tells you which other orchestrator to invoke. The [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}#the-workflow-catalog) page lists the 25 workflows.
+State your concern in your own words: you don't name a ceremony or a workflow. The orchestrator maps the concern to the one workflow of its layer whose purpose matches, or tells you which other orchestrator to invoke. The [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}#the-workflow-catalog) page lists the 61 workflows. You can start at any layer: Essential SAFe needs only the ART and Team orchestrators.
 
 ## Run a first workflow
 
-Select `value-management-officer` and write, for example:
+Select `release-train-engineer` and write, for example:
 
 ```text
-I want to start a new Epic: "Build a REST API for user authentication (JWT, refresh tokens)".
+We need customers to be able to export their invoices as PDF.
 ```
 
-The orchestrator maps this to the `epic-lean-business-case` workflow. Its steps, each acted by one bench agent and delivering one artifact:
+The orchestrator recognises a Feature and proposes the `feature-refinement` workflow. Its steps, each acted by one agent and delivering one artifact: the owner drafts, six experts each challenge, the owner revises.
 
 | # | Step | Actor | Artifact |
 |---|---|---|---|
-| 1 | `draft-epic` | `business-owner` | `epic` |
-| 2 | `discovery-and-draft` | `business-owner` | `lean-business-case` |
-| 3 | `draft-enabler-epic` | `enterprise-architect` | `epic-enabler` |
-| 4 | `challenge-feasibility` | `developer` | `feasibility-review` |
-| 5 | `owner-rewrite` | `business-owner` | `lean-business-case` |
-| 6 | `update-epic` | `business-owner` | `epic` |
-| 7 | `update-enabler-epic` | `enterprise-architect` | `epic-enabler` |
+| 1 | `draft` | `product-manager` | `feature` |
+| 2 | `challenge-system-architect` | `system-architect` | `challenge` |
+| 3 | `challenge-software-engineer` | `software-engineer` | `challenge` |
+| 4 | `challenge-quality-engineer` | `quality-engineer` | `challenge` |
+| 5 | `challenge-security-expert` | `security-expert` | `challenge` |
+| 6 | `challenge-ux-designer` | `ux-designer` | `challenge` |
+| 7 | `challenge-data-protection-officer` | `data-protection-officer` | `challenge` |
+| 8 | `revise` | `product-manager` | `feature` |
+
+Each expert reads the draft through its own lens and writes one challenge packet (findings, evidence, the smallest change that would resolve each, and a verdict). An expert whose lens does not apply says so in one line. The Product Manager then answers every finding in the Feature's challenge ledger: accepted, rejected with a reason, or deferred to a named place. See [the challenge loop]({% link saf/safe-agentic-organization/index.md %}#the-challenge-loop).
 
 What happens next:
 
@@ -59,7 +63,7 @@ What happens next:
 3. **Dispatch, one worker session per step.** The orchestrator dispatches the step to its actor, on the resolved model (`task` in the Copilot app / CLI, a subagent in VS Code). The harness checks the step's preconditions first and denies the dispatch when one fails. The worker session opens with the step's instructions and skills injected. It is the step instance: one worker session, one agent, one artifact instance.
 4. **Governed writes.** Every write of the worker session is authorized, validated and committed onto its step ref (see [Write governance]({% link saf/agentic-harness/write-governance.md %})). An invalid write is reverted, and the actor is told why.
 5. **Step outcome.** When the dispatch returns, the harness checks that the step instance delivered exactly one artifact instance of its declared kind and that its postconditions hold. On pass, it promotes the step instance into the workspace branch. On fail, it withholds it; the orchestrator asks `resolve-step` again, the same step comes back, and the new step instance continues the failed one's work. You don't see step retries.
-6. **The user gate.** When every step has a passing step instance, `resolve-step` answers `no-next-step`. The orchestrator returns the workflow's main artifacts (here `epic`, `lean-business-case`, `epic-enabler`) and waits. You review them and accept, raise concerns, or reject. A rejection reiterates the workflow as a new workflow instance.
+6. **The user gate.** When every step has a passing step instance, `resolve-step` answers `no-next-step`. The orchestrator returns the workflow's main artifact (here the `feature`) with the verdict of each expert and the findings the owner rejected or deferred, and waits. You accept, raise concerns, or reject. To **accept**, start a new session and say so: the item's `*-transition` workflow (here `feature-transition`) records the move and re-renders the Kanban, or, for an artifact with no state, a gate-decision workflow records your decision. To raise concerns or **reject**, start a new session and state them: the same workflow runs again as a new workflow instance, with your concerns as its subject. A gate decision that accepts an artifact is refused unless an expert challenged it.
 
 ```mermaid
 sequenceDiagram
@@ -89,7 +93,7 @@ Agent replies and reports are indicative. The committed artifacts are the only e
 The orchestrator asks with one plain shell command, alone in its tool call, for example on the Copilot app / CLI:
 
 ```text
-& <venv python> <harness.py> resolve-step --workflow-slug epic-lean-business-case
+& <venv python> <harness.py> resolve-step --workflow-slug feature-refinement
 ```
 
 (Linux and macOS: without the leading `&`.) The shell never runs that line, and no hook edits it. The harness hook recognizes the request, runs the function for the orchestrator session that the host observed, and returns the JSON report **as a hook denial** whose reason starts with `SAFe agentic harness RESULT (<function>)`. That denial is the successful answer: the orchestrator acts on it and does not re-issue the command. Only a reason starting with `SAFe agentic harness REJECTED` means the request was refused; it names the problem and the accepted line.
@@ -102,11 +106,11 @@ On both hosts, an orchestrator session is **one turn**: it opens when you send a
 
 - An orchestrator session drives at most one workflow instance. Asking it for another workflow is refused with `session-instance-bound`, even after `no-next-step`.
 - It resolves one step at a time. A second `resolve-step` while a step is in flight is refused with `step-in-flight`.
-- After the gate, the organization's orchestrators name the workflow that comes next (for example `portfolio-sync` for the next product) and ask you to run it in a **new conversation**: `copilot --agent poesis-saf-agentic-organization:<orchestrator>`, or the agent picker. Reaching a ★ gate often takes several runs. Ask the orchestrator to "drive to the gate" and it answers with the plan of runs, one conversation each, and starts only the first.
+- After the gate, the organization's orchestrators name the workflow that comes next (for example `feature-transition` to record your decision) and ask you to run it in a **new conversation**: `copilot --agent poesis-saf-agentic-organization:<orchestrator>`, or the agent picker. Reaching an outcome often takes several runs (refine, record the decision, plan). Ask the orchestrator to "drive to the gate" and it answers with the plan of runs, one conversation each, and starts only the first.
 
 ## Continue a workflow instance
 
-A workflow instance outlives its orchestrator sessions. The orchestrator may return to you before the end, for example when a precondition fails on state only you can produce: `feature-derivation` is refused while no Epic is approved. Your next prompt to the same orchestrator about the same concern opens a new orchestrator session, and `resolve-step` **continues the latest open workflow instance** of that workflow. It never replaces it: starting over a half-finished workflow instance is not supported. A step that failed comes back, and its new step instance builds on the failed step instance's step ref when the workspace branch has not moved since.
+A workflow instance outlives its orchestrator sessions. The orchestrator may return to you before the end, for example when a precondition fails on state only you can produce: `pi-planning` is refused while no Feature is `ready`. Your next prompt to the same orchestrator about the same concern opens a new orchestrator session, and `resolve-step` **continues the latest open workflow instance** of that workflow. It never replaces it: starting over a half-finished workflow instance is not supported. A step that failed comes back, and its new step instance builds on the failed step instance's step ref when the workspace branch has not moved since.
 
 A new orchestrator session can continue a workflow instance only once the previous orchestrator session has ended or concluded its step. Otherwise `resolve-step` answers `workflow-instance-busy`.
 

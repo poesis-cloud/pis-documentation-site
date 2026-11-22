@@ -114,30 +114,31 @@ An empty `selected` is a normal value: the predicate decides. A false predicate 
 
 ## Examples
 
-A postcondition from the organization's `feature-derivation` / `derive-business` (artifact `feature`): the Feature it delivers names an approved Epic as its parent, or names none.
+A postcondition from the organization's `feature-refinement` / `draft` (artifact `feature`): the Feature it delivers names an approved Epic or Capability as its parent, or names none.
 
 ```yaml
-- slug: parent-epic-approved
-  kind: postcondition
+- kind: postcondition
+  slug: parent-is-approved
   setSelector:
     setQuery: >-
-      workspace.filter(f, f.path == step.artifact.path && f.data.parentEpic != null)
+      workspace.filter(a, a.path == step.artifact.path && a.data.parent != null)
   setPredicate: >-
-    selected.all(f, workspace.exists(e, e.kind == 'epic'
-    && e.data.id == f.data.parentEpic
-    && e.data.status in ['portfolio-backlog', 'implementing']))
+    selected.all(a, workspace.exists(p, p.kind == 'epic' && p.path == a.data.parent
+    && p.data.status in ['ready', 'implementing'])
+    || workspace.exists(p, p.kind == 'capability' && p.path == a.data.parent
+    && p.data.status in ['analyzing', 'ready', 'implementing']))
 ```
 
-`f` is guarded by the path join with `step`, so `f.data.parentEpic` is checked against the `feature` schema; `e` is guarded by `e.kind == 'epic'`.
+`a` is guarded by the path join with `step`, so `a.data.parent` is checked against the `feature` schema; each `p` is guarded by its `p.kind` literal.
 
 A postcondition that rewrites the artifact instance an earlier step of this workflow instance delivered:
 
 ```yaml
 - kind: postcondition
-  slug: rewrites-drafted-artifact
+  slug: revises-the-drafted-artifact
   setSelector:
     setQuery: >-
-      steps.filter(s, s.workflow == workflow.id && s.slug == 'discovery-and-draft'
+      steps.filter(s, s.workflow == workflow.id && s.slug == 'draft'
       && s.outcome == 'pass' && s.artifact.path == step.artifact.path)
   setPredicate: selected.size() == 1
 ```

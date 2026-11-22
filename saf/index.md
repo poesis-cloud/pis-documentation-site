@@ -24,7 +24,7 @@ SAF complements **[OIP]({% link oip/index.md %})** and is designed to integrate 
 Four properties make it work:
 
 1. **Local-first** — the agent loop runs on your machine, in your agent host, against a real Git working tree. Work state stays in your files; only what you push leaves through your Git host. (Model calls go to your agent host's model provider.)
-2. **Governed** — three layer orchestrators and a specialist bench, with a human gate at the end of every workflow. The harness resolves every step, authorizes and validates every write, and only accepts a step that delivered its artifact.
+2. **Governed** — four layer orchestrators, SAFe role authors and an expert bench that challenges every main artifact, with a human gate at the end of every workflow. The harness resolves every step, authorizes and validates every write, and only accepts a step that delivered its artifact.
 3. **Sovereign** — work state lives in your own files and Git history, not in a vendor's cloud. Nothing is trapped in an unmanaged chat.
 4. **Portable** — the harness is methodology- and host-agnostic: plain files, a fixed set of twelve functions, and host specifics isolated in thin adapters. Two hosts are supported today; the same workflows run on both.
 
@@ -36,17 +36,20 @@ flowchart LR
     subgraph HOST["Your agent host: GitHub Copilot app / CLI, or VS Code"]
       direction TB
       VMO["value-management-officer<br/>Portfolio: Epics"]
-      RTE["release-train-engineer<br/>Program: Features"]
+      STE["solution-train-engineer<br/>Large Solution: Capabilities"]
+      RTE["release-train-engineer<br/>ART: Features"]
       SM["scrum-master<br/>Team: Stories"]
-      BENCH["Specialist bench<br/>one worker per step"]
+      BENCH["Authors and experts<br/>one worker per step"]
       H["Agentic Harness<br/>resolves, checks, records"]
     end
     WS["Workspace<br/>your Git repository"]
     GH["Your Git host"]
     U -->|"concern, assent, gate decision"| VMO
+    U --> STE
     U --> RTE
     U --> SM
     VMO -->|"dispatch steps"| BENCH
+    STE --> BENCH
     RTE --> BENCH
     SM --> BENCH
     H -.->|"governs each step and write"| BENCH
@@ -55,7 +58,7 @@ flowchart LR
 
     classDef orch fill:#10b981,stroke:#065f46,color:#ffffff;
     classDef fs fill:#e0e7ff,stroke:#6366f1,color:#1e1b4b;
-    class VMO,RTE,SM orch
+    class VMO,STE,RTE,SM orch
     class WS fs
 ```
 
@@ -73,7 +76,7 @@ flowchart LR
 
 - **[Agentic Harness]({% link saf/agentic-harness/index.md %})** — the deterministic execution core: it resolves workflow steps, models and the context of orchestrator and worker sessions, checks conditions, authorization and artifacts, governs every write through step transactions, and journals every step.
   - [Features]({% link saf/agentic-harness/features.md %}) — the capability catalogue with milestones
-- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — the SAFe-shaped framework application the harness executes: orchestrators, the specialist bench, skills, workflows, instructions, and artifact schemas.
+- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — the SAFe framework application the harness executes: four layer orchestrators, SAFe role authors, an expert bench that challenges every main artifact, skills, workflows, instructions, and artifact schemas.
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared data plane storing the artifacts local agentic workflows produce. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones

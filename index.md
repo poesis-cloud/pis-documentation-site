@@ -69,7 +69,7 @@ A framework for building self-evolving agentic organizations — a deterministic
 - [Running workflows]({% link saf/usage.md %}) — run, continue and recover a workflow instance
 - **[Agentic Harness]({% link saf/agentic-harness/index.md %})** — the deterministic execution core: step resolution, condition checks, write governance, journaling
   - [Features]({% link saf/agentic-harness/features.md %}) — the capability catalogue with milestones
-- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — orchestrators, the specialist bench, and the workflow catalog
+- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — four layer orchestrators, SAFe role authors, the expert bench, and the workflow catalog
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared remote workspace for agentic workflow artifacts. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
