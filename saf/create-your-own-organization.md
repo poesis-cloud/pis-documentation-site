@@ -22,13 +22,15 @@ your-organization/
 ├── .env                 FRAMEWORK_*_DIR: where each folder below lives
 ├── conf/                harness.conf.yaml, workspace.conf.yaml, access-control-list.conf.yaml, model-profiles.conf.yaml
 ├── agents/              <slug>.agent.md — one per actor (orchestrators and specialists)
-├── skills/              <slug>.skill.md — playbooks loaded on demand
-├── instructions/        <actor>/<workflow>-<step>.instructions.md — per-step instructions
+├── skills/              <slug>.skill.md — one craft skill per agent, injected into each step it acts
+├── instructions/        shared/ (step contract, step patterns, orchestrator duties) and <layer>/ (one brief per workflow, one catalog per orchestrator)
 ├── workflows/           <layer>/<slug>.workflow.conf.yaml — the steps of each workflow
 ├── templates/           artifact templates
-├── artifacts/           <actor>/<artifact>.artifact.schema.json — one JSON Schema per artifact
-├── docs/                required reading for the orchestrators
-└── builds/plugin/       plugin.json, tools.yaml, host-binding.md, bin/register.{sh,ps1}, render_plugin.py
+├── artifacts/           <layer>/<artifact>.artifact.schema.json — one JSON Schema per artifact
+├── docs/                usage model, catalog, step artifacts, SAFe conformance
+└── builds/
+    ├── model/           the organization model and the generator of the structured files (optional)
+    └── plugin/          plugin.json, tools.yaml, host-binding.md, bin/register.{sh,ps1}, render_plugin.py
 ```
 
 `.env` is the layout contract: the harness reads the `FRAMEWORK_AGENTS_DIR`, `FRAMEWORK_ARTIFACTS_DIR`, `FRAMEWORK_INSTRUCTIONS_DIR`, `FRAMEWORK_SKILLS_DIR`, `FRAMEWORK_TEMPLATES_DIR`, `FRAMEWORK_WORKFLOWS_DIR` and `FRAMEWORK_WORKSPACE_DIR` values from it, so no path is hardcoded in a hook.
@@ -46,8 +48,10 @@ require: ">=1.0.0a1,<1.1"
 ## 3. Write the organization
 
 - **Agents.** Orchestrators are the entry points you talk to; specialists run one step each. List every agent's Copilot tools in `builds/plugin/tools.yaml`; it must name exactly the source agents.
-- **Skills, instructions, workflows.** A workflow lists its steps; each step names an actor, an instruction and the artifact it must deliver. The harness resolves each step, authorizes and validates every write, and accepts a step only if it delivered its artifact.
+- **Skills, instructions, workflows.** A workflow lists its steps; each step names an actor, its instructions and skills, and the artifact it must deliver. The harness resolves each step, authorizes and validates every write, and accepts a step only if it delivered its artifact.
 - **Templates and artifacts.** Each artifact has a JSON Schema and a template; `workspace.conf.yaml` binds both to a workspace path.
+- **Keep contexts small.** Everything the harness injects at a step is paid for by every run: give each step a few short instructions and one skill. The SAFe organization keeps a step to a step contract, a step pattern and a workflow brief, and tests that budget.
+- **Generate the repetitive part.** The SAFe organization writes its agents and skills by hand and generates its artifact schemas, templates, workflows, briefs, access control list and workspace layout from one model (`builds/model/`, `make generate`), with a test that fails when they drift.
 
 ## 4. Registry and registration
 

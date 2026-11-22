@@ -29,10 +29,10 @@ The content below is on the organization's `main` branch, which the [Quickstart]
 
 | Feature | Representative content | Milestone |
 |---------|------------------------|-----------|
-| Agents | 14 agents: three layer orchestrators (`value-management-officer`, `release-train-engineer`, `scrum-master`) and an 11-agent specialist bench | On `main` · target v1.0 (MVP/GA) |
-| Skills | 37 SAFe ceremony, practice, authoring and orchestration playbooks, injected per step by the harness | On `main` · target v1.0 (MVP/GA) |
-| Workflows | 25 governed workflows across the three layers, as challenge loops ending at a human gate; harness-checked conditions on the critical transitions | On `main` · target v1.0 (MVP/GA) |
-| Instructions | Step instructions per actor, and the orchestrators' workflow instructions, injected when orchestrator and worker sessions open | On `main` · target v1.0 (MVP/GA) |
-| Artifacts | JSON Schema contracts and templates for every artifact kind, each recording its `stepOutcomes` | On `main` · target v1.0 (MVP/GA) |
+| Agents | 38 agents: four layer orchestrators (`value-management-officer`, `solution-train-engineer`, `release-train-engineer`, `scrum-master`), 9 SAFe roles that author artifacts and a 25-expert bench of real IT jobs (site reliability, observability, data protection, security, finance, UX, …) | On `main` · target v1.0 (MVP/GA) |
+| Skills | One craft skill per agent: its authoring guide for the artifacts it owns and its lens on each artifact it challenges, injected per step by the harness | On `main` · target v1.0 (MVP/GA) |
+| Workflows | 61 governed workflows across the four SAFe layers (36 challenge loops, 11 transitions, 10 event records, 4 gate decisions), each ending at a human gate; harness-checked conditions: no acceptance without challenge, the owner answers every finding, no item moves past refinement unchallenged, approved parents only | On `main` · target v1.0 (MVP/GA) |
+| Instructions | A step contract, a step pattern and a workflow brief per step, and the orchestrators' four duties and catalog, injected when worker and orchestrator sessions open; context budgets are tested | On `main` · target v1.0 (MVP/GA) |
+| Artifacts | 34 artifact kinds with JSON Schemas and templates, including a generic challenge packet and a challenge ledger on every main artifact, each recording its `stepOutcomes` | On `main` · target v1.0 (MVP/GA) |
 | Model catalogue | Canonical model profiles the harness scores per step; bound to host models by each harness adapter | On `main` · target v1.0 (MVP/GA) |
 | Copilot plugin | One Agent Plugins 1.0 plugin for the Copilot CLI, the GitHub Copilot app and VS Code (Session Target: Copilot); installed from the marketplace or with a one-line installer, with an `init` skill for workspaces | On `main` · target v1.0 (MVP/GA) |

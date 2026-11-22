@@ -94,7 +94,7 @@ The harness governs a **workspace**: a Git repository whose checked-out branch h
 
 ## 4. Select an orchestrator
 
-Start a **new** Copilot session in the workspace and select one of the three orchestrators: `value-management-officer`, `release-train-engineer` or `scrum-master`. On the CLI:
+Start a **new** Copilot session in the workspace and select the orchestrator of your layer: `value-management-officer` (Portfolio), `solution-train-engineer` (Large Solution), `release-train-engineer` (ART) or `scrum-master` (Team). On the CLI:
 
 ```bash
 copilot --agent poesis-saf-agentic-organization:value-management-officer
