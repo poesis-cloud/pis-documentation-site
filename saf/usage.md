@@ -31,7 +31,7 @@ You talk to one of four orchestrators, one per SAFe layer. Each one writes, or t
 | `release-train-engineer` | ART | Feature |
 | `scrum-master` | Team | Story |
 
-State your concern in your own words: you don't name a ceremony or a workflow. The orchestrator maps the concern to the one workflow of its layer whose purpose matches, or tells you which other orchestrator to invoke. The [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}#the-workflow-catalog) page lists the 61 workflows. You can start at any layer: Essential SAFe needs only the ART and Team orchestrators.
+State your concern in your own words: you don't name a ceremony or a workflow. The orchestrator maps the concern to the one workflow of its layer whose purpose matches, or tells you which other orchestrator to invoke. The [SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %}#the-workflow-catalog) page lists the 61 workflows. You can start at any layer: Essential SAFe needs only the ART and Team orchestrators.
 
 ## Run a first workflow
 

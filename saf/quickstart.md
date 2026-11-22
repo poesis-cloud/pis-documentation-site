@@ -16,7 +16,7 @@ redirect_from:
 SAF runs on your own machine, inside GitHub Copilot. It ships as two Copilot plugins (Agent Plugins 1.0), which you install together:
 
 - **`poesis-saf-agentic-harness`**: the [Agentic Harness]({% link saf/agentic-harness/index.md %}), which governs every workflow the agents run;
-- **`poesis-saf-agentic-organization`**: the [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}), which holds the agents, skills, workflows and artifact schemas.
+- **`poesis-saf-agentic-organization`**: the [SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %}), which holds the agents, skills, workflows and artifact schemas.
 
 One pair of plugins serves every Copilot host: the Copilot CLI, the GitHub Copilot app, and VS Code with the Copilot session target.
 

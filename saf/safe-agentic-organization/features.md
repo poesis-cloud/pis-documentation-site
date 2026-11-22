@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "SAFe Agentic Organization Features"
-parent: SAFe Agentic Organization
+title: "SAF Agentic Organization Features"
+parent: SAF Agentic Organization
 grand_parent: SAF — the Systemic Agentic Framework
 nav_order: 1
 ---
 
-# SAFe Agentic Organization Features
+# SAF Agentic Organization Features
 {: .no_toc }
 
-Capability catalogue for the SAFe Agentic Organization.
+Capability catalogue for the SAF Agentic Organization.
 
 ## Table of contents
 {: .no_toc .text-delta }
