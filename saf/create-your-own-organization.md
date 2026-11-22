@@ -9,7 +9,7 @@ nav_order: 4
 
 {: .no_toc }
 
-The [Agentic Harness]({% link saf/agentic-harness/index.md %}) is methodology-agnostic: it executes whatever **framework** it finds in a registered plugin. The [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) is one such framework. This page shows how to build another one, an agentic organization of your own, as a Copilot plugin, using [`saf-agentic-organization`](https://github.com/poesis-cloud/saf-agentic-organization) as the worked example.
+The [Agentic Harness]({% link saf/agentic-harness/index.md %}) is methodology-agnostic: it executes whatever **framework** it finds in a registered plugin. The [SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) is one such framework. This page shows how to build another one, an agentic organization of your own, as a Copilot plugin, using [`saf-agentic-organization`](https://github.com/poesis-cloud/saf-agentic-organization) as the worked example.
 
 The binding specifications live in the repositories' `def/` folders and are linked, not copied, here: the [harness core spec](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/def/core/spec.md) and the [GitHub Copilot adapter spec](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/def/adapter/github-copilot/spec.md). The organization's own build notes are [`docs/hosts/copilot-plugin.md`](https://github.com/poesis-cloud/saf-agentic-organization/blob/main/docs/hosts/copilot-plugin.md).
 

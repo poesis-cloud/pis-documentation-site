@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SAFe Agentic Organization
+title: SAF Agentic Organization
 parent: SAF — the Systemic Agentic Framework
 nav_order: 4
 has_children: true
@@ -8,10 +8,10 @@ redirect_from:
   - /safe-agentic-framework/distributed-agentic-safe/
 ---
 
-# SAFe Agentic Organization
+# SAF Agentic Organization
 {: .no_toc }
 
-The **SAFe Agentic Organization** is the SAFe framework application the [Agentic Harness]({% link saf/agentic-harness/index.md %}) executes: **Full SAFe** as an agentic organization, with the four layers (Portfolio, Large Solution, ART, Team), 38 agents, 61 workflows and 34 artifact kinds. It is not one agent that "does Scrum". It is a *distributed* system: SAFe governance is split across specialized agents, **every main artifact is challenged by experts with real IT jobs before a human decides on it**, and the work state is externalized to committed artifacts in a Git repository. We call this model **Distributed Agentic SAFe**, to contrast it with *centralized* agentic, where a single monolithic agent tries to hold the whole lifecycle in one context window.
+The **SAF Agentic Organization** is the SAFe framework application the [Agentic Harness]({% link saf/agentic-harness/index.md %}) executes: **Full SAFe** as an agentic organization, with the four layers (Portfolio, Large Solution, ART, Team), 38 agents, 61 workflows and 34 artifact kinds. It is not one agent that "does Scrum". It is a *distributed* system: SAFe governance is split across specialized agents, **every main artifact is challenged by experts with real IT jobs before a human decides on it**, and the work state is externalized to committed artifacts in a Git repository. We call this model **distributed agentic**, to contrast it with *centralized* agentic, where a single monolithic agent tries to hold the whole lifecycle in one context window.
 
 This page describes the organization's `main` branch. The [Quickstart]({% link saf/quickstart.md %}) installs it as the Copilot plugin `poesis-saf-agentic-organization`. Its repository is [`poesis-cloud/saf-agentic-organization`](https://github.com/poesis-cloud/saf-agentic-organization); the roster, the workflow catalog and the artifact kinds are listed in its [catalog](https://github.com/poesis-cloud/saf-agentic-organization/blob/main/docs/catalog.md), and how each SAFe role, event and artifact maps onto it in its [SAFe conformance](https://github.com/poesis-cloud/saf-agentic-organization/blob/main/docs/safe-conformance.md).
 
@@ -25,7 +25,7 @@ This page describes the organization's `main` branch. The [Quickstart]({% link s
 
 ## Centralized vs. distributed
 
-| Axis | Centralized agentic | **Distributed Agentic SAFe** |
+| Axis | Centralized agentic | **Distributed agentic (SAF)** |
 |---|---|---|
 | Orchestration | one monolithic agent owns the whole lifecycle | **4 layer orchestrators**, SAFe role authors and an expert bench |
 | Context | a single shared memory | **no shared memory**: committed artifacts are the bus; each step gets a small fixed context |

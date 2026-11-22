@@ -72,7 +72,7 @@ There is no general-purpose harness CLI for you to drive. `harness.py` is one en
 | Product | Role |
 |---|---|
 | **Agentic Harness** (this product) | the deterministic execution engine — methodology- and host-agnostic |
-| [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) | the SAFe-shaped framework application the harness executes |
+| [SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) | the SAFe-shaped framework application the harness executes |
 | [Agentic Workspace]({% link saf/agentic-workspace/index.md %}) | the shared data plane the harness checks and commits into |
 
 The canonical harness-core specification — terminology, invariants, the twelve-function contract, design and implementation — is [`def/core/spec.md`](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/def/core/spec.md). The host binding has its own specification: [`github-copilot`](https://github.com/poesis-cloud/saf-agentic-harness/blob/main/def/adapter/github-copilot/spec.md).

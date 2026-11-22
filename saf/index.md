@@ -15,7 +15,7 @@ The **Systemic Agentic Framework (SAF)** puts teams and AI on rails to objective
 
 SAF ships with a ready-made **SAFe-shaped organization**, which is one organization among others you can build on the harness.
 
-**Status.** The [Agentic Harness]({% link saf/agentic-harness/index.md %}) and the [SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) are two Copilot plugins, installed from the `poesis-saf` marketplace (stable) or `poesis-saf-preview` (pre-releases), or with a one-line installer.
+**Status.** The [Agentic Harness]({% link saf/agentic-harness/index.md %}) and the [SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) are two Copilot plugins, installed from the `poesis-saf` marketplace (stable) or `poesis-saf-preview` (pre-releases), or with a one-line installer.
 
 SAF complements **[OIP]({% link oip/index.md %})** and is designed to integrate with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes, and the planned [SIE Bridge]({% link saf/saf-sie-bridge/index.md %}) turns its execution history into GSM contributions.
 
@@ -62,7 +62,7 @@ flowchart LR
     class WS fs
 ```
 
-*Each orchestrator drives one workflow at a time and returns its main artifacts to you at the gate. The full model is on the **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** page.*
+*Each orchestrator drives one workflow at a time and returns its main artifacts to you at the gate. The full model is on the **[SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** page.*
 
 ---
 
@@ -76,7 +76,7 @@ flowchart LR
 
 - **[Agentic Harness]({% link saf/agentic-harness/index.md %})** — the deterministic execution core: it resolves workflow steps, models and the context of orchestrator and worker sessions, checks conditions, authorization and artifacts, governs every write through step transactions, and journals every step.
   - [Features]({% link saf/agentic-harness/features.md %}) — the capability catalogue with milestones
-- **[SAFe Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — the SAFe framework application the harness executes: four layer orchestrators, SAFe role authors, an expert bench that challenges every main artifact, skills, workflows, instructions, and artifact schemas.
+- **[SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %})** — the SAFe framework application the harness executes: four layer orchestrators, SAFe role authors, an expert bench that challenges every main artifact, skills, workflows, instructions, and artifact schemas.
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared data plane storing the artifacts local agentic workflows produce. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
