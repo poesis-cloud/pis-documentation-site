@@ -23,7 +23,7 @@ Content mirrors the Poesis portfolio taxonomy — Solutions → Products → Pag
 | `sie/` | SIE — Systemic Intelligence Engine (Definition Manager, Definition Operator, OTel Collector, MCP) |
 | `sis/` | SIS — Systemic Intelligence Sourcing (Code Sourcer, Blackboard Manager) |
 | `gsm/` | GSM — the standard (Specifications, Research Lab, Ontology) |
-| `saf/` | SAF — Systemic Agentic Framework (Agentic Harness, SAF Agentic Organization, Agentic Workspace, SIE Bridge) |
+| `saf/` | SAF — Systemic Agentic Framework (Agentic Harness, SAF Agentic Organization, Agentic Workspace) |
 | `sim/` | SIM — Systemic Intelligence Model (LM) |
 
 ## Editorial policy

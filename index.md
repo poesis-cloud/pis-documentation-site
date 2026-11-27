@@ -73,8 +73,6 @@ A framework for building self-evolving agentic organizations — a deterministic
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared remote workspace for agentic workflow artifacts. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
-- **[SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning harness-governed execution history into GSM contributions on the Blackboard Manager. *Documentation in construction.*
-  - [Features]({% link saf/saf-sie-bridge/features.md %}) — the capability catalogue with milestones
 
 ### [SIM — Systemic Intelligence Model]({% link sim/index.md %})
 

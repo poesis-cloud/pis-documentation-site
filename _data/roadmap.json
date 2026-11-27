@@ -1363,40 +1363,6 @@
             "ga": true
           }
         ]
-      },
-      {
-        "id": "saf/saf-sie-bridge",
-        "name": "SIE Bridge",
-        "current": "0.0",
-        "state": "planned",
-        "status": "planned",
-        "statusLabel": "Planned",
-        "scope": "The planned bridge will derive typed candidates from pinned SAF artifacts and journals, retaining provenance and uncertainty for review. Client-owned reconciliation and draft promotion connect those proposals to SIE; sourcing itself does not approve or deploy them.",
-        "features": [
-          {
-            "id": "saf/saf-sie-bridge/harness-history-sourcing",
-            "name": "Harness history sourcing",
-            "state": "planned",
-            "status": "planned",
-            "statusLabel": "Planned",
-            "kind": "implementation",
-            "notes": "Derive typed Blackboard candidates from pinned artifacts and journals, retaining provenance and uncertainty for review before separate draft promotion.",
-            "milestone": {
-              "version": "1.0",
-              "label": "MVP/GA — harness history sourcing into GSM contributions on the Blackboard Manager",
-              "ga": true
-            }
-          }
-        ],
-        "milestones": [
-          {
-            "version": "1.0",
-            "label": "MVP/GA — harness history sourcing into GSM contributions on the Blackboard Manager",
-            "status": "planned",
-            "statusLabel": "Planned",
-            "ga": true
-          }
-        ]
       }
     ]
   },
