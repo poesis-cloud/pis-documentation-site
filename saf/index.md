@@ -17,7 +17,7 @@ SAF ships with a ready-made **SAFe-shaped organization**, which is one organizat
 
 **Status.** The [Agentic Harness]({% link saf/agentic-harness/index.md %}) and the [SAF Agentic Organization]({% link saf/safe-agentic-organization/index.md %}) are two Copilot plugins, installed from the `poesis-saf` marketplace (stable) or `poesis-saf-preview` (pre-releases), or with a one-line installer.
 
-SAF complements **[OIP]({% link oip/index.md %})** and is designed to integrate with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes, and the planned [SIE Bridge]({% link saf/saf-sie-bridge/index.md %}) turns its execution history into GSM contributions.
+SAF complements **[OIP]({% link oip/index.md %})** and is designed to integrate with **[SIE]({% link sie/index.md %})**: its artifact templates can be sourced as GSM Archetypes.
 
 ## The framework's architecture
 
@@ -80,8 +80,6 @@ flowchart LR
   - [Features]({% link saf/safe-agentic-organization/features.md %}) — the capability catalogue with milestones
 - **[Agentic Workspace]({% link saf/agentic-workspace/index.md %})** — the shared data plane storing the artifacts local agentic workflows produce. *Documentation in construction.*
   - [Features]({% link saf/agentic-workspace/features.md %}) — the capability catalogue with milestones
-- **[SIE Bridge]({% link saf/saf-sie-bridge/index.md %})** — the client sourcer turning the harness-governed agentic-execution history into GSM contributions on the Blackboard Manager. *Documentation in construction.*
-  - [Features]({% link saf/saf-sie-bridge/features.md %}) — the capability catalogue with milestones
 
 **Next: [Quickstart →]({% link saf/quickstart.md %})**
 {: .fs-5 .fw-300 }

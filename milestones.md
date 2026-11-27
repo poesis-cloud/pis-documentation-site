@@ -61,4 +61,3 @@ invented shipped milestone.
 2. **Blackboard Manager GA gates the Code Sourcer GA** — the sourcer needs a stable server contract.
 3. **The Agentic Harness has a recorded 1.0 release**. Organization and Workspace need compatible contracts and scoped acceptance; the release does not prove their integration.
 4. **OIP GA does not gate on SIE GA** — OIP 1.0 may ship against SIE 0.x.
-5. **Blackboard Manager GA also gates the SIE Bridge GA** — the same stable server contract the Code Sourcer depends on.
