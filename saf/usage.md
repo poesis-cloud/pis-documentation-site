@@ -9,6 +9,9 @@ nav_order: 2
 
 {: .no_toc }
 
+Running is the use of an agentic organization, whichever way it was built: installed as it is, adapted, generated from your documentation, or built with Poesis. Every organization on SAF runs the same way, whatever its trade, because the harness that runs it knows no methodology; and it evolves as it is used.
+{: .fs-6 .fw-300 }
+
 This page assumes you finished a [Quickstart]({% link saf/quickstart.md %}). It shows how a workflow runs, from your first request to the user gate, how to continue a workflow instance, and how to recover one that an interruption left busy.
 
 ## Table of contents
@@ -19,6 +22,18 @@ This page assumes you finished a [Quickstart]({% link saf/quickstart.md %}). It 
 {:toc}
 
 ---
+
+## A run in five moves
+
+Whatever the organization, every run has the same five moves, and the harness guarantees them:
+
+1. **You state a need**, in your own words, to the orchestrator of your scope. It maps the need to one workflow, and asks before it starts.
+2. **Agents take the steps**: one step, one agent in a declared role, one deliverable. The harness resolves each step, its model and the context the agent needs. Each agent works with a small context (a few short instructions, one craft skill and one template), so it does one thing well.
+3. **Every deliverable is checked**, against its contract, its conditions and the permissions of the role that wrote it. Where the organization says so, expert agents challenge it before a person sees it.
+4. **People decide.** Each workflow ends at a human gate, where you accept, raise concerns or reject. Nothing is accepted until a person decides, and the decision is recorded: the next workflow starts from it.
+5. **The organization remembers.** Deliverables, decisions and the journal of every step accumulate in the shared workspace: the memory the next run builds on.
+
+The rest of this page follows one run of the ready-made organization through these moves.
 
 ## Talk to the orchestrator of your layer
 
@@ -147,3 +162,25 @@ In the workspace repository:
 - **Harness refs** — `git for-each-ref refs/harness/` lists the step refs (every step instance's commits, promoted or not) and the artifact locks still held. They are local-only.
 
 Push the workspace branch to share the accepted artifacts; the harness refs and logs stay on your machine.
+
+## How the organization evolves
+
+The organization evolves as it is used: what its runs show, its people revise in its own files (agents, workflows, rules and templates), reviewed like code. Capturing pain points from runs, and workflows that change and upgrade the organization from that evidence, are planned: follow them on the [public roadmap](https://github.com/poesis-cloud/saf-agentic-organization/issues).
+
+## Every organization runs this way
+
+- **The ready-made organization**, for scaled agile delivery, is available in alpha preview: see its [roster and workflows](https://github.com/poesis-cloud/saf-agentic-organization/blob/main/docs/catalog.md).
+- **Your own organization**, declared on the harness from your documentation or adapted from a ready-made one, runs exactly the same way: see [Create your own organization]({% link saf/create-your-own-organization.md %}).
+- **An organization built with Poesis**: Poesis mirrors how one scope really works, generates the seed of its agentic organization, and runs a first workflow with your people ([Agentic transformation](https://poesis.cloud/path-d-mirror-and-transform/)).
+- **More ready-made organizations** are planned. They will join the [SAF marketplace](https://github.com/poesis-cloud/saf-marketplace) as plugins, next to the first one, and run the same way.
+
+## Getting help
+
+Community support carries no response-time commitment: it is not a support contract.
+
+- **Ask and report.** Questions, bugs and proposals go to the issue tracker of the repository concerned ([harness](https://github.com/poesis-cloud/saf-agentic-harness/issues), [organization](https://github.com/poesis-cloud/saf-agentic-organization/issues), [marketplace](https://github.com/poesis-cloud/saf-marketplace/issues)), or to [GitHub Discussions](https://github.com/orgs/poesis-cloud/discussions), where anyone can read them and answer.
+- **Read the documentation.** The [Quickstart]({% link saf/quickstart.md %}), this page, the [usage model](https://github.com/poesis-cloud/saf-agentic-organization/blob/main/docs/usage-model.md) and the [known limitations]({% link saf/agentic-harness/limitations.md %}).
+- **Follow what comes next.** Each repository keeps its roadmap in the open: every planned feature is a public issue you can follow, discuss or take on.
+- **Contribute.** Fork, change and open a pull request, each commit signed off under the Developer Certificate of Origin ([Contributing]({% link saf/contributing.md %})).
+
+For a commitment, on a scope, access, timing and terms written down before any work starts, [start a pilot with Poesis](https://poesis.cloud/pilot/).
