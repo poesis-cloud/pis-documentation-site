@@ -11,6 +11,9 @@ redirect_from:
 
 {: .no_toc }
 
+AI adoption is easy; scaling it responsibly is hard. More agents do not make better operations: isolated agents and disconnected tools add complexity, risk and cost. What scales is an organization the agents work in, under controls that do not depend on their reasoning.
+{: .fs-6 .fw-300 }
+
 The **Systemic Agentic Framework (SAF)** puts teams and AI on rails to objectives. It is a framework for building self-evolving agentic organizations: a deterministic **harness** orchestrates workflows, resolves steps, models, skills and instructions, and authorizes what each agent may write, while an **organization** defines the roles, workflows and artifacts that do the work. Everything runs locally in GitHub Copilot — the CLI, the app or VS Code (Session Target: Copilot) — and produces schema-validated artifacts in a Git repository you own. Workflows end at human gates: agents draft, challenge and rewrite; the decision stays with you.
 
 SAF ships with a ready-made **SAFe-shaped organization**, which is one organization among others you can build on the harness.
